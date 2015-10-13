@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package llorix-one
+ * @package parallax-one
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -28,9 +28,9 @@
 
 	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
 	 
-		$parallax_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
+		$llorix_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
 		
-		if( isset($parallax_one_disable_preloader) && ($parallax_one_disable_preloader != 1)):
+		if( isset($llorix_one_disable_preloader) && ($llorix_one_disable_preloader != 1)):
 			 
 			echo '<div class="preloader">';
 				echo '<div class="status">&nbsp;</div>';
@@ -73,12 +73,26 @@
             <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll">
 		        <div class="very-top-header">
 		        	<div class="container">
-		        		<div class="very-top-left">Call us: (+4) 0789.500.400</div>
+		        		
+		        		<?php
+		        			$llorix_one_very_top_header_phone = get_theme_mod('parallax_one_very_top_header_phone','(+9) 0999.500.400');
+
+							if( !empty($llorix_one_very_top_header_phone) ){
+				        		echo '<div class="very-top-left">';
+				        		echo esc_html_e('Call us:', 'parallax-one') . ' ';
+				        		echo '<span>' . esc_attr($llorix_one_very_top_header_phone) . '</span>';
+				        		echo '</div>';
+							} elseif ( isset( $wp_customize )   ) {
+								echo '<div class="very-top-left paralax_one_only_customizer">' . esc_html_e('Call us:', 'parallax-one') . '<span></span></div>';
+							}
+						?>
+
+
 		        		<div class="very-top-right">
 						
 							<?php 
 								/* SOCIAL ICONS */
-								$parallax_one_social_icons = get_theme_mod('parallax_one_social_icons',json_encode(
+								$llorix_one_social_icons = get_theme_mod('parallax_one_very_top_social_icons',json_encode(
 																array(
 																	array('icon_value' =>'icon-social-facebook' , 'link' => '#'),
 																	array('icon_value' =>'icon-social-twitter' , 'link' => '#'),
@@ -86,12 +100,12 @@
 																	)
 																));
 								
-								if( !empty( $parallax_one_social_icons ) ){
-									$parallax_one_social_icons_decoded = json_decode($parallax_one_social_icons);
-									if( !empty($parallax_one_social_icons_decoded) ){
+								if( !empty( $llorix_one_social_icons ) ){
+									$llorix_one_social_icons_decoded = json_decode($llorix_one_social_icons);
+									if( !empty($llorix_one_social_icons_decoded) ){
 										echo '<ul class="social-icons">';
-											foreach($parallax_one_social_icons_decoded as $parallax_one_social_icon){
-												echo '<li><a href="'.esc_url($parallax_one_social_icon->link).'"><span class="'.esc_attr($parallax_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
+											foreach($llorix_one_social_icons_decoded as $llorix_one_social_icon){
+												echo '<li><a href="'.esc_url($llorix_one_social_icon->link).'"><span class="'.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
 											}
 										echo '</ul>';
 									}
@@ -117,15 +131,15 @@
 						
 						<?php
 							
-							$parallax_one = get_theme_mod('paralax_one_logo', parallax_get_file('/images/logo-nav.png') );
+							$llorix_one = get_theme_mod('paralax_one_logo', llorix_one_get_file('/images/logo-nav.png') );
 
 							
 							
-							if(!empty($parallax_one)):
+							if(!empty($llorix_one)):
 
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 
-									echo '<img src="'.esc_url($parallax_one).'" alt="'.get_bloginfo('title').'">';
+									echo '<img src="'.esc_url($llorix_one).'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
 

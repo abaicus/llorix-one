@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package llorix-one
+ * @package parallax-one
  */
 
 	get_header(); 
