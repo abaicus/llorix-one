@@ -3,12 +3,12 @@ Theme Name: Llorix One
 Theme URI: http://themeisle.com/themes/llorix-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
-Description: Llorix One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Llorix One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 1.0.0  
+Description: Llorix One is a free and beautiful WordPress theme, with a classy design and an elegant parallax effect. It provides a simple and professional look that can be used for any kind of businesses or startups. Llorix One has a black & white appearance, with green buttons and icons. Llorix One is a one page theme and promotes simplicity and elegance at their best. The theme provides a blog section, is ecommerce ready (WooCommerce compatible), WPML and SEO friendly. You can change anything you need in the theme as it comes with a handful of customization options. You can use it for businesses, agencies, corporate websites, or portfolios. Its great design can push forward your startup as well.
+Version: 1.0.0 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: llorix-one
-Tags:black, blue, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
+Tags:black, green, gray, white, light, dark, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -653,14 +653,14 @@ big {
 }
 
 .grey-line {
-	background: #eaebec;
+	background: #F3F3F3;
 }
 
 .grey-line-short {
 	height: 2px;
 	width: 40px;
 	display: block;
-	background: #eaebec;
+	background: #F3F3F3;
 }
 
 .white-text {
@@ -669,8 +669,8 @@ big {
 
 .white-bg-border {
 	background: #ffffff;
-	border-top: 1px solid #eaebec;
-	border-bottom: 1px solid #eaebec;
+	border-top: 1px solid #F3F3F3;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .white-bg {
@@ -678,8 +678,8 @@ big {
 }
 
 .grey-bg {
-	border-top: 1px solid #eaebec;
-	border-bottom: 1px solid #eaebec;
+	border-top: 1px solid #F3F3F3;
+	border-bottom: 1px solid #F3F3F3;
 	background: #F7F8FA;
 }
 
@@ -1426,6 +1426,7 @@ header .navbar-brand {
 .clients {
 	background: rgba(255, 255, 255, 0.9);
 	padding: 25px 0;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 /*---------------------------------------
@@ -1439,7 +1440,7 @@ header .navbar-brand {
 
 .services {
 	background-color: #F7F8FA;
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .services .section-overlay-layer {
@@ -1574,7 +1575,7 @@ header .navbar-brand {
 -----------------------------------------*/
 .brief {
     background-color: #FFF;
-    border-bottom: 1px solid #F1F1F1;
+    border-bottom: 1px solid #F3F3F3;
 }
 
 .brief .section-overlay-layer {
@@ -1928,7 +1929,7 @@ header .navbar-brand {
 -----------------------------------------*/
 .latest-news {
 	background-color: #F7F8FA;
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .latest-news .section-overlay-layer {
@@ -2204,7 +2205,7 @@ button.control_next.fade-btn {
 -----------------------------------------*/
 .team {
 	background-color: #FFF;	
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 	background: url(images/background-images/parallax-img/team-img.jpg);
 }
 
@@ -2353,7 +2354,7 @@ button.control_next.fade-btn {
 .testimonials {
 	text-align: center;
 	background-color: #FFF;
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .testimonials .section-overlay-layer {
@@ -2505,7 +2506,7 @@ button.control_next.fade-btn {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .call-to-action .section-overlay-layer {
@@ -2539,7 +2540,7 @@ button.control_next.fade-btn {
 .contact-info {
 	text-align: center;
 	background-color: #FFF;
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .contact-info .section-overlay-layer {
@@ -3374,7 +3375,7 @@ div.wpcf7-mail-sent-ng {
 .woocommerce .cart .button:hover, 
 .woocommerce .cart input.button:hover {
 	background: #F7F8FA;
-	border: 1px solid #eaebec;
+	border: 1px solid #F3F3F3;
 	color: #4fe26c;
 }
 
@@ -3660,7 +3661,7 @@ div.wpcf7-mail-sent-ng {
 .woocommerce #payment #place_order:hover, 
 .woocommerce-page #payment #place_order:hover {
 	background: #F7F8FA;
-	border: 1px solid #eaebec;
+	border: 1px solid #F3F3F3;
 	color: #4fe26c;
 }
 
@@ -5492,7 +5493,7 @@ h2.screen-reader-text {
 
 .comment-form .form-submit input:hover, #recaptcha-submit-btn-area input:hover {
 	background: #F7F8FA;
-	border: 1px solid #eaebec;
+	border: 1px solid #F3F3F3;
 	color: #4fe26c;
 }
 

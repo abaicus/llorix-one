@@ -38,7 +38,7 @@ class Parallax_One_Welcome {
 	 * @see  add_theme_page()
 	 */
 	public function parallax_one_welcome_register_menu() {
-		add_theme_page( 'About Llorix One', 'About Llorix One', 'activate_plugins', 'parallax-one-welcome', array( $this, 'parallax_one_welcome_screen' ) );
+		add_theme_page( 'About Llorix One', 'About Llorix One', 'activate_plugins', 'llorix-one-welcome', array( $this, 'parallax_one_welcome_screen' ) );
 	}
 
 	/**
@@ -58,8 +58,8 @@ class Parallax_One_Welcome {
 	public function parallax_one_welcome_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Llorix One! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'llorix-one' ), '<a href="' . esc_url( admin_url( 'themes.php?page=parallax-one-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=parallax-one-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Llorix One', 'llorix-one' ); ?></a></p>
+				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Llorix One! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'llorix-one' ), '<a href="' . esc_url( admin_url( 'themes.php?page=llorix-one-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=llorix-one-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Llorix One', 'llorix-one' ); ?></a></p>
 			</div>
 		<?php
 	}
@@ -69,9 +69,9 @@ class Parallax_One_Welcome {
 	 */
 	public function parallax_one_welcome_style_and_scripts( $hook_suffix ) {
 
-		if ( 'appearance_page_parallax-one-welcome' == $hook_suffix ) {
-			wp_enqueue_style( 'parallax-one-welcome-screen-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css' );
-			wp_enqueue_script( 'parallax-one-welcome-screen-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome.js', array('jquery') );
+		if ( 'appearance_page_llorix-one-welcome' == $hook_suffix ) {
+			wp_enqueue_style( 'llorix-one-welcome-screen-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css' );
+			wp_enqueue_script( 'llorix-one-welcome-screen-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome.js', array('jquery') );
 			
 			global $llorix_one_required_actions;
 			
@@ -90,7 +90,7 @@ class Parallax_One_Welcome {
 					endif;
 				endforeach;
 			endif;
-			wp_localize_script( 'parallax-one-welcome-screen-js', 'parallaxOneWelcomeScreenObject', array(
+			wp_localize_script( 'llorix-one-welcome-screen-js', 'parallaxOneWelcomeScreenObject', array(
 				'nr_actions_required' => $nr_actions_required,
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 				'template_directory' => get_template_directory_uri(),
@@ -104,8 +104,8 @@ class Parallax_One_Welcome {
 	 */
 	public function parallax_one_welcome_scripts_for_customizer() {
 		
-		wp_enqueue_style( 'parallax-one-welcome-screen-customizer-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome_customizer.css' );
-		wp_enqueue_script( 'parallax-one-welcome-screen-customizer-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome_customizer.js', array('jquery'), '20120206', true );
+		wp_enqueue_style( 'llorix-one-welcome-screen-customizer-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome_customizer.css' );
+		wp_enqueue_script( 'llorix-one-welcome-screen-customizer-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome_customizer.js', array('jquery'), '20120206', true );
 		
 		global $llorix_one_required_actions;
 		$nr_actions_required = 0;
@@ -122,9 +122,9 @@ class Parallax_One_Welcome {
 				endif;
 			endforeach;
 		endif;
-		wp_localize_script( 'parallax-one-welcome-screen-customizer-js', 'parallaxOneWelcomeScreenCustomizerObject', array(
+		wp_localize_script( 'llorix-one-welcome-screen-customizer-js', 'parallaxOneWelcomeScreenCustomizerObject', array(
 			'nr_actions_required' => $nr_actions_required,
-			'aboutpage' => esc_url( admin_url( 'themes.php?page=parallax-one-welcome' ) ),
+			'aboutpage' => esc_url( admin_url( 'themes.php?page=llorix-one-welcome' ) ),
 			'customizerpage' => esc_url( admin_url( 'customize.php#actions_required' ) ),
 			'themeinfo' => __('View Theme Info','llorix-one'),
 		) );

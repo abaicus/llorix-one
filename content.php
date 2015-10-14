@@ -1,23 +1,23 @@
 <?php
 /**
- * @package parallax-one
+ * @package llorix-one
  */
 ?>
 
-<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
+<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'llorix-one' ), get_the_title() )?>">
 	<header class="entry-header">
 
 		<?php the_title( sprintf( '<h1 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<div class="clearfix"></div>			
 		<div class="entry-meta list-post-entry-meta">
-			<div class="parallax-one-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>">
+			<div class="parallax-one-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'llorix-one' ) ); ?>">
 				<?php echo get_the_date('F j, Y');?> 
 			</div>
 			<span class="posted-in entry-terms-categories" itemprop="articleSection">
 				 &#8226; In 
 				<?php
 					/* translators: used between list items, there is a space after the comma */
-					$categories_list = get_the_category_list( esc_html__( ', ', 'parallax-one' ) );
+					$categories_list = get_the_category_list( esc_html__( ', ', 'llorix-one' ) );
 					$pos = strpos($categories_list, ',');
 					if ( $pos ) {
 						echo substr($categories_list, 0, $pos);
@@ -33,7 +33,7 @@
 			</span>
 			<div class="comments-wrap"> &#8226; 
 				<a href="<?php comments_link(); ?>" class="post-comments">
-					<?php comments_number( esc_html__('No comments','parallax-one'), esc_html__('One comment','parallax-one'), esc_html__('% comments','parallax-one') ); ?>
+					<?php comments_number( esc_html__('No comments','llorix-one'), esc_html__('One comment','llorix-one'), esc_html__('% comments','llorix-one') ); ?>
 				</a>
 			</div>
 		</div><!-- .entry-meta -->
@@ -66,7 +66,7 @@
 	<div itemprop="description" class="entry-content entry-summary">
 		<?php
 			$ismore = @strpos( $post->post_content, '<!--more-->');
-			if($ismore) : the_content( sprintf( esc_html__('Read more %s ...','parallax-one'), '<span class="screen-reader-text">'.esc_html__('about ', 'parallax-one').get_the_title().'</span>' ) );
+			if($ismore) : the_content( sprintf( esc_html__('Read more %s ...','llorix-one'), '<span class="screen-reader-text">'.esc_html__('about ', 'llorix-one').get_the_title().'</span>' ) );
 			else : the_excerpt();
 			endif;
 		?>
@@ -78,13 +78,13 @@
 				</div>
 			</div>
 			<div class="post-bottom-button">
-				<a href="<?php the_permalink(); ?>" class="readmore"><?php echo esc_html__( 'Read more', 'parallax-one' ); ?></a>
+				<a href="<?php the_permalink(); ?>" class="readmore"><?php echo esc_html__( 'Read more', 'llorix-one' ); ?></a>
 			</div>
 		</div>
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parallax-one' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'llorix-one' ),
 				'after'  => '</div>',
 			) );
 		?>

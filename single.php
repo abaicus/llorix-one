@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package parallax-one
+ * @package llorix-one
  */
 
 	get_header(); 

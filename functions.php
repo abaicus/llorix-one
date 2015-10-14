@@ -238,16 +238,14 @@ function llorix_one_scripts() {
 	
 
 	$llorix_one_enable_move = get_theme_mod('paralax_one_enable_move');
-	if ( !empty($llorix_one_enable_move) && $llorix_one_enable_move && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	if ( !empty($llorix_one_enable_move) && $llorix_one_enable_move ) {
 
 		wp_enqueue_script( 'llorix-one-home-plugin', llorix_one_get_file('/js/plugin.home.js'), array('jquery','llorix-one-custom-all'), '1.0.1', true );
 
 	}
 
-	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
-
-		wp_enqueue_script( 'llorix-one-custom-home', llorix_one_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
-	}
+	wp_enqueue_script( 'llorix-one-custom-home', llorix_one_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
+	
 
 	wp_enqueue_script( 'llorix-one-skip-link-focus-fix', llorix_one_get_file('/js/skip-link-focus-fix.js'), array(), '1.0.0', true );
 
@@ -313,7 +311,7 @@ function llorix_one_add_id(){
 									array('image_url' => llorix_one_get_file('/images/team/1.jpg'),'title' => esc_html__('Albert Jacobs','llorix-one'),'subtitle' => esc_html__('Founder & CEO','llorix-one')),
 									array('image_url' => llorix_one_get_file('/images/team/2.jpg'),'title' => esc_html__('Tonya Garcia','llorix-one'),'subtitle' => esc_html__('Account Manager','llorix-one')),
 									array('image_url' => llorix_one_get_file('/images/team/3.jpg'),'title' => esc_html__('Linda Guthrie','llorix-one'),'subtitle' => esc_html__('Business Development','llorix-one')),
-									array('image_url' => llorix_one_get_file('/images/team/4.jpg'),'title' => esc_html__('Tonya Jacobs','parallax-one'),'subtitle' => esc_html__('Q&A specialist','parallax-one'))
+									array('image_url' => llorix_one_get_file('/images/team/4.jpg'),'title' => esc_html__('Tonya Jacobs','llorix-one'),'subtitle' => esc_html__('Q&A specialist','llorix-one'))
 							)
 						));
 		if(!empty($llorix_one_team)){
@@ -555,7 +553,7 @@ function llorix_one_php_style() {
 	$llorix_one_first_layer = get_theme_mod('paralax_one_first_layer', llorix_one_get_file('/images/background1.png'));
 	$llorix_one_second_layer = get_theme_mod('paralax_one_second_layer',llorix_one_get_file('/images/background2.png'));
 
-	if( ( empty($llorix_one_enable_move) || !$llorix_one_enable_move) && 'posts' == get_option( 'show_on_front' ) && is_front_page() ) {
+	if( ( empty($llorix_one_enable_move) || !$llorix_one_enable_move) ) {
 		$llorix_one_header_image = get_header_image();
 		if(!empty($llorix_one_header_image)){
 			echo '.header{ background-image: url('.$llorix_one_header_image.');}';

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package parallax-one
+ * @package llorix-one
  */
 ?>
 
@@ -9,14 +9,14 @@
 		<?php the_title( '<h1 itemprop="headline" class="entry-title single-title">', '</h1>' ); ?>
 		<div class="clearfix"></div>
 		<div class="entry-meta list-post-entry-meta">
-			<div class="parallax-one-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'parallax-one' ) ); ?>">
+			<div class="parallax-one-post-meta" itemprop="datePublished" datetime="<?php the_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php the_time( _x( 'l, F j, Y, g:i a', 'post time format', 'llorix-one' ) ); ?>">
 				<?php echo get_the_date('F j, Y');?> 
 			</div>
 			<span class="posted-in entry-terms-categories" itemprop="articleSection">
 				 &#8226; In 
 				<?php
 					/* translators: used between list items, there is a space after the comma */
-					$categories_list = get_the_category_list( esc_html__( ', ', 'parallax-one' ) );
+					$categories_list = get_the_category_list( esc_html__( ', ', 'llorix-one' ) );
 					$pos = strpos($categories_list, ',');
 					if ( $pos ) {
 						echo substr($categories_list, 0, $pos);
@@ -32,7 +32,7 @@
 			</span>
 			<div class="comments-wrap"> &#8226; 
 				<a href="<?php comments_link(); ?>" class="post-comments">
-					<?php comments_number( esc_html__('No comments','parallax-one'), esc_html__('One comment','parallax-one'), esc_html__('% comments','parallax-one') ); ?>
+					<?php comments_number( esc_html__('No comments','llorix-one'), esc_html__('One comment','llorix-one'), esc_html__('% comments','llorix-one') ); ?>
 				</a>
 			</div>
 		</div><!-- .entry-meta -->
@@ -42,7 +42,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'parallax-one' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'llorix-one' ),
 				'after'  => '</div>',
 			) );
 		?>
