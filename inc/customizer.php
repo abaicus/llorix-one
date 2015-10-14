@@ -2,7 +2,7 @@
 /**
  * parallax-one Theme Customizer
  *
- * @package parallax-one
+ * @package llorix-one
  */
 
 /**

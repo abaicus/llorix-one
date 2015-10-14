@@ -517,7 +517,7 @@ msgid "General options"
 msgstr ""
 
 #: inc/customizer.php:77
-msgid "Paralax One theme general appearance options"
+msgid "Llorix One theme general appearance options"
 msgstr ""
 
 #: inc/customizer.php:89 sections/parallax_one_logos_section.php:26
@@ -819,7 +819,7 @@ msgid "Advanced options"
 msgstr ""
 
 #: inc/customizer.php:723
-msgid "Paralax One theme general options"
+msgid "Llorix One theme general options"
 msgstr ""
 
 #: inc/customizer.php:774

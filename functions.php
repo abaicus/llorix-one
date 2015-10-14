@@ -313,7 +313,7 @@ function llorix_one_add_id(){
 									array('image_url' => llorix_one_get_file('/images/team/1.jpg'),'title' => esc_html__('Albert Jacobs','llorix-one'),'subtitle' => esc_html__('Founder & CEO','llorix-one')),
 									array('image_url' => llorix_one_get_file('/images/team/2.jpg'),'title' => esc_html__('Tonya Garcia','llorix-one'),'subtitle' => esc_html__('Account Manager','llorix-one')),
 									array('image_url' => llorix_one_get_file('/images/team/3.jpg'),'title' => esc_html__('Linda Guthrie','llorix-one'),'subtitle' => esc_html__('Business Development','llorix-one')),
-									array('image_url' => llorix_one_get_file('/images/team/4.jpg'),'title' => esc_html__('Tonya Jacobs','parallax-one'),'subtitle' => esc_html__('Q&A specialist','parallax-one'))
+									array('image_url' => llorix_one_get_file('/images/team/4.jpg'),'title' => esc_html__('Tonya Jacobs','llorix-one'),'subtitle' => esc_html__('Q&A specialist','llorix-one'))
 							)
 						));
 		if(!empty($llorix_one_team)){

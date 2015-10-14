@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package parallax-one
+ * @package llorix-one
  */
 
 	get_header(); 
@@ -18,7 +18,7 @@
 	<div class="archive-page-header">
 		<div class="container">
 			<header class="col-md-12 page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'parallax-one' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'llorix-one' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 		</div>
 	</div>

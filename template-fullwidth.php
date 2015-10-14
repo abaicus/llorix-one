@@ -2,7 +2,7 @@
 /**
  * Template name: Full Width
  *
- * @package parallax-one
+ * @package llorix-one
  */
 
 	get_header(); 
