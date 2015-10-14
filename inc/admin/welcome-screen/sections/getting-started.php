@@ -51,12 +51,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<hr />
 
-		<h4><?php esc_html_e( 'Change dimensions for footer social icons', 'llorix-one' ); ?></h4>
-		<p><?php esc_html_e( 'In the below documentation you will find an easy way to change the default dimensions for you social icons.', 'llorix-one' ); ?></p>
-		<p><a href="http://docs.themeisle.com/article/71-parallax-one-change-dimensions-for-footer-icons" class="button"><?php esc_html_e( 'View how to do this', 'llorix-one' ); ?></a></p>
-		
-		<hr />
-
 		<h4><?php esc_html_e( 'Change customizer in a child theme', 'llorix-one' ); ?></h4>
 		<p><?php esc_html_e( 'If you want to add or remove customizer controls, check out our documentation to find out how.', 'llorix-one' ); ?></p>
 		<p><a href="http://docs.themeisle.com/article/74-how-to-override-controls" class="button"><?php esc_html_e( 'View how to do this', 'llorix-one' ); ?></a></p>
@@ -81,12 +75,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<p><?php esc_html_e( 'To better suit your site\'s needs, you can change each section\'s anchor to what you want. The entire process is described below.', 'llorix-one' ); ?></p>
 		<p><a href="http://docs.themeisle.com/article/72-parallax-one-how-to-change-section-anchor" class="button"><?php esc_html_e( 'View how to do this', 'llorix-one' ); ?></a></p>
 		
-		<hr />
-		
-		<h4><?php esc_html_e( 'Slider in big title section', 'llorix-one' ); ?></h4>
-		<p><?php esc_html_e( 'If you are in the position where you want to change the default appearance of the big title section, you may want to replace it with a nice looking slider. This can be accomplished by following the documention below.', 'llorix-one' ); ?></p>
-		<p><a href="http://docs.themeisle.com/article/70-parallax-one-replacing-big-title-section-with-an-image-slider" class="button"><?php esc_html_e( 'View how to do this', 'llorix-one' ); ?></a></p>
-
 	</div>
 
 	<div class="parallax-one-clear"></div>

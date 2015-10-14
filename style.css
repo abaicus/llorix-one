@@ -653,14 +653,14 @@ big {
 }
 
 .grey-line {
-	background: #eaebec;
+	background: #F3F3F3;
 }
 
 .grey-line-short {
 	height: 2px;
 	width: 40px;
 	display: block;
-	background: #eaebec;
+	background: #F3F3F3;
 }
 
 .white-text {
@@ -669,8 +669,8 @@ big {
 
 .white-bg-border {
 	background: #ffffff;
-	border-top: 1px solid #eaebec;
-	border-bottom: 1px solid #eaebec;
+	border-top: 1px solid #F3F3F3;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .white-bg {
@@ -678,8 +678,8 @@ big {
 }
 
 .grey-bg {
-	border-top: 1px solid #eaebec;
-	border-bottom: 1px solid #eaebec;
+	border-top: 1px solid #F3F3F3;
+	border-bottom: 1px solid #F3F3F3;
 	background: #F7F8FA;
 }
 
@@ -1426,6 +1426,7 @@ header .navbar-brand {
 .clients {
 	background: rgba(255, 255, 255, 0.9);
 	padding: 25px 0;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 /*---------------------------------------
@@ -1439,7 +1440,7 @@ header .navbar-brand {
 
 .services {
 	background-color: #F7F8FA;
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .services .section-overlay-layer {
@@ -1574,7 +1575,7 @@ header .navbar-brand {
 -----------------------------------------*/
 .brief {
     background-color: #FFF;
-    border-bottom: 1px solid #F1F1F1;
+    border-bottom: 1px solid #F3F3F3;
 }
 
 .brief .section-overlay-layer {
@@ -1928,7 +1929,7 @@ header .navbar-brand {
 -----------------------------------------*/
 .latest-news {
 	background-color: #F7F8FA;
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .latest-news .section-overlay-layer {
@@ -2204,7 +2205,7 @@ button.control_next.fade-btn {
 -----------------------------------------*/
 .team {
 	background-color: #FFF;	
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 	background: url(images/background-images/parallax-img/team-img.jpg);
 }
 
@@ -2353,7 +2354,7 @@ button.control_next.fade-btn {
 .testimonials {
 	text-align: center;
 	background-color: #FFF;
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .testimonials .section-overlay-layer {
@@ -2505,7 +2506,7 @@ button.control_next.fade-btn {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .call-to-action .section-overlay-layer {
@@ -2539,7 +2540,7 @@ button.control_next.fade-btn {
 .contact-info {
 	text-align: center;
 	background-color: #FFF;
-	border-bottom: 1px solid #eaebec;
+	border-bottom: 1px solid #F3F3F3;
 }
 
 .contact-info .section-overlay-layer {
@@ -3374,7 +3375,7 @@ div.wpcf7-mail-sent-ng {
 .woocommerce .cart .button:hover, 
 .woocommerce .cart input.button:hover {
 	background: #F7F8FA;
-	border: 1px solid #eaebec;
+	border: 1px solid #F3F3F3;
 	color: #4fe26c;
 }
 
@@ -3660,7 +3661,7 @@ div.wpcf7-mail-sent-ng {
 .woocommerce #payment #place_order:hover, 
 .woocommerce-page #payment #place_order:hover {
 	background: #F7F8FA;
-	border: 1px solid #eaebec;
+	border: 1px solid #F3F3F3;
 	color: #4fe26c;
 }
 
@@ -5492,7 +5493,7 @@ h2.screen-reader-text {
 
 .comment-form .form-submit input:hover, #recaptcha-submit-btn-area input:hover {
 	background: #F7F8FA;
-	border: 1px solid #eaebec;
+	border: 1px solid #F3F3F3;
 	color: #4fe26c;
 }
 
