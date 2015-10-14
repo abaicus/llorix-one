@@ -10,7 +10,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 	<div class="prallax-one-tab-pane-center">
 
-		<h1 class="parallax-one-welcome-title">Welcome to Llorix One! <?php if( !empty($llorix_one['Version']) ): ?> <sup id="parallax-one-theme-version"><?php echo esc_attr( $llorix_one['Version'] ); ?> </sup><?php endif; ?></h1>
+		<h1 class="llorix-one-welcome-title"><?php _e('Welcome to Llorix One!','llorix-one'); ?> <?php if( !empty($llorix_one['Version']) ): ?> <sup id="parallax-one-theme-version"><?php echo esc_attr( $llorix_one['Version'] ); ?> </sup><?php endif; ?></h1>
 
 		<p><?php esc_html_e( 'Our most elegant and professional one-page theme, which turns your scrolling into a smooth and pleasant experience.','llorix-one'); ?></p>
 		<p><?php esc_html_e( 'We want to make sure you have the best experience using Llorix One and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Llorix One, as much as we enjoy creating great products.', 'llorix-one' ); ?>
@@ -85,7 +85,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<h1><?php esc_html_e( 'View full documentation', 'llorix-one' ); ?></h1>
 		<p><?php esc_html_e( 'Need more details? Please check our full documentation for detailed information on how to use Llorix One.', 'llorix-one' ); ?></p>
-		<p><a href="http://themeisle.com/documentation-parallax-one/" class="button button-primary"><?php esc_html_e( 'Read full documentation', 'llorix-one' ); ?></a></p>
+		<p><a href="http://themeisle.com/documentation-llorix-one/" class="button button-primary"><?php esc_html_e( 'Read full documentation', 'llorix-one' ); ?></a></p>
 
 	</div>
 
