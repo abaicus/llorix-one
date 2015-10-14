@@ -933,12 +933,9 @@ function llorix_one_customizer_script() {
 add_action( 'customize_controls_enqueue_scripts', 'llorix_one_customizer_script' );
 
 function llorix_one_is_contact_page() { 
-		return is_page_template('template-contact.php');
+	return is_page_template('template-contact.php');
 };
 
 function llorix_one_show_on_front(){
-	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ){
-		return true;
-	}
-	return false;
+	return is_page_template('template-frontpage.php');
 }

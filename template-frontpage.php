@@ -1,17 +1,20 @@
 <?php
+/**
+ * Template name: Frontpage
+ *
+ * @package llorix-one
+ */
 
-if ( 'posts' == get_option( 'show_on_front' ) ) {
+get_header(); 
 	
-		get_header(); 
-
-		llorix_one_get_template_part( apply_filters("parallax_one_plus_header_layout","/sections/parallax_one_header_section"));
+	llorix_one_get_template_part( apply_filters("parallax_one_plus_header_layout","/sections/parallax_one_header_section"));
 	?>
-		</div>
-		<!-- /END COLOR OVER IMAGE -->
-	</header>
-	<!-- /END HOME / HEADER  -->
+	</div>
+	<!-- /END COLOR OVER IMAGE -->
+</header>
+<!-- /END HOME / HEADER  -->
 
-	<div itemprop id="content" class="content-warp" role="main">
+<div itemprop id="content" class="content-warp" role="main">
 
 	<?php
 
@@ -24,13 +27,10 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		}
 	?>
 
-	</div><!-- .content-wrap -->
+</div><!-- .content-wrap -->
 
-	<?php 
+<?php 
 
-	get_footer();
-} else {
+get_footer();
 
-	include( get_page_template() );
-}
 ?>
