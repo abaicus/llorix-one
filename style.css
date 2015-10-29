@@ -4569,8 +4569,8 @@ footer.footer #wp-calendar td {
 }
 
 .widget_search .search-submit:hover {
-	box-shadow: none;
 	background: none;
+	box-shadow: none;
 }
 
 .widget_search .search-form:before {
