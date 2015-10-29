@@ -19,27 +19,6 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'llorix-one' ); ?></a>
-	<!-- =========================
-     PRE LOADER       
-    ============================== -->
-	<?php
-		
-	 global $wp_customize;
-
-	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
-	 
-		$llorix_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
-		
-		if( isset($llorix_one_disable_preloader) && ($llorix_one_disable_preloader != 1)):
-			 
-			echo '<div class="preloader">';
-				echo '<div class="status">&nbsp;</div>';
-			echo '</div>';
-			
-		endif;	
-
-	endif; ?>
-
 
 	<!-- =========================
      SECTION: HOME / HEADER  
