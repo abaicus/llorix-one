@@ -11,7 +11,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
@@ -19,27 +18,6 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'llorix-one' ); ?></a>
-	<!-- =========================
-     PRE LOADER       
-    ============================== -->
-	<?php
-		
-	 global $wp_customize;
-
-	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
-	 
-		$llorix_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
-		
-		if( isset($llorix_one_disable_preloader) && ($llorix_one_disable_preloader != 1)):
-			 
-			echo '<div class="preloader">';
-				echo '<div class="status">&nbsp;</div>';
-			echo '</div>';
-			
-		endif;	
-
-	endif; ?>
-
 
 	<!-- =========================
      SECTION: HOME / HEADER  
@@ -187,7 +165,7 @@
 										'theme_location'    => 'primary',
 										'menu_class'        => 'primary-menu small-text',
 										'depth'           	=> 4,
-										'fallback_cb'       => 'parallax_one_wp_page_menu'
+										'fallback_cb'       => 'llorix_one_wp_page_menu'
 										 ) 
 								);
 							?>

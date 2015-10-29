@@ -29,8 +29,33 @@ get_header();
 
 </div><!-- .content-wrap -->
 
+
+<!-- =========================
+ PRE LOADER       
+============================== -->
+<?php
+	
+	global $wp_customize;
+
+	if( !isset( $wp_customize ) ): 
+
+		$llorix_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
+
+		if( isset($llorix_one_disable_preloader) && ($llorix_one_disable_preloader != 1)):
+			 
+			echo '<div class="preloader">';
+				echo '<div class="status">&nbsp;</div>';
+			echo '</div>';
+			
+		endif;	
+
+	endif; 
+
+?>
+
+
 <?php 
 
-get_footer();
+	get_footer();
 
 ?>

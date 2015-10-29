@@ -394,6 +394,9 @@ function llorix_one_add_id(){
 }
 add_action( 'shutdown', 'llorix_one_add_id' );
 
+/* Enable support for title-tag */
+add_theme_support( 'title-tag' );
+
 /**
  * Custom template tags for this theme.
  */
