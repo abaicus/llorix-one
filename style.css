@@ -756,15 +756,15 @@ input[type="submit"] {
 	-webkit-transition: none;
 	transition: none;
 	font-weight: bold;
-	border: 2px solid rgba(79, 226, 108, 1);
+	border: 2px solid rgba(241, 108, 32, 1);
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background: rgba(79, 226, 108, 0.5);
-	border: 2px solid rgba(79, 226, 108, 0.8);
+	background: rgba(241, 108, 32, 0.5);
+	border: 2px solid rgba(241, 108, 32, 0.8);
 }
 
 button:focus,
@@ -2738,15 +2738,15 @@ div.wpcf7-mail-sent-ng {
 	font-weight: normal;
 	border: none;
 	font-size: 14px;
-	background: rgba(79, 226, 108, 1);
-	border: 2px solid rgba(79, 226, 108, 1);
+	background: rgba(241, 108, 32, 1);
+	border: 2px solid rgba(241, 108, 32, 1);
 	margin-top: 1em;
 }
 
 .woocommerce ul.products li.product .button:hover,
 .woocommerce .products .product .button:hover {
-	background: rgba(79, 226, 108, .5);
-	border: 2px solid rgba(79, 226, 108, .8);
+	background: rgba(241, 108, 32, .5);
+	border: 2px solid rgba(241, 108, 32, .8);
 }
 
 .woocommerce ul.products li.product h3,
@@ -2777,7 +2777,7 @@ div.wpcf7-mail-sent-ng {
     min-height: 45px;
     line-height: 45px;
     padding: 0;
-    background-color: rgba(79,226,108,1);
+    background-color: rgba(241, 108, 32, 1);
     font-size: 14px;
     font-weight: 300;
 }
@@ -2987,8 +2987,8 @@ div.wpcf7-mail-sent-ng {
 	color: #ffffff;
 	-webkit-transition: none;
 	transition: none;
-	background: rgba(79, 226, 108, 1);
-	border: 3px solid rgba(79, 226, 108, 1);
+	background: rgba(241, 108, 32, 1);
+	border: 3px solid rgba(241, 108, 32, 1);
 }
 
 .woocommerce div.product form.cart .button:hover,
@@ -2997,8 +2997,8 @@ div.wpcf7-mail-sent-ng {
 	text-decoration: none;
 	border: none;
 	background: #47C15F;
-	background: rgba(79, 226, 108, 0.5);
-	border: 3px solid rgba(79, 226, 108, 0.8);
+	background: rgba(241, 108, 32, 0.5);
+	border: 3px solid rgba(241, 108, 32, 0.8);
 }
 
 .woocommerce div.product p.price ins, 
@@ -3054,7 +3054,7 @@ div.wpcf7-mail-sent-ng {
     min-height: 70px;
     line-height: 70px;
     padding: 0;
-    background-color: rgba(79,226,108,1);
+    background-color: rgba(241, 108, 32, 1);
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
@@ -3137,9 +3137,9 @@ div.wpcf7-mail-sent-ng {
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
-    border-bottom: 1px solid rgba(79,226,108,1);
+    border-bottom: 1px solid rgba(241, 108, 32, 1);
     color: rgb(255, 255, 255);
-    background-color: rgba(79,226,108,1);
+    background-color: rgba(241, 108, 32, 1);
 }
 
 .woocommerce table.shop_attributes {
@@ -3686,16 +3686,16 @@ div.wpcf7-mail-sent-ng {
     padding: 3px 15px;
     font-size: 13px;
     color: #FFF;
-	background: rgba(79, 226, 108, 1);
-    border: 2px solid rgba(79, 226, 108, 1);
+	background: rgba(241, 108, 32, 1);
+    border: 2px solid rgba(241, 108, 32, 1);
 }
 
 .woocommerce #respond input#submit:hover, 
 .woocommerce a.button:hover, 
 .woocommerce button.button:hover, 
 .woocommerce input.button:hover {
-	background: rgba(79, 226, 108, .5);
-    border: 2px solid rgba(79, 226, 108, .8);
+	background: rgba(241, 108, 32, .5);
+    border: 2px solid rgba(241, 108, 32, .8);
 }
 
 .woocommerce #respond input#submit:hover, 
@@ -4702,8 +4702,8 @@ a:hover {
 
 .standard-button:hover,
 .navbar-register-button:hover {
-	background: rgba(79, 226, 108, 0.3);
-	border: 3px solid rgba(79, 226, 108, 0.5);
+	background: rgba(241, 108, 32, 0.3);
+	border: 3px solid rgba(241, 108, 32, 0.5);
 }
 
 .inpage-scroll:hover {
@@ -5082,7 +5082,7 @@ a:hover {
 }
 
 .archive-page-header {
-    background: #343434;
+    background: #0D3C55;
 }
 
 .page-header h1.page-title {
