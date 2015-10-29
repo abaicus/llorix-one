@@ -187,7 +187,7 @@
 										'theme_location'    => 'primary',
 										'menu_class'        => 'primary-menu small-text',
 										'depth'           	=> 4,
-										'fallback_cb'       => 'parallax_one_wp_page_menu'
+										'fallback_cb'       => 'llorix_one_wp_page_menu'
 										 ) 
 								);
 							?>
