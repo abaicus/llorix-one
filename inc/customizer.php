@@ -919,14 +919,12 @@ function llorix_one_sanitize_html( $input){
 
 function llorix_one_customizer_script() {
 	wp_enqueue_script( 'llorix_one_customizer_script', llorix_one_get_file('/js/parallax_one_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
-	wp_register_script( 'parallax_one_buttons', llorix_one_get_file('/js/parallax_one_buttons_control.js'), array("jquery"), '1.0.0', true  );
-	wp_enqueue_script( 'parallax_one_buttons' );
 	
-	wp_localize_script( 'parallax_one_buttons', 'objectL10n', array(
+	wp_localize_script( 'llorix_one_customizer_script', 'llorixOneCustomizerObject', array(
 		
 		'documentation' => esc_html__( 'Documentation', 'llorix-one' ),
 		'support' => esc_html__('Support Forum','llorix-one'),
-		'github' => esc_html__('Github','llorix-one')
+		'pro' => __('Upgrade to PRO','llorix-one'),
 		
 	) );
 }

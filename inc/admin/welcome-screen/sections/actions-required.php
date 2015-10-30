@@ -18,7 +18,7 @@
 	
 		/* $llorix_one_required_actions is an array of true/false for each required action that was dismissed */
 		
-		$llorix_one_show_required_actions = get_option("parallax_one_show_required_actions");
+		$llorix_one_show_required_actions = get_option("llorix_one_show_required_actions");
 		
 		foreach( $llorix_one_required_actions as $llorix_one_required_action_key => $llorix_one_required_action_value ):
 		
@@ -42,8 +42,8 @@
 	endif;
 	$nr_actions_required = 0;
 	/* get number of required actions */
-	if( get_option('parallax_one_show_required_actions') ):
-		$llorix_one_show_required_actions = get_option('parallax_one_show_required_actions');
+	if( get_option('llorix_one_show_required_actions') ):
+		$llorix_one_show_required_actions = get_option('llorix_one_show_required_actions');
 	else:
 		$llorix_one_show_required_actions = array();
 	endif;

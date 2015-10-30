@@ -72,7 +72,7 @@
 							
 								foreach($llorix_one_social_icons_decoded as $llorix_one_social_icon){
 									
-									echo '<li><a href="'.esc_url($llorix_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
+									echo '<li><a target="_blank" href="'.esc_url($llorix_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
 
 								}
 						
