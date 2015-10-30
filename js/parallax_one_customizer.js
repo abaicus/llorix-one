@@ -319,7 +319,7 @@ jQuery(document).ready(function() {
 		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/llorix-one/" class="button" target="_blank">{github}</a>'.replace('{github}', llorixOneCustomizerObject.support));
 
 	}
-	jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',llorixOneCustomizerObject.pro));
+	/*jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',llorixOneCustomizerObject.pro));*/
 
 	if ( !jQuery( ".parallax-upsells" ).length ) {
 		jQuery('#customize-theme-controls > ul').prepend('</li>');
