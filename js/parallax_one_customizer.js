@@ -125,6 +125,7 @@ function parallax_one_refresh_general_control_values(){
 				subtitle = subtitle.replace(/(['"])/g, "\\$1");
 			}
 			var id = jQuery(this).find(".parallax_one_box_id").val();
+            var shortcode = jQuery(this).find(".parallax_one_shortcode_control").val();
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
                     "icon_value" : (choice === 'parallax_none' ? "" : icon_value) ,
@@ -134,7 +135,8 @@ function parallax_one_refresh_general_control_values(){
                     "choice" : choice,
                     "title" : title,
                     "subtitle" : subtitle,
-					"id" : id
+					"id" : id,
+                    "shortcode" : escapeHtml(shortcode)
                 });
             }
 
@@ -203,6 +205,7 @@ jQuery(document).ready(function(){
                 field.find(".custom_media_url").val('');
                 field.find(".parallax_one_title_control").val('');
                 field.find(".parallax_one_subtitle_control").val('');
+                field.find(".parallax_one_shortcode_control").val('');
                 th.find(".parallax_one_general_control_repeater_container:first").parent().append(field);
                 parallax_one_refresh_general_control_values();
             }
@@ -228,6 +231,10 @@ jQuery(document).ready(function(){
 		 parallax_one_refresh_general_control_values();
 	});
     
+    jQuery("#customize-theme-controls").on('keyup', '.parallax_one_shortcode_control',function(){
+		 parallax_one_refresh_general_control_values();
+	});
+    
 	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_text_control',function(){
 		 parallax_one_refresh_general_control_values();
 	});
@@ -244,6 +251,21 @@ jQuery(document).ready(function(){
 	});	
 
 });
+
+var entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+  };
+
+  function escapeHtml(string) {
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+      return entityMap[s];
+    });
+  }
 
 
 /********************************************
@@ -275,3 +297,31 @@ jQuery(document).ready(function(){
 		} 
 	});
 });
+
+jQuery(document).ready(function() {
+
+	var llorix_one_aboutpage = llorixOneCustomizerObject.aboutpage;
+    var llorix_one_nr_actions_required = llorixOneCustomizerObject.nr_actions_required;
+
+    /* Number of required actions */
+    if ((typeof llorix_one_aboutpage !== 'undefined') && (typeof llorix_one_nr_actions_required !== 'undefined') && (llorix_one_nr_actions_required != '0')) {
+        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + llorix_one_aboutpage + '"><span class="parallax-one-actions-count">' + llorix_one_nr_actions_required + '</span></a>');
+    }
+
+    /* Upsells in customizer (Documentation link, Support link, View theme info and Upgrade to PRO link */
+	if( !jQuery( ".parallax-upsells" ).length ) {
+		jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section parallax-upsells">');
+	}
+
+	if( jQuery( ".parallax-upsells" ).length ) {
+
+		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-llorix-one/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', llorixOneCustomizerObject.documentation));
+		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/llorix-one/" class="button" target="_blank">{github}</a>'.replace('{github}', llorixOneCustomizerObject.support));
+
+	}
+	jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',llorixOneCustomizerObject.pro));
+
+	if ( !jQuery( ".parallax-upsells" ).length ) {
+		jQuery('#customize-theme-controls > ul').prepend('</li>');
+	}
+});	

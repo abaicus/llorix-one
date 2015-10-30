@@ -43,10 +43,10 @@
 													echo '<div class="icon-container"><span class="'.esc_attr($llorix_one_contact_item->icon_value).' colored-text"></span></div>';
 												}
 												if(!empty($llorix_one_contact_item->text)){
-													if(function_exists('icl_translate')){
-														echo '<a href="" class="strong">'.icl_translate('Contact',$llorix_one_contact_item->id.'_contact',esc_attr($llorix_one_contact_item->text)).'</a>';
+													if(function_exists('icl_t')){
+														echo '<a href="" class="strong">'.icl_t('Contact',$llorix_one_contact_item->id.'_contact',html_entity_decode($llorix_one_contact_item->text)).'</a>';
 													} else {
-														echo '<a href="" class="strong">'.esc_attr($llorix_one_contact_item->text).'</a>';
+														echo '<a href="" class="strong">'.html_entity_decode($llorix_one_contact_item->text).'</a>';
 													}
 												}
 												echo '</div>';

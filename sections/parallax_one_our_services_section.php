@@ -3,8 +3,8 @@
 ============================== -->
 <?php
 	global $wp_customize;
-	$llorix_one_our_services_title = get_theme_mod('parallax_one_our_services_title','Our Services');
-	$llorix_one_our_services_subtitle = get_theme_mod('parallax_one_our_services_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+	$llorix_one_our_services_title = get_theme_mod('parallax_one_our_services_title',esc_html__('Our Services','llorix-one'));
+	$llorix_one_our_services_subtitle = get_theme_mod('parallax_one_our_services_subtitle',esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','llorix-one'));
 	$llorix_one_services = get_theme_mod('parallax_one_services_content',
 		json_encode(
 			array(
@@ -78,15 +78,15 @@
 											}
 											if(!empty($llorix_one_service_box->title)){
 												if( !empty($llorix_one_service_box->link) ){
-													if (function_exists ( 'icl_translate' ) && !empty($llorix_one_service_box->id)){
-														$llorix_one_title_services = icl_translate('Featured Area',$llorix_one_service_box->id.'_services_title',$llorix_one_service_box->title);
+													if (function_exists ( 'icl_t' ) && !empty($llorix_one_service_box->id)){
+														$llorix_one_title_services = icl_t('Featured Area',$llorix_one_service_box->id.'_services_title',$llorix_one_service_box->title);
 														echo '<h3 class="colored-text"><a href="'.esc_url($llorix_one_service_box->link).'">'.esc_attr($llorix_one_title_services).'</a></h3>';
 													} else {
 														echo '<h3 class="colored-text"><a href="'.esc_url($llorix_one_service_box->link).'">'.esc_attr($llorix_one_service_box->title).'</a></h3>';
 													}
 												} else {
-													if (function_exists ( 'icl_translate' ) && !empty($llorix_one_service_box->id)){
-														$llorix_one_title_services = icl_translate('Featured Area',$llorix_one_service_box->id.'_services_title',$llorix_one_service_box->title);
+													if (function_exists ( 'icl_t' ) && !empty($llorix_one_service_box->id)){
+														$llorix_one_title_services = icl_t('Featured Area',$llorix_one_service_box->id.'_services_title',$llorix_one_service_box->title);
 														echo '<h3 class="colored-text">'.esc_attr($llorix_one_title_services).'</h3>';
 													} else {
 														echo '<h3 class="colored-text">'.esc_attr($llorix_one_service_box->title).'</h3>';
@@ -94,8 +94,8 @@
 												}
 											}
 											if(!empty($llorix_one_service_box->text)){
-												if (function_exists ( 'icl_translate' ) && !empty($llorix_one_service_box->id)){
-													echo '<p>'.icl_translate('Featured Area',$llorix_one_service_box->id.'_services_text',$llorix_one_service_box->text).'</p>';
+												if (function_exists ( 'icl_t' ) && !empty($llorix_one_service_box->id)){
+													echo '<p>'.icl_t('Featured Area',$llorix_one_service_box->id.'_services_text',$llorix_one_service_box->text).'</p>';
 												} else {
 													echo '<p>'.$llorix_one_service_box->text.'</p>';
 												}

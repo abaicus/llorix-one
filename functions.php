@@ -431,22 +431,20 @@ function parallax_one_ie () {
 }
 add_action('wp_head', 'parallax_one_ie');
 
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+add_action('woocommerce_before_main_content', 'parallax_one_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'parallax_one_wrapper_end', 10);
 
-
-
-	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-	add_action('woocommerce_before_main_content', 'parallax_one_wrapper_start', 10);
-	add_action('woocommerce_after_main_content', 'parallax_one_wrapper_end', 10);
-	function parallax_one_wrapper_start() {
-		echo '</div> </header>';
-		echo '<div class="content-wrap">
-				<div class="container">
-					<div id="primary" class="content-area col-md-12">';
-	}
-	function parallax_one_wrapper_end() {
-		echo '</div></div></div>';
-	}
+function parallax_one_wrapper_start() {
+	echo '</div> </header>';
+	echo '<div class="content-wrap">
+			<div class="container">
+				<div id="primary" class="content-area col-md-12">';
+}
+function parallax_one_wrapper_end() {
+	echo '</div></div></div>';
+}
 
 
 // add this code directly, no action needed

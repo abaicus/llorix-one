@@ -1,18 +1,10 @@
 jQuery(document).ready(function() {
-    jQuery(".parallax-one-nav-tabs a").click(function(event) {
-        event.preventDefault();
-        jQuery(this).parent().addClass("active");
-        jQuery(this).parent().siblings().removeClass("active");
-        var tab = jQuery(this).attr("href");
-        jQuery(".parallax-one-tab-pane").not(tab).css("display", "none");
-        jQuery(tab).fadeIn();
-    });
 	
-	/* If there are required actions, add an icon with the number of required actions in the About Llorix One page -> Actions required tab */
-    var parallax_one_nr_actions_required = parallaxOneWelcomeScreenObject.nr_actions_required;
+	/* If there are required actions, add an icon with the number of required actions in the About L One page -> Actions required tab */
+    var llorix_one_nr_actions_required = llorixOneWelcomeScreenObject.nr_actions_required;
 
-    if ( (typeof parallax_one_nr_actions_required !== 'undefined') && (parallax_one_nr_actions_required != '0') ) {
-        jQuery('li.parallax-one-w-red-tab a').append('<span class="parallax-one-actions-count">' + parallax_one_nr_actions_required + '</span>');
+    if ( (typeof llorix_one_nr_actions_required !== 'undefined') && (llorix_one_nr_actions_required != '0') ) {
+        jQuery('li.parallax-one-w-red-tab a').append('<span class="parallax-one-actions-count">' + llorix_one_nr_actions_required + '</span>');
     }
 
     /* Dismiss required actions */
@@ -22,24 +14,24 @@ jQuery(document).ready(function() {
         
         jQuery.ajax({
             type       : "GET",
-            data       : { action: 'parallax_one_dismiss_required_action',dismiss_id : id },
+            data       : { action: 'llorix_one_dismiss_required_action',dismiss_id : id },
             dataType   : "html",
-            url        : parallaxOneWelcomeScreenObject.ajaxurl,
+            url        : llorixOneWelcomeScreenObject.ajaxurl,
             beforeSend : function(data,settings){
-				jQuery('.parallax-one-tab-pane#actions_required h1').append('<div id="temp_load" style="text-align:center"><img src="' + parallaxOneWelcomeScreenObject.template_directory + '/inc/admin/welcome-screen/img/ajax-loader.gif" /></div>');
+				jQuery('.parallax-one-tab-pane#actions_required h1').append('<div id="temp_load" style="text-align:center"><img src="' + llorixOneWelcomeScreenObject.template_directory + '/inc/admin/welcome-screen/img/ajax-loader.gif" /></div>');
             },
             success    : function(data){
 				jQuery("#temp_load").remove(); /* Remove loading gif */
                 jQuery('#'+ data).parent().remove(); /* Remove required action box */
 
-                var parallax_one_actions_count = jQuery('.parallax-one-actions-count').text(); /* Decrease or remove the counter for required actions */
-                if( typeof parallax_one_actions_count !== 'undefined' ) {
-                    if( parallax_one_actions_count == '1' ) {
+                var llorix_one_actions_count = jQuery('.parallax-one-actions-count').text(); /* Decrease or remove the counter for required actions */
+                if( typeof llorix_one_actions_count !== 'undefined' ) {
+                    if( llorix_one_actions_count == '1' ) {
                         jQuery('.parallax-one-actions-count').remove();
-                        jQuery('.parallax-one-tab-pane#actions_required').append('<p>' + parallaxOneWelcomeScreenObject.no_required_actions_text + '</p>');
+                        jQuery('.parallax-one-tab-pane#actions_required').append('<p>' + llorixOneWelcomeScreenObject.no_required_actions_text + '</p>');
                     }
                     else {
-                        jQuery('.parallax-one-actions-count').text(parseInt(parallax_one_actions_count) - 1);
+                        jQuery('.parallax-one-actions-count').text(parseInt(llorix_one_actions_count) - 1);
                     }
                 }
             },
@@ -48,4 +40,25 @@ jQuery(document).ready(function() {
             }
         });
     });
+	
+	/* Tabs in welcome page */
+	function llorix_one_welcome_page_tabs(event) {
+		jQuery(event).parent().addClass("active");
+        jQuery(event).parent().siblings().removeClass("active");
+        var tab = jQuery(event).attr("href");
+        jQuery(".parallax-one-tab-pane").not(tab).css("display", "none");
+        jQuery(tab).fadeIn();
+	}
+	
+	var llorix_one_actions_anchor = location.hash;
+	
+	if( (typeof llorix_one_actions_anchor !== 'undefined') && (llorix_one_actions_anchor != '') ) {
+		llorix_one_welcome_page_tabs('a[href="'+ llorix_one_actions_anchor +'"]');
+	}
+	
+    jQuery(".parallax-one-nav-tabs a").click(function(event) {
+        event.preventDefault();
+		llorix_one_welcome_page_tabs(this);
+    });
+	
 });

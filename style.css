@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/llorix-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Llorix One is a free and beautiful WordPress theme, with a classy design and an elegant parallax effect. It provides a simple and professional look that can be used for any kind of businesses or startups. Llorix One has a black & white appearance, with green buttons and icons. Llorix One is a one page theme and promotes simplicity and elegance at their best. The theme provides a blog section, is ecommerce ready (WooCommerce compatible), WPML and SEO friendly. You can change anything you need in the theme as it comes with a handful of customization options. You can use it for businesses, agencies, corporate websites, or portfolios. Its great design can push forward your startup as well.
-Version: 1.0.0.1
+Version: 1.0.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: llorix-one
@@ -1173,6 +1173,7 @@ header .navbar-brand {
     -moz-border-radius: 2px;
     border-radius: 2px;
     background: #999999;
+    border: none;
 }
 
 .dropdown-toggle:after {
@@ -1192,6 +1193,7 @@ header .navbar-brand {
 	background-color: #f16c20;
 	color: #ffffff;
 	z-index: 1;
+	border: none;
 }
 
 .dropdown-toggle.toggled-on,
@@ -4762,6 +4764,8 @@ a:hover {
 	border-radius: 3px;
 	padding: 10px;
 	margin-bottom: 40px;
+    border-bottom: 1px solid #d0d0d0;
+    padding-bottom: 45px;
 }
 
 .page-header {
@@ -4776,24 +4780,23 @@ a:hover {
 	position: relative;
 	min-height: 150px;
 	background-color: rgb(234, 234, 234);
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .list-post-entry-meta {
-	position: relative;
-	bottom: -1px;
-	left: 0;
-	width: 100%;
-	background: none;
-	padding: 5px 0 10px;
-    margin-bottom: 20px;
+    position: relative;
+    margin-top: -5px;
+    width: 100%;
+    background: none;
+    padding: 0;
+    margin-bottom: 0px;
     font-size: 14px;
     color: #d0d0d0;
     text-transform: uppercase;
 }
 
 .list-post-entry-meta a {
-    color: #d0d0d0;
+    color: #999999;
     font-weight: 700;
 }
 
@@ -4904,7 +4907,6 @@ a:hover {
 }
 
 .post-list article.sticky {
-	border-bottom: 4px solid #f16c20;
 	background-color: rgba(0,0,0,0.02);
 }
 
@@ -4983,7 +4985,7 @@ a:hover {
 .posted-in {
     position: relative;
     float: left;
-    color: #d0d0d0;
+    color: #999999;
     font-weight: 400;
     margin-right: 4px;
 }
@@ -5065,7 +5067,7 @@ a:hover {
 
 .post-bottom-tags ul li a {
     font-size: 14px;
-    color: #d0d0d0;
+    color: #999999;
 }
 
 .post-bottom-tags ul li a:hover {
@@ -5745,6 +5747,7 @@ h2.screen-reader-text {
 }
 #sidebar-secondary .widget.widget_search input {
 	margin: 10px 0;
+	border: none;
 }
 #sidebar-secondary .widget.widget_search .search-form:before {
     content: "\e0a6";
@@ -5941,6 +5944,7 @@ h2.screen-reader-text {
 
 .widget_search .search-submit:hover {
 	box-shadow: none;
+	border: none;
 }
 
 .widget_search .search-form:before {
@@ -6092,6 +6096,10 @@ h2.screen-reader-text {
 		line-height: 26px;
 	}
 	
+	#primary {
+		padding-right: 0;
+	}
+
 	.browser-image img {
         width: 100%;
     }

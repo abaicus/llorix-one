@@ -7,6 +7,32 @@
 <article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'llorix-one' ), get_the_title() )?>">
 	<header class="entry-header">
 
+
+		<div class="post-img-wrap">
+		 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+				<?php 
+					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+				?>
+					<?php 
+						$image_id = get_post_thumbnail_id();
+						$image_url_big = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-big', true);
+						$image_url_mobile = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-mobile', true);
+					?>
+			 		<picture itemscope itemprop="image">
+						<source media="(max-width: 600px)" srcset="<?php echo esc_url($image_url_mobile[0]); ?>">
+						<img src="<?php echo esc_url($image_url_big[0]); ?>" alt="<?php the_title_attribute(); ?>">
+					</picture>
+				<?php
+					} else {
+				?>
+			 		<picture itemscope itemprop="image">
+						<source media="(max-width: 600px)" srcset="<?php echo llorix_one_get_file('/images/no-thumbnail-mobile.jpg');?> ">
+						<img src="<?php echo llorix_one_get_file('/images/no-thumbnail.jpg'); ?>" alt="<?php the_title_attribute(); ?>">
+					</picture>
+				<?php } ?>
+			</a>
+		</div>
+		
 		<?php the_title( sprintf( '<h1 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<div class="clearfix"></div>			
 		<div class="entry-meta list-post-entry-meta">
@@ -37,30 +63,7 @@
 				</a>
 			</div>
 		</div><!-- .entry-meta -->
-		<div class="post-img-wrap">
-		 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-				<?php 
-					if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-				?>
-					<?php 
-						$image_id = get_post_thumbnail_id();
-						$image_url_big = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-big', true);
-						$image_url_mobile = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-mobile', true);
-					?>
-			 		<picture itemscope itemprop="image">
-						<source media="(max-width: 600px)" srcset="<?php echo esc_url($image_url_mobile[0]); ?>">
-						<img src="<?php echo esc_url($image_url_big[0]); ?>" alt="<?php the_title_attribute(); ?>">
-					</picture>
-				<?php
-					} else {
-				?>
-			 		<picture itemscope itemprop="image">
-						<source media="(max-width: 600px)" srcset="<?php echo llorix_one_get_file('/images/no-thumbnail-mobile.jpg');?> ">
-						<img src="<?php echo llorix_one_get_file('/images/no-thumbnail.jpg'); ?>" alt="<?php the_title_attribute(); ?>">
-					</picture>
-				<?php } ?>
-			</a>
-		</div>
+
 	</header><!-- .entry-header -->
 
 	<div itemprop="description" class="entry-content entry-summary">

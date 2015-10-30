@@ -2,8 +2,8 @@
  SECTION: CUSTOMERS   
 ============================== -->
 <?php
-	$llorix_one_happy_customers_title = get_theme_mod('parallax_one_happy_customers_title','Happy Customers');
-	$llorix_one_happy_customers_subtitle = get_theme_mod('parallax_one_happy_customers_subtitle','Cloud computing subscription model out of the box proactive solution.');
+	$llorix_one_happy_customers_title = get_theme_mod('parallax_one_happy_customers_title', esc_html__('Happy Customers','llorix-one'));
+	$llorix_one_happy_customers_subtitle = get_theme_mod('parallax_one_happy_customers_subtitle',esc_html__('Cloud computing subscription model out of the box proactive solution.','llorix-one'));
 	$llorix_one_testimonials_content = get_theme_mod('parallax_one_testimonials_content',
 		json_encode(
 			array(
@@ -77,8 +77,8 @@
 										?>
 												<h5 class="colored-text">
 													<?php
-														if(function_exists('icl_translate')){
-															echo icl_translate('Testimonials',$llorix_one_testimonial->id.'_testimonials_title',esc_attr($llorix_one_testimonial->title));
+														if(function_exists('icl_t')){
+															echo icl_t('Testimonials',$llorix_one_testimonial->id.'_testimonials_title',esc_attr($llorix_one_testimonial->title));
 														} else {
 															echo esc_attr($llorix_one_testimonial->title);
 														}
@@ -91,8 +91,8 @@
 										?>
 												<div class="small-text">
 													<?php 
-														if(function_exists('icl_translate')){
-															echo icl_translate('Testimonials',$llorix_one_testimonial->id.'_testimonials_subtitle',esc_attr($llorix_one_testimonial->subtitle));
+														if(function_exists('icl_t')){
+															echo icl_t('Testimonials',$llorix_one_testimonial->id.'_testimonials_subtitle',esc_attr($llorix_one_testimonial->subtitle));
 														} else {
 															echo esc_attr($llorix_one_testimonial->subtitle);
 														}
@@ -105,8 +105,8 @@
 										?>
 												<p>
 													<?php 
-														if(function_exists('icl_translate')){
-															echo icl_translate('Testimonials',$llorix_one_testimonial->id.'_testimonials_text',esc_attr($llorix_one_testimonial->text));
+														if(function_exists('icl_t')){
+															echo icl_t('Testimonials',$llorix_one_testimonial->id.'_testimonials_text',esc_attr($llorix_one_testimonial->text));
 														} else {
 															echo esc_attr($llorix_one_testimonial->text); 
 														}
