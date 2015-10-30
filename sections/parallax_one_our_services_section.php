@@ -3,8 +3,8 @@
 ============================== -->
 <?php
 	global $wp_customize;
-	$llorix_one_our_services_title = get_theme_mod('parallax_one_our_services_title','Our Services');
-	$llorix_one_our_services_subtitle = get_theme_mod('parallax_one_our_services_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+	$llorix_one_our_services_title = get_theme_mod('parallax_one_our_services_title',esc_html__('Our Services','llorix-one'));
+	$llorix_one_our_services_subtitle = get_theme_mod('parallax_one_our_services_subtitle',esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','llorix-one'));
 	$llorix_one_services = get_theme_mod('parallax_one_services_content',
 		json_encode(
 			array(

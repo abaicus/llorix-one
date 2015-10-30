@@ -3,7 +3,7 @@
 ============================== -->
 <?php
 	$paralax_one_our_story_image = get_theme_mod('paralax_one_our_story_image', llorix_one_get_file('/images/about-us.png'));
-	$llorix_one_our_story_title = get_theme_mod('parallax_one_our_story_title','Our Story');
+	$llorix_one_our_story_title = get_theme_mod('parallax_one_our_story_title',esc_html__('Our Story','llorix-one'));
 	$llorix_one_our_story_text = get_theme_mod('parallax_one_our_story_text',esc_html__('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','llorix-one'));
 	if(!empty($paralax_one_our_story_image) || !empty($llorix_one_our_story_title) || !empty($llorix_one_our_story_content)){
 ?>

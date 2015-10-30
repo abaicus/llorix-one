@@ -4,8 +4,8 @@
 <?php
 	global $wp_customize;
 	$team_background = get_theme_mod('paralax_one_team_background', llorix_one_get_file('/images/background-images/parallax-img/team-img.jpg'));
-	$llorix_one_our_team_title = get_theme_mod('parallax_one_our_team_title','Our Team');
-	$llorix_one_our_team_subtitle = get_theme_mod('parallax_one_our_team_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+	$llorix_one_our_team_title = get_theme_mod('parallax_one_our_team_title',esc_html__('Our Team','llorix-one'));
+	$llorix_one_our_team_subtitle = get_theme_mod('parallax_one_our_team_subtitle',esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','llorix-one'));
 	$llorix_one_team_content = get_theme_mod('parallax_one_team_content',
 		json_encode(
 			array(

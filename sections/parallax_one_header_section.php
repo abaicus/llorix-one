@@ -1,8 +1,8 @@
 <!-- CONTAINER -->
 <?php
-	$llorix_one_header_title = get_theme_mod('parallax_one_header_title','Simple, Reliable and Awesome.');
-	$llorix_one_header_subtitle = get_theme_mod('parallax_one_header_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-	$llorix_one_header_button_text = get_theme_mod('parallax_one_header_button_text','GET STARTED');
+	$llorix_one_header_title = get_theme_mod('parallax_one_header_title',esc_html__('Simple, Reliable and Awesome.','llorix-one'));
+	$llorix_one_header_subtitle = get_theme_mod('parallax_one_header_subtitle',esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','llorix-one'));
+	$llorix_one_header_button_text = get_theme_mod('parallax_one_header_button_text',esc_html__('GET STARTED','llorix-one'));
 	$llorix_one_header_button_link = get_theme_mod('parallax_one_header_button_link','#');
 	$llorix_one_enable_move = get_theme_mod('paralax_one_enable_move');
 	$llorix_one_first_layer = get_theme_mod('paralax_one_first_layer', llorix_one_get_file('/images/background1.png'));

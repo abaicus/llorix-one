@@ -2,8 +2,8 @@
  SECTION: CUSTOMERS   
 ============================== -->
 <?php
-	$llorix_one_happy_customers_title = get_theme_mod('parallax_one_happy_customers_title','Happy Customers');
-	$llorix_one_happy_customers_subtitle = get_theme_mod('parallax_one_happy_customers_subtitle','Cloud computing subscription model out of the box proactive solution.');
+	$llorix_one_happy_customers_title = get_theme_mod('parallax_one_happy_customers_title', esc_html__('Happy Customers','llorix-one'));
+	$llorix_one_happy_customers_subtitle = get_theme_mod('parallax_one_happy_customers_subtitle',esc_html__('Cloud computing subscription model out of the box proactive solution.','llorix-one'));
 	$llorix_one_testimonials_content = get_theme_mod('parallax_one_testimonials_content',
 		json_encode(
 			array(
