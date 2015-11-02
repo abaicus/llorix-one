@@ -100,6 +100,7 @@ function parallax_one_uniqid(prefix, more_entropy) {
   return retId;
 }
 
+
 /********************************************
 *** General Repeater ***
 *********************************************/
@@ -110,31 +111,22 @@ function parallax_one_refresh_general_control_values(){
 		th.find(".parallax_one_general_control_repeater_container").each(function(){
 			var icon_value = jQuery(this).find('.parallax_one_icon_control').val();
 			var text = jQuery(this).find(".parallax_one_text_control").val();
-			if(text){
-				text = text.replace(/(['"])/g, "\\$1");
-			}
 			var link = jQuery(this).find(".parallax_one_link_control").val();
 			var image_url = jQuery(this).find(".custom_media_url").val();
 			var choice = jQuery(this).find(".parallax_one_image_choice").val();
 			var title = jQuery(this).find(".parallax_one_title_control").val();
-			if(title){
-				title = title.replace(/(['"])/g, "\\$1");
-			}
 			var subtitle = jQuery(this).find(".parallax_one_subtitle_control").val();
-			if(subtitle){
-				subtitle = subtitle.replace(/(['"])/g, "\\$1");
-			}
 			var id = jQuery(this).find(".parallax_one_box_id").val();
             var shortcode = jQuery(this).find(".parallax_one_shortcode_control").val();
             if( text !='' || image_url!='' || title!='' || subtitle!='' ){
                 values.push({
                     "icon_value" : (choice === 'parallax_none' ? "" : icon_value) ,
-                    "text" : text,
+                    "text" :  escapeHtml(text),
                     "link" : link,
                     "image_url" : (choice === 'parallax_none' ? "" : image_url),
                     "choice" : choice,
-                    "title" : title,
-                    "subtitle" : subtitle,
+                    "title" : escapeHtml(title),
+                    "subtitle" : escapeHtml(subtitle),
 					"id" : id,
                     "shortcode" : escapeHtml(shortcode)
                 });
@@ -145,6 +137,7 @@ function parallax_one_refresh_general_control_values(){
         th.find('.parallax_one_repeater_colector').trigger('change');
     });
 }
+
 
 
 jQuery(document).ready(function(){
@@ -258,16 +251,15 @@ var entityMap = {
     ">": "&gt;",
     '"': '&quot;',
     "'": '&#39;',
-    "/": '&#x2F;'
+    "/": '&#x2F;',
   };
 
   function escapeHtml(string) {
-    return String(string).replace(/[&<>"'\/]/g, function (s) {
-      return entityMap[s];
-    });
+	  string = String(string).replace(/\\/g,'&#92;');
+	  return String(string).replace(/[&<>"'\/]/g, function (s) {
+      	return entityMap[s];
+	  });
   }
-
-
 /********************************************
 *** Parallax effect
 *********************************************/
@@ -300,12 +292,12 @@ jQuery(document).ready(function(){
 
 jQuery(document).ready(function() {
 
-	var llorix_one_aboutpage = llorixOneCustomizerObject.aboutpage;
-    var llorix_one_nr_actions_required = llorixOneCustomizerObject.nr_actions_required;
+	var parallax_one_aboutpage = parallaxOneCustomizerObject.aboutpage;
+    var parallax_one_nr_actions_required = parallaxOneCustomizerObject.nr_actions_required;
 
     /* Number of required actions */
-    if ((typeof llorix_one_aboutpage !== 'undefined') && (typeof llorix_one_nr_actions_required !== 'undefined') && (llorix_one_nr_actions_required != '0')) {
-        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + llorix_one_aboutpage + '"><span class="parallax-one-actions-count">' + llorix_one_nr_actions_required + '</span></a>');
+    if ((typeof parallax_one_aboutpage !== 'undefined') && (typeof parallax_one_nr_actions_required !== 'undefined') && (parallax_one_nr_actions_required != '0')) {
+        jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + parallax_one_aboutpage + '"><span class="parallax-one-actions-count">' + parallax_one_nr_actions_required + '</span></a>');
     }
 
     /* Upsells in customizer (Documentation link, Support link, View theme info and Upgrade to PRO link */
@@ -315,11 +307,11 @@ jQuery(document).ready(function() {
 
 	if( jQuery( ".parallax-upsells" ).length ) {
 
-		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-llorix-one/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', llorixOneCustomizerObject.documentation));
-		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/llorix-one/" class="button" target="_blank">{github}</a>'.replace('{github}', llorixOneCustomizerObject.support));
+		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-parallax-one/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', parallaxOneCustomizerObject.documentation));
+		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/parallax-one/" class="button" target="_blank">{github}</a>'.replace('{github}', parallaxOneCustomizerObject.support));
 
 	}
-	/*jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',llorixOneCustomizerObject.pro));*/
+	jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',parallaxOneCustomizerObject.pro));
 
 	if ( !jQuery( ".parallax-upsells" ).length ) {
 		jQuery('#customize-theme-controls > ul').prepend('</li>');

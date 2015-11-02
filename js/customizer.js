@@ -124,14 +124,6 @@
 		
     });	
 	
-	//Very top header Phone
-	wp.customize("parallax_one_very_top_header_phone", function(value) {
-		
-        value.bind(function( to ) {
-			$( '.very-top-left span' ).html( to );
-		} );
-		
-    });	
 
 	/******************************************************
 	************* OUR STORY SECTION ****************
@@ -280,18 +272,6 @@
 		
     });
 	
-	//Team background	
-	wp.customize( 'paralax_one_team_background', function( value ) {
-		value.bind( function( to ) {
-			
-			if ( '' != to ) {
-				$( '.team-wrap' ).attr( 'style','background-image:url('+to+')' );
-			} else {
-				$( '.team-wrap' ).removeAttr('style');
-			}
-			
-		} );
-	} );
 
 	/******************************************************
 	******** HAPPY CUSTOMERS SECTION ***********

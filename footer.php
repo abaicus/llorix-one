@@ -59,28 +59,6 @@
 				<?php
 					global $wp_customize;
 				
-					/* SOCIAL ICONS */
-					$llorix_one_social_icons = get_theme_mod('parallax_one_social_icons',json_encode(array(array('icon_value' =>'icon-social-facebook' , 'link' => '#'),array('icon_value' =>'icon-social-twitter' , 'link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'link' => '#'))));
-
-					if( !empty( $llorix_one_social_icons ) ){
-						
-						$llorix_one_social_icons_decoded = json_decode($llorix_one_social_icons);
-						
-						if( !empty($llorix_one_social_icons_decoded) ){
-						
-							echo '<ul class="social-icons">';
-							
-								foreach($llorix_one_social_icons_decoded as $llorix_one_social_icon){
-									
-									echo '<li><a target="_blank" href="'.esc_url($llorix_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
-
-								}
-						
-							echo '</ul>';
-						
-						}
-					}
-
 					/* COPYRIGHT */
 					$paralax_one_copyright = get_theme_mod('parallax_one_copyright','Themeisle');
 					
@@ -89,8 +67,9 @@
 					} elseif ( isset( $wp_customize )   ) {
 						echo '<span class="parallax_one_copyright_content paralax_one_only_customizer"></span>';
 					}
-
-					/* OPTIONAL FOOTER LINKS */					
+				
+					/* OPTIONAL FOOTER LINKS */
+					
 					echo '<div itemscope role="navigation" itemtype="http://schema.org/SiteNavigationElement" id="menu-secondary" aria-label="'.esc_html__('Secondary Menu','llorix-one').'">';
 						echo '<h1 class="screen-reader-text">'.esc_html__( 'Secondary Menu', 'llorix-one' ).'</h1>';
 						wp_nav_menu( 
@@ -101,7 +80,28 @@
 								'depth' 			=> 1,
 								'fallback_cb'       => false ) );
 					echo '</div>';
+					/* SOCIAL ICONS */
+				
+					$parallax_one_social_icons = get_theme_mod('parallax_one_social_icons',json_encode(array(array('icon_value' =>'icon-social-facebook' , 'link' => '#'),array('icon_value' =>'icon-social-twitter' , 'link' => '#'),array('icon_value' =>'icon-social-googleplus' , 'link' => '#'))));
 
+					if( !empty( $parallax_one_social_icons ) ){
+						
+						$parallax_one_social_icons_decoded = json_decode($parallax_one_social_icons);
+						
+						if( !empty($parallax_one_social_icons_decoded) ){
+						
+							echo '<ul class="social-icons">';
+							
+								foreach($parallax_one_social_icons_decoded as $parallax_one_social_icon){
+									
+									echo '<li><a target="_blank" href="'.esc_url($parallax_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($parallax_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
+
+								}
+						
+							echo '</ul>';
+						
+						}
+					}
 				?>
 	            
 	        </div><!-- .footer-bottom-wrap -->

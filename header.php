@@ -18,6 +18,27 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'llorix-one' ); ?></a>
+	<!-- =========================
+     PRE LOADER       
+    ============================== -->
+	<?php
+		
+	 global $wp_customize;
+
+	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
+	 
+		$parallax_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
+		
+		if( isset($parallax_one_disable_preloader) && ($parallax_one_disable_preloader != 1)):
+			 
+			echo '<div class="preloader">';
+				echo '<div class="status">&nbsp;</div>';
+			echo '</div>';
+			
+		endif;	
+
+	endif; ?>
+
 
 	<!-- =========================
      SECTION: HOME / HEADER  
@@ -45,54 +66,10 @@
 				}
 			}
         ?>
-
 		<div class="overlay-layer-nav <?php if(!empty($fixedheader)) {echo esc_attr($fixedheader);} ?>">
+
             <!-- STICKY NAVIGATION -->
             <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll">
-		        <div class="very-top-header">
-		        	<div class="container">
-		        		
-		        		<?php
-		        			$llorix_one_very_top_header_phone = get_theme_mod('parallax_one_very_top_header_phone','(+9) 0999.500.400');
-
-							if( !empty($llorix_one_very_top_header_phone) ){
-				        		echo '<div class="very-top-left">';
-				        		echo esc_html_e('Call us:', 'llorix-one') . ' ';
-				        		echo '<span>' . esc_attr($llorix_one_very_top_header_phone) . '</span>';
-				        		echo '</div>';
-							} elseif ( isset( $wp_customize )   ) {
-								echo '<div class="very-top-left paralax_one_only_customizer">' . esc_html_e('Call us:', 'llorix-one') . '<span></span></div>';
-							}
-						?>
-
-
-		        		<div class="very-top-right">
-						
-							<?php 
-								/* SOCIAL ICONS */
-								$llorix_one_social_icons = get_theme_mod('parallax_one_very_top_social_icons',json_encode(
-																array(
-																	array('icon_value' =>'icon-social-facebook' , 'link' => '#'),
-																	array('icon_value' =>'icon-social-twitter' , 'link' => '#'),
-																	array('icon_value' =>'icon-social-googleplus' , 'link' => '#')
-																	)
-																));
-								
-								if( !empty( $llorix_one_social_icons ) ){
-									$llorix_one_social_icons_decoded = json_decode($llorix_one_social_icons);
-									if( !empty($llorix_one_social_icons_decoded) ){
-										echo '<ul class="social-icons">';
-											foreach($llorix_one_social_icons_decoded as $llorix_one_social_icon){
-												echo '<li><a href="'.esc_url($llorix_one_social_icon->link).'"><span class="'.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
-											}
-										echo '</ul>';
-									}
-								}
-							?>
-	            
-		        		</div>
-		        	</div>
-		        </div>
 				<!-- CONTAINER -->
                 <div class="container">
 				
@@ -109,15 +86,15 @@
 						
 						<?php
 							
-							$llorix_one = get_theme_mod('paralax_one_logo', llorix_one_get_file('/images/logo-nav.png') );
+							$parallax_one = get_theme_mod('paralax_one_logo', parallax_get_file('/images/logo-nav.png') );
 
 							
 							
-							if(!empty($llorix_one)):
+							if(!empty($parallax_one)):
 
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 
-									echo '<img src="'.esc_url($llorix_one).'" alt="'.get_bloginfo('title').'">';
+									echo '<img src="'.esc_url($parallax_one).'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
 
@@ -165,7 +142,7 @@
 										'theme_location'    => 'primary',
 										'menu_class'        => 'primary-menu small-text',
 										'depth'           	=> 4,
-										'fallback_cb'       => 'llorix_one_wp_page_menu'
+										'fallback_cb'       => 'parallax_one_wp_page_menu'
 										 ) 
 								);
 							?>

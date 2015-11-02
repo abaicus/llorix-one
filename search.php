@@ -14,21 +14,16 @@
 <!-- /END HOME / HEADER  -->
 
 <div itemscope itemtype="http://schema.org/SearchResultsPage" role="main" id="content" class="content-warp">
-
-	<div class="archive-page-header">
-		<div class="container">
-			<header class="col-md-12 page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'llorix-one' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-		</div>
-	</div>
-
 	<div class="container">
 
 		<div id="primary" class="content-area col-md-8 post-list">
 			<main id="main" class="site-main" role="main">
 
 				<?php if ( have_posts() ) : ?>
+
+					<header class="page-header">
+						<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'llorix-one' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					</header><!-- .page-header -->
 
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>

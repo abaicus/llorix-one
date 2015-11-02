@@ -13,9 +13,16 @@
 	<p><?php esc_html_e( 'GitHub is the place to go!','llorix-one' ); ?></p>
 
 	<p>
-		<a href="https://github.com/Codeinwp/llorix-one" class="button button-primary"><?php esc_html_e( 'Llorix One on GitHub', 'llorix-one' ); ?></a>
+		<a href="https://github.com/Codeinwp/parallax-one" class="button button-primary"><?php esc_html_e( 'Llorix One on GitHub', 'llorix-one' ); ?></a>
 	</p>
 	
 	<hr/>
+	
+	<p><?php esc_html_e( 'Do you have some suggestions for us?','llorix-one'); ?></p>
+	<p><?php esc_html_e( 'Your opinion matter!','llorix-one' ); ?></p>
+
+	<p>
+		<a href="https://themeisle.uservoice.com/forums/252899-themeisle/category/137634-parallaxone" class="button button-primary"><?php esc_html_e( 'Tell us your thoughts', 'llorix-one' ); ?></a>
+	</p>
 	
 </div>
