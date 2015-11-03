@@ -138,8 +138,8 @@ function mainNav() {
     var topMenuClose    = -70;
     var topMenuOpen     = 0;
     if ( jQuery('.admin-bar').length>0 ) {
-        $llorix_one_header_height = jQuery('.navbar').height();
-        topMenuClose    = $llorix_one_header_height * -1;
+        $parallax_one_header_height = jQuery('.navbar').height();
+        topMenuClose    = $parallax_one_header_height * -1;
         topMenuOpen     = 32;
     }
     if ( top > 40 )
@@ -503,3 +503,17 @@ var isMobile = {
     
     
 } )( jQuery );
+
+
+jQuery(document).ready( function(){
+    if( isMobile ) {
+        fixed_responsive_bg_body();
+    }
+});
+function fixed_responsive_bg_body() {
+    if( jQuery('body').hasClass('custom-background') ) {
+        var thisItem = jQuery('body.custom-background');
+        thisItem.prepend( '<div class="mobile-bg-fixed" style="background-image:' + thisItem.css('background-image') + ';"></div>' );
+    }
+}
+

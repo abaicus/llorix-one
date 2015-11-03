@@ -15,25 +15,35 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div role="main" id="content" class="content-warp">
-
-	<div class="archive-page-header">
+<div class="archive-top">
+	<div class="section-overlay-layer">
 		<div class="container">
-			<header class="col-md-12 page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+
+			<p class="archive-top-big-title">Lorem ipsum dolor</p>
+			<p class="colored-line"></p>
+			<p class="archive-top-text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis risus augue. Cras at mollis eros. Sed porttitor quam eget aliquam mattis. Fusce leo nibh, ornare at volutpat ut, luctus dictum elit. Mauris non vehicula eros, ac lacinia lorem. Quisque fermentum purus ac scelerisque suscipit. Morbi et iaculis tellus. Proin ut urna ac purus suscipit iaculis. Aliquam erat volutpat. Donec at viverra magna. Fusce efficitur eros a nunc volutpat ultrices. Aenean mattis purus lectus, quis fermentum diam placerat in.
+			</p>
+
 		</div>
 	</div>
+</div>
 
+
+<div role="main" id="content" class="content-warp">
 	<div class="container">
 
 		<div id="primary" class="content-area col-md-8 post-list">
 			<main <?php if(have_posts()) echo 'itemscope itemtype="http://schema.org/Blog"'; ?> id="main" class="site-main" role="main">
 
 				<?php if ( have_posts() ) : ?>
+
+					<header class="page-header">
+						<?php
+							the_archive_title( '<h1 class="page-title">', '</h1>' );
+							the_archive_description( '<div class="taxonomy-description">', '</div>' );
+						?>
+					</header><!-- .page-header -->
 
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>

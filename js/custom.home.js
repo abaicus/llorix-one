@@ -138,7 +138,7 @@ jQuery(document).ready(function(){
         jQuery('#happy_customers_wrap').parallaxonegridpinterest({columns: 1,selector: '.testimonials-box'});
     } else {
         jQuery('#our_services_wrap').parallaxonegridpinterest({columns: 3,selector: '.service-box'});
-        jQuery('#happy_customers_wrap').parallaxonegridpinterest({columns: 2,selector: '.testimonials-box'});
+        jQuery('#happy_customers_wrap').parallaxonegridpinterest({columns: 3,selector: '.testimonials-box'});
     } 
 });
 
@@ -150,7 +150,7 @@ jQuery(window).resize(function() {
             jQuery('#happy_customers_wrap').parallaxonegridpinterest({columns: 1,selector: '.testimonials-box'});
         } else {
             jQuery('#our_services_wrap').parallaxonegridpinterest({columns: 3,selector: '.service-box'});
-            jQuery('#happy_customers_wrap').parallaxonegridpinterest({columns: 2,selector: '.testimonials-box'});
+            jQuery('#happy_customers_wrap').parallaxonegridpinterest({columns: 3,selector: '.testimonials-box'});
         } 
     }
 });
@@ -181,8 +181,8 @@ jQuery(document).ready(function() {
 
 jQuery(document).ready(function(){
     if(jQuery('.overlay-layer-nav').hasClass('sticky-navigation-open')){
-        $llorix_one_header_height = jQuery('.navbar').height();
-        $llorix_one_header_height+=84;
-        jQuery('.header .overlay-layer').css('padding-top',$llorix_one_header_height);
+        $parallax_one_header_height = jQuery('.navbar').height();
+        $parallax_one_header_height+=84;
+        jQuery('.header .overlay-layer').css('padding-top',$parallax_one_header_height);
     }
 });

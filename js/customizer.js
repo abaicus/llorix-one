@@ -35,9 +35,35 @@
 		} );
 	} );
 	
+		
+	//Very top header Phone
+	wp.customize("parallax_one_very_top_header_phone", function(value) {
+		
+        value.bind(function( to ) {
+			$( '.very-top-left span' ).html( to );
+		} );
+		
+    });	
 	
+	/* Blog header */
+	wp.customize("parallax_one_blog_header_title", function(value) {
+        value.bind(function( to ) {
+			$( '.archive-top-big-title' ).html( to );
+		} );
+    });	
+	wp.customize("parallax_one_blog_header_subtitle", function(value) {
+        value.bind(function( to ) {
+			$( '.archive-top-text' ).html( to );
+		} );
+    });
+	wp.customize("parallax_one_blog_header_image", function(value) {
+        value.bind(function( to ) {
+			$(".archive-top").css('background-image', 'url(' + to + ')');
+        } );
+    });	
+    
 	/***************************************
-	******** HEADER SECTION *********
+	******** HEADER SECTION ****************
 	****************************************/
 	//Logo
 	wp.customize("paralax_one_logo", function(value) {
@@ -124,14 +150,6 @@
 		
     });	
 	
-	//Very top header Phone
-	wp.customize("parallax_one_very_top_header_phone", function(value) {
-		
-        value.bind(function( to ) {
-			$( '.very-top-left span' ).html( to );
-		} );
-		
-    });	
 
 	/******************************************************
 	************* OUR STORY SECTION ****************
@@ -280,18 +298,6 @@
 		
     });
 	
-	//Team background	
-	wp.customize( 'paralax_one_team_background', function( value ) {
-		value.bind( function( to ) {
-			
-			if ( '' != to ) {
-				$( '.team-wrap' ).attr( 'style','background-image:url('+to+')' );
-			} else {
-				$( '.team-wrap' ).removeAttr('style');
-			}
-			
-		} );
-	} );
 
 	/******************************************************
 	******** HAPPY CUSTOMERS SECTION ***********
