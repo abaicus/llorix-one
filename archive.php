@@ -15,6 +15,21 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
+<div class="archive-top">
+	<div class="section-overlay-layer">
+		<div class="container">
+
+			<p class="archive-top-big-title">Lorem ipsum dolor</p>
+			<p class="colored-line"></p>
+			<p class="archive-top-text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis risus augue. Cras at mollis eros. Sed porttitor quam eget aliquam mattis. Fusce leo nibh, ornare at volutpat ut, luctus dictum elit. Mauris non vehicula eros, ac lacinia lorem. Quisque fermentum purus ac scelerisque suscipit. Morbi et iaculis tellus. Proin ut urna ac purus suscipit iaculis. Aliquam erat volutpat. Donec at viverra magna. Fusce efficitur eros a nunc volutpat ultrices. Aenean mattis purus lectus, quis fermentum diam placerat in.
+			</p>
+
+		</div>
+	</div>
+</div>
+
+
 <div role="main" id="content" class="content-warp">
 	<div class="container">
 
