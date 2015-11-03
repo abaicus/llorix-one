@@ -78,7 +78,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'panel'		  => 'panel_2'
 	));
 	
-		/* Logo	*/
+	/* Logo	*/
 	$wp_customize->add_setting( 'paralax_one_logo', array(
 		'default' => parallax_get_file('/images/logo-nav.png'),
 		'sanitize_callback' => 'esc_url',
@@ -289,7 +289,6 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_very_top_header_phone', array(
 		'label'    			=> esc_html__( 'Phone number', 'llorix-one' ),
 		'section'  			=> 'parallax_one_very_top_header_content',
-		'active_callback' 	=> 'parallax_one_show_on_front',
 		'priority'    		=> 1
 	));
 
@@ -314,6 +313,51 @@ function parallax_one_customize_register( $wp_customize ) {
         'parallax_text_control' 	=> false,
         'parallax_link_control' 	=> true
 	) ) );
+	
+	/* BLOG HEADER */
+
+	$wp_customize->add_section( 'parallax_one_blog_header_section' , array(
+		'title'		=> esc_html__( 'Blog header', 'llorix-one' ),
+		'priority'	=> 50,
+		'panel' 	=> 'panel_1'
+	));
+	
+	/* Blog Header title */
+	$wp_customize->add_setting( 'parallax_one_blog_header_title', array(
+		'default' 			=> esc_html__('BLOG','llorix-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'transport' 		=> 'postMessage'
+	));
+	$wp_customize->add_control( 'parallax_one_blog_header_title', array(
+		'label'    			=> esc_html__( 'Title', 'llorix-one' ),
+		'section'  			=> 'parallax_one_blog_header_section',
+		'priority'    		=> 1
+	));
+	
+	/* Blog Header subtitle */
+	$wp_customize->add_setting( 'parallax_one_blog_header_subtitle', array(
+		'default' 			=> esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis risus augue. Cras at mollis eros. Sed porttitor quam eget aliquam mattis. Fusce leo nibh, ornare at volutpat ut, luctus dictum elit. Mauris non vehicula eros, ac lacinia lorem. Quisque fermentum purus ac scelerisque suscipit. Morbi et iaculis tellus. Proin ut urna ac purus suscipit iaculis. Aliquam erat volutpat. Donec at viverra magna. Fusce efficitur eros a nunc volutpat ultrices. Aenean mattis purus lectus, quis fermentum diam placerat in.','llorix-one'),
+		'sanitize_callback' => 'parallax_one_sanitize_text',
+		'transport' 		=> 'postMessage'
+	));
+	$wp_customize->add_control( 'parallax_one_blog_header_subtitle', array(
+		'label'    			=> esc_html__( 'Subtitle', 'llorix-one' ),
+		'section'  			=> 'parallax_one_blog_header_section',
+		'priority'    		=> 2
+	));
+	
+	/* Blog Header image	*/
+	$wp_customize->add_setting( 'parallax_one_blog_header_image', array(
+		'default' => parallax_get_file('/images/background-images/background-blog.jpg'),
+		'sanitize_callback' => 'esc_url',
+		'transport' => 'postMessage'
+	));
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'parallax_one_blog_header_image', array(
+	      	'label'    => esc_html__( 'Image', 'llorix-one' ),
+	      	'section'  => 'parallax_one_blog_header_section',
+			'priority'    => 3,
+	)));
 
 
 	/********************************************************/
