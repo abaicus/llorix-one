@@ -993,6 +993,58 @@ header .navbar-brand {
 	margin: 0;
 }
 
+.very-top-header {
+	background: #0d3c55;
+	color: #FFF;
+}
+
+.very-top-header .transparent-text-dark {
+    color: #343434;
+    background-color: #FFF;
+    border-radius: 75px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.very-top-header .social-icons span:before {
+	line-height: 20px;
+	font-size: 12px;
+	text-align: center;
+	width: 20px;
+	float: left;
+}
+
+.very-top-header .transparent-text-dark:hover {
+	background: #f16c20;
+}
+
+.very-top-header .social-icons span:hover:before {
+	color: #FFF;
+}
+
+.very-top-header a:hover .transparent-text-dark {
+	color: #f16c20;
+}
+
+.very-top-left {
+    float: left;
+    padding: 10px 0;
+    color: #CCC;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.very-top-right {
+	float: right;
+}
+
+.very-top-header ul.social-icons {
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 12px;
+    margin-bottom: 0;
+}
 
 .menu-align-center  .main-navigation li a {
 	margin: 0;
@@ -5417,6 +5469,7 @@ h2.screen-reader-text {
     left: 0;
     background-size: cover;
     background-position: top center;
+    z-index: -1;
 }
 
 /* --------------------------------------

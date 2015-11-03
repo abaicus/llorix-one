@@ -35,7 +35,16 @@
 		} );
 	} );
 	
-	
+		
+	//Very top header Phone
+	wp.customize("parallax_one_very_top_header_phone", function(value) {
+		
+        value.bind(function( to ) {
+			$( '.very-top-left span' ).html( to );
+		} );
+		
+    });	
+    
 	/***************************************
 	******** HEADER SECTION *********
 	****************************************/

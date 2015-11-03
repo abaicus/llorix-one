@@ -70,6 +70,47 @@
 
             <!-- STICKY NAVIGATION -->
             <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation appear-on-scroll">
+
+		    	<div class="very-top-header">
+		        	<div class="container">
+		        		<?php
+		        			$llorix_one_very_top_header_phone = get_theme_mod('parallax_one_very_top_header_phone','(+9) 0999.500.400');
+
+							if( !empty($llorix_one_very_top_header_phone) ){
+				        		echo '<div class="very-top-left">';
+				        		echo esc_html_e('Call us:', 'llorix-one') . ' ';
+				        		echo '<span>' . esc_attr($llorix_one_very_top_header_phone) . '</span>';
+				        		echo '</div>';
+							} elseif ( isset( $wp_customize )   ) {
+								echo '<div class="very-top-left paralax_one_only_customizer">' . esc_html_e('Call us:', 'llorix-one') . '<span></span></div>';
+							}
+						?>
+		        		<div class="very-top-right">
+							<?php 
+								/* SOCIAL ICONS */
+								$llorix_one_social_icons = get_theme_mod('parallax_one_very_top_social_icons',json_encode(
+																array(
+																	array('icon_value' =>'icon-social-facebook' , 'link' => '#'),
+																	array('icon_value' =>'icon-social-twitter' , 'link' => '#'),
+																	array('icon_value' =>'icon-social-googleplus' , 'link' => '#')
+																	)
+																));
+								
+								if( !empty( $llorix_one_social_icons ) ){
+									$llorix_one_social_icons_decoded = json_decode($llorix_one_social_icons);
+									if( !empty($llorix_one_social_icons_decoded) ){
+										echo '<ul class="social-icons">';
+											foreach($llorix_one_social_icons_decoded as $llorix_one_social_icon){
+												echo '<li><a href="'.esc_url($llorix_one_social_icon->link).'"><span class="'.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
+											}
+										echo '</ul>';
+									}
+								}
+							?>            
+		        		</div>
+		        	</div>
+		        </div>
+
 				<!-- CONTAINER -->
                 <div class="container">
 				
