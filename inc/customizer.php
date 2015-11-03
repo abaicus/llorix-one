@@ -134,7 +134,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_header_logo', array(
 	      	'label'    => esc_html__( 'Header Logo', 'llorix-one' ),
 	      	'section'  => 'parallax_one_header_content',
-			'active_callback' => 'parallax_one_show_on_front',
+			'active_callback' => 'llorix_one_show_on_front',
 			'priority'    => 10
 	)));
 	
@@ -147,7 +147,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_header_title', array(
 		'label'    => esc_html__( 'Main title', 'llorix-one' ),
 		'section'  => 'parallax_one_header_content',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 20
 	));
 	
@@ -160,7 +160,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_header_subtitle', array(
 		'label'    => esc_html__( 'Subtitle', 'llorix-one' ),
 		'section'  => 'parallax_one_header_content',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 30
 	));
 
@@ -174,7 +174,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_header_button_text', array(
 		'label'    => esc_html__( 'Button label', 'llorix-one' ),
 		'section'  => 'parallax_one_header_content',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 40
 	));
 	
@@ -187,7 +187,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_header_button_link', array(
 		'label'    => esc_html__( 'Button link', 'llorix-one' ),
 		'section'  => 'parallax_one_header_content',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 50
 	));
 	
@@ -219,7 +219,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_logos_content', array(
 		'label'   => esc_html__('Add new social icon','llorix-one'),
 		'section' => 'parallax_one_logos_settings_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority' => 10,
         'parallax_image_control' => true,
         'parallax_icon_control' => false,
@@ -290,7 +290,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_our_services_title', array(
 		'label'    => esc_html__( 'Main title', 'llorix-one' ),
 		'section'  => 'parallax_one_services_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 10
 	));
 	
@@ -303,7 +303,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_our_services_subtitle', array(
 		'label'    => esc_html__( 'Subtitle', 'llorix-one' ),
 		'section'  => 'parallax_one_services_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 20
 	));
     
@@ -322,7 +322,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_services_content', array(
 		'label'   => esc_html__('Add new service box','llorix-one'),
 		'section' => 'parallax_one_services_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority' => 30,
         'parallax_image_control' => true,
         'parallax_icon_control' => true,
@@ -349,7 +349,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_our_story_title', array(
 		'label'    => esc_html__( 'Main title', 'llorix-one' ),
 		'section'  => 'parallax_one_about_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 10,
 	));
 
@@ -368,7 +368,7 @@ function parallax_one_customize_register( $wp_customize ) {
 				'type' => 'textarea',
 				'label'   => esc_html__( 'Content', 'llorix-one' ),
 				'section' => 'parallax_one_about_section',
-				'active_callback' => 'parallax_one_show_on_front',
+				'active_callback' => 'llorix_one_show_on_front',
 				'priority'    => 20,
 			)
 	);
@@ -382,7 +382,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_our_story_image', array(
 	      	'label'    => esc_html__( 'Image', 'llorix-one' ),
 	      	'section'  => 'parallax_one_about_section',
-			'active_callback' => 'parallax_one_show_on_front',
+			'active_callback' => 'llorix_one_show_on_front',
 			'priority'    => 30,
 	)));
 
@@ -405,7 +405,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_our_team_title', array(
 		'label'    => esc_html__( 'Main title', 'llorix-one' ),
 		'section'  => 'parallax_one_team_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 10,
 	));
 	
@@ -418,7 +418,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_our_team_subtitle', array(
 		'label'    => esc_html__( 'Subtitle', 'llorix-one' ),
 		'section'  => 'parallax_one_team_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 20,
 	));
 	
@@ -437,12 +437,25 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_team_content', array(
 		'label'   => esc_html__('Add new team member','llorix-one'),
 		'section' => 'parallax_one_team_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority' => 3,
         'parallax_image_control' => true,
 		'parallax_title_control' => true,
 		'parallax_subtitle_control' => true
 	) ) );
+	
+	/* Team Background	*/
+	$wp_customize->add_setting( 'paralax_one_team_background', array(
+		'default' 				=> parallax_get_file('/images/background-images/parallax-img/team-img.jpg'),
+		'sanitize_callback'		=> 'esc_url',
+		'transport' 			=> 'postMessage'
+	));
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_team_background', array(
+	      	'label'    			=> esc_html__( 'Team Background', 'llorix-one' ),
+	      	'section'  			=> 'parallax_one_team_section',
+			'active_callback' 	=> 'llorix_one_show_on_front',
+			'priority'    		=> 10
+	)));
 	
 	/********************************************************/
 	/********** TESTIMONIALS OPTIONS  ***********************/
@@ -464,7 +477,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_happy_customers_title', array(
 		'label'    => esc_html__( 'Main title', 'llorix-one' ),
 		'section'  => 'parallax_one_testimonials_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 10,
 	));
 	
@@ -477,7 +490,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_happy_customers_subtitle', array(
 		'label'    => esc_html__( 'Subtitle', 'llorix-one' ),
 		'section'  => 'parallax_one_testimonials_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 20,
 	));
 	
@@ -496,7 +509,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_testimonials_content', array(
 		'label'   => esc_html__('Add new testimonial','llorix-one'),
 		'section' => 'parallax_one_testimonials_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority' => 30,
         'parallax_image_control' => true,
 		'parallax_title_control' => true,
@@ -526,7 +539,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'paralax_one_ribbon_background', array(
 	      	'label'    => esc_html__( 'Ribbon Background', 'llorix-one' ),
 	      	'section'  => 'parallax_one_ribbon_section',
-			'active_callback' => 'parallax_one_show_on_front',
+			'active_callback' => 'llorix_one_show_on_front',
 			'priority'    => 10
 	)));
 	
@@ -538,7 +551,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_ribbon_title', array(
 		'label'    => esc_html__( 'Main title', 'llorix-one' ),
 		'section'  => 'parallax_one_ribbon_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 20
 	));
 	
@@ -551,7 +564,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_button_text', array(
 		'label'    => esc_html__( 'Button label', 'llorix-one' ),
 		'section'  => 'parallax_one_ribbon_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 30
 	));
 	
@@ -564,7 +577,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_button_link', array(
 		'label'    => esc_html__( 'Button link', 'llorix-one' ),
 		'section'  => 'parallax_one_ribbon_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 40
 	));
 
@@ -586,7 +599,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'parallax_one_latest_news_title', array(
 		'label'    => esc_html__( 'Main title', 'llorix-one' ),
 		'section'  => 'parallax_one_latest_news_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 10
 	));
 	
@@ -615,7 +628,7 @@ function parallax_one_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'parallax_one_contact_info_content', array(
 		'label'   => esc_html__('Add new contact field','llorix-one'),
 		'section' => 'parallax_one_contact_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority' => 10,
         'parallax_image_control' => false,
         'parallax_icon_control' => true,
@@ -633,7 +646,7 @@ function parallax_one_customize_register( $wp_customize ) {
 		'label'    => esc_html__( 'Map shortcode', 'llorix-one' ),
 		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','llorix-one'),
 		'section'  => 'parallax_one_contact_section',
-		'active_callback' => 'parallax_one_show_on_front',
+		'active_callback' => 'llorix_one_show_on_front',
 		'priority'    => 20
 	));
 	
@@ -1056,9 +1069,6 @@ function parallax_one_is_contact_page() {
 		return is_page_template('template-contact.php');
 };
 
-function parallax_one_show_on_front(){
-	if ( 'posts' == get_option( 'show_on_front' ) && is_front_page() ){
-		return true;
-	}
-	return false;
+function llorix_one_show_on_front(){
+	return is_page_template('template-frontpage.php');
 }

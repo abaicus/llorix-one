@@ -106,7 +106,7 @@
             </tr>
 
             <tr class="parallax-one-text-center">
-                <td colspan="3"><a href="http://themeisle.com/plugins/parallax-one-plus/" target="_blank" class="button button-primary"><?php esc_html_e( 'Get Llorix One Plus now!','llorix-one' ); ?></a></td>
+                <td colspan="3"><a href="http://themeisle.com/plugins/parallax-one-plus/" target="_blank" class="button button-primary"><?php esc_html_e( 'Get LLorix one Plus now!','llorix-one' ); ?></a></td>
             </tr>
         </tbody>
 
