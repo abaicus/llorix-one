@@ -1,5 +1,13 @@
 
 
+### 1.0.0.5 - 03/11/2015
+
+ Changes: 
+
+
+ * Fixed #19, header on blog page
+
+
 ### 2.0.1 - 18/08/2015
 
  Changes: 
