@@ -1,14 +1,14 @@
 /*
 Theme Name: Llorix One
-Theme URI: http://themeisle.com/themes/parallax-one/
+Theme URI: http://themeisle.com/themes/llorix-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
-Description: Llorix One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Llorix One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
-Version: 2.0.9
+Description: Llorix One is a free and beautiful WordPress theme, with a classy design and an elegant parallax effect. It provides a simple and professional look that can be used for any kind of businesses or startups. Llorix One has a black & white appearance, with green buttons and icons. Llorix One is a one page theme and promotes simplicity and elegance at their best. The theme provides a blog section, is ecommerce ready (WooCommerce compatible), WPML and SEO friendly. You can change anything you need in the theme as it comes with a handful of customization options. You can use it for businesses, agencies, corporate websites, or portfolios. Its great design can push forward your startup as well.
+Version: 1.0.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: parallax-one
-Tags:black, blue, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
+Text Domain: llorix-one
+Tags:black, green, gray, white, light, dark, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1440,7 +1440,8 @@ header .navbar-brand {
 
 .clients {
 	background: rgba(255, 255, 255, 0.9);
-	border-bottom: 1px solid #dadfe3
+	border-bottom: 1px solid #dadfe3;
+	padding: 25px 0;
 }
 
 /*---------------------------------------
@@ -1453,7 +1454,7 @@ header .navbar-brand {
 }
 
 .services {
-	background-color: #F7F8FA;
+	background-color: #FFF;
 	border-bottom: 1px solid #eaebec;
 }
 
@@ -1461,12 +1462,8 @@ header .navbar-brand {
 }
 
 .single-service {
-	padding: 40px 35px 40px 35px;
+	padding: 40px 20px 40px 20px;
 	background: #ffffff;
-	border-top: 1px solid #eaeaea;
-	border-left: 1px solid #eaeaea;
-	border-right: 1px solid #eaeaea;
-	border-bottom: 4px solid #eaeaea;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -2165,23 +2162,35 @@ button.control_next.fade-btn {
 .team {
 	background-color: #FFF;	
 	border-bottom: 1px solid #eaebec;
+	background: url(images/background-images/parallax-img/team-img.jpg);
+	background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    border-bottom: 1px solid #F3F3F3;
 }
 
 .team .section-overlay-layer {
 	padding-bottom: 50px;
+	background: rgba(13, 60, 85, 0.8);
+}
+
+.team .sub-heading {
+	color: #FFF;
+}
+
+.team .dark-text {
+	color: #FFF;
 }
 
 .team-member {
 	margin-bottom: 25px;
 	position: relative;
 	overflow: hidden;
-	border: 5px solid #ffffff;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 1px solid #e4e7e7;
-	border-bottom: 4px solid #e4e7e7;
 	min-height: 100px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
 }
 
 .team-member .social-icons {
@@ -2253,10 +2262,13 @@ button.control_next.fade-btn {
 }
 
 .team-member-wrap .team-member-box {
-	float: none;
-	display: inline-block;
-	margin-right: -4px;
-	vertical-align: top;
+    float: none;
+    display: inline-block;
+    margin-right: -4px;
+    vertical-align: top;
+    padding-right: 55px;
+    padding-left: 55px;
+    padding-bottom: 30px;
 }
 
 .member-details-inner {
@@ -2301,14 +2313,14 @@ button.control_next.fade-btn {
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
-    display: inline-block;
-    overflow: hidden;
-    width: 81px;
-    height: 81px;
-    border: 3px solid #FFF;
-    background-clip: padding-box;
-    box-shadow: 0px 0px 0px 1px #f16c20;
-    background-color: #FAFAFA;
+	display: inline-block;
+	overflow: hidden;
+	background-clip: padding-box;
+	width: 170px;
+	height: 170px;
+	box-shadow: 0px 0px 0px 5px #f5f5f5;
+	background-color: #f5f5f5;
+	border: 5px solid #e5e5e5;
 }
 
 .feedback .pic-container img {
@@ -2326,7 +2338,7 @@ button.control_next.fade-btn {
 }
 
 .feedback-text-wrap {
-	padding: 0 35px;
+	padding: 0 20px;
 }
 
 .testimonials-box {
@@ -2347,19 +2359,15 @@ button.control_next.fade-btn {
 }
 
 .testimonials-box .feedback {
-  padding: 40px 0 40px 0;
-  margin: 40px 0 30px 0;
-  background: #ffffff;
-  border-top: 1px solid #eaeaea;
-  border-left: 1px solid #eaeaea;
-  border-right: 1px solid #eaeaea;
-  border-bottom: 4px solid #eaeaea;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-  -webkit-transition: all ease 0.55s;
-  transition: all ease 0.55s;
-  position: relative;
+	padding: 145px 0 40px 0;
+    margin: 40px 0 30px 0;
+    background: #ffffff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all ease 0.55s;
+    transition: all ease 0.55s;
+    position: relative;
 }
 
 .testimonials-box .feedback:hover {
@@ -2399,9 +2407,9 @@ button.control_next.fade-btn {
 }
 
 .call-to-action .section-overlay-layer {
-	padding-top: 100px;
-	padding-bottom: 100px;
-	background: rgba(0, 5, 8, 0.80);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: rgba(13, 60, 85, 0.8);
 }
 
 .call-to-action h2 {
@@ -4169,7 +4177,7 @@ div.bbp-forum-header, div.bbp-topic-header, div.bbp-reply-header, li.bbp-body di
 }
 
 .footer-links li a {
-	color:#454545;
+	font-size: 14px;
 }
 
 .footer-links li a:hover {
@@ -4455,7 +4463,7 @@ footer.footer .team-member-box .team-member {
 
 /* PRELOADER IMAGE BACKGROUND */
 .status {
-	background-image: url(images/loader-blue.gif);
+	background-image: url(images/loader-red.gif);
 	background-repeat: no-repeat;
 	background-position: center;
 	-webkit-background-size: cover;
