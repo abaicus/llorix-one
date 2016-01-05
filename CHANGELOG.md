@@ -1,5 +1,13 @@
 
 
+### 1.0.0.7 - 05/01/2016
+
+ Changes: 
+
+
+ * #22, Required action for Latest news, remove ShortPixel plugin and description and tags improvements
+
+
 ### 1.0.0.5 - 03/11/2015
 
  Changes: 
