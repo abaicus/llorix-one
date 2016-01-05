@@ -123,7 +123,7 @@ function parallax_one_setup() {
 	*/
 	if ( is_admin() ) {
 		
-		global $parallax_one_required_actions;
+		global $llorix_one_required_actions;
         /*
          * id - unique id; required
          * title
@@ -132,21 +132,20 @@ function parallax_one_setup() {
          * plugin_slug - the plugin's slug (used for installing the plugin)
          *
          */
-        $parallax_one_required_actions = array(
+        $llorix_one_required_actions = array(
 			array(
-                "id" => 'parallax-one-req-ac-install-intergeo-maps',
+				"id" => 'llorix-one-req-ac-check-front-page',
+                "title" => esc_html__( 'Switch "Front page displays" to "A static page" ' ,'llorix-one' ),
+                "description" => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','llorix-one' ),
+                "check" => llorix_one_is_not_static_page()
+			),
+			array(
+                "id" => 'llorix-one-req-ac-install-intergeo-maps',
                 "title" => esc_html__( 'Install Intergeo Maps - Google Maps Plugin' ,'llorix-one' ),
-                "description"=> esc_html__( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode','llorix-one' ),
+                "description" => esc_html__( 'In order to use map section, you need to install Intergeo Maps plugin then use it to create a map and paste the generated shortcode in Customize -> Contact section -> Map shortcode','llorix-one' ),
                 "check" => defined('INTERGEO_PLUGIN_NAME'),
                 "plugin_slug" => 'intergeo-maps'
-            ),
-            array(
-                "id" => 'parallax-one-req-ac-install-pirate-forms',
-                "title" => esc_html__( 'Install Pirate Forms' ,'llorix-one' ),
-                "description"=> esc_html__( 'Makes your contact page more engaging by creating a good-looking contact form on your website. The interaction with your visitors was never easier.','llorix-one' ),
-                "check" => defined('PIRATE_FORMS_VERSION'),
-                "plugin_slug" => 'pirate-forms'
-            ),
+            )
 		);
 		
 		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
@@ -154,6 +153,23 @@ function parallax_one_setup() {
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );
+
+function llorix_one_is_not_static_page() {
+	
+	$llorix_one_is_not_static = 1;
+	
+	if( 'page' == get_option( 'show_on_front' ) ):
+		
+		$llorix_one_front_page_id = get_option( 'page_on_front' );
+		$llorix_one_template_name = get_page_template_slug( $llorix_one_front_page_id );
+		if ( !empty($llorix_one_template_name) && ( $llorix_one_template_name == 'template-frontpage.php' ) ):
+			$llorix_one_is_not_static = 0;
+		endif;
+		
+	endif;
+	
+	return (!$llorix_one_is_not_static ? true : false);
+}
 
 
 add_filter( 'image_size_names_choose', 'parallax_one_media_uploader_custom_sizes' );
@@ -466,18 +482,6 @@ function parallax_one_register_required_plugins() {
 			
 				'slug' 	   => 'pirate-forms',
 
-				'required' => false
-			
-			),
-			
-			array(
-			
-				'name'     => 'ShortPixel Image Optimizer',
-			
-				'slug' 	   => 'shortpixel-image-optimiser',
-				
-				'source'   => get_template_directory() . '/lib/plugins/shortpixel-image-optimiser.zip',
-				
 				'required' => false
 			
 			)
