@@ -1,18 +1,18 @@
 # Llorix One
 
-Contributors:           codeinwp
+Contributors: codeinwp
 
-Tags:				black, blue, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready
+Tags: black, blue, orange, gray, white, light, dark, responsive-layout, one-column, two-columns, right-sidebar, custom-header, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, sticky-post, threaded-comments, translation-ready, accessibility-ready
 
 Requires at least:	3.3.0
 
-Tested up to:		4.3
+Tested up to:		4.4
 
 Llorix One
 
 ## Description
 
-Llorix One is a free and elegant one page theme that can be used for web agency business,corporate business,personal and parallax business portfolio, photography sites and freelancer . It comes with a clean and beautiful design, completed by the parallax effect, which makes it run smoothly and easily. You can simply modify everything, as the theme comes with a complex and user-friendly set of customization options. Llorix One is ecommerce (WooCommerce) Compatible, WPML and SEO Friendly and is one of the best business themes.
+Description: Llorix One is a free and beautiful business WordPress theme, with a flat clean design and an elegant parallax effect. It provides a simple and professional look that can be used for any kind of businesses or startups. Llorix One has a blue & orange appearance, with buttons and icons promoting simplicity and elegance at their best. The theme provides a responsive blog section, is ecommerce ready (WooCommerce compatible), WPML and SEO friendly. You can use it for your business / startup, agencies, corporate websites, or portfolios. 
 
 ## License #
 
