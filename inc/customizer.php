@@ -1035,6 +1035,24 @@ function parallax_one_customize_register( $wp_customize ) {
 	   )
 	));	
 	
+	/* Control for choosing template for the frontpage */
+	$parallax_one_templates = get_page_templates();
+	
+	if( !empty($parallax_one_templates) ):
+		$wp_customize->add_setting( 'parallax_one_frontpage_template', array(
+			'default' => esc_html__('Frontpage template','llorix-one'),
+			'sanitize_callback' => 'parallax_one_sanitize_text',
+			'transport' => 'postMessage'
+		));
+		$wp_customize->add_control( 'parallax_one_frontpage_template', array(
+			'type' => 'select',
+			'label'    => esc_html__( 'Frontpage template', 'llorix-one' ),
+			'section'  => 'static_front_page',
+			'choices' => array_flip($parallax_one_templates),
+			'priority'    => 10
+		));
+	endif;	
+	
 }
 add_action( 'customize_register', 'parallax_one_customize_register' );
 

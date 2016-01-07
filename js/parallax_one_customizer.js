@@ -316,4 +316,12 @@ jQuery(document).ready(function() {
 	if ( !jQuery( ".parallax-upsells" ).length ) {
 		jQuery('#customize-theme-controls > ul').prepend('</li>');
 	}
+	
+	//jQuery('#customize-control-parallax_one_frontpage_template').css('display','none');
+	
+	/* Show control for frontpage template */
+	jQuery('#_customize-dropdown-pages-page_on_front').change(function() {
+		console.log(this.value);
+		//jQuery('#customize-control-parallax_one_frontpage_template').css('display','block');
+	});
 });	
