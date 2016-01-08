@@ -317,11 +317,25 @@ jQuery(document).ready(function() {
 		jQuery('#customize-theme-controls > ul').prepend('</li>');
 	}
 	
-	//jQuery('#customize-control-parallax_one_frontpage_template').css('display','none');
-	
 	/* Show control for frontpage template */
+	var parallax_one_static_page_id = jQuery('#_customize-dropdown-pages-page_on_front').val();
+	
+	if( (typeof parallax_one_static_page_id != "undefined") && (parallax_one_static_page_id != '0') ) {
+		jQuery('#customize-control-parallax_one_frontpage_template_static').css('display','block');
+	}
+	else {
+		jQuery('#customize-control-parallax_one_frontpage_template_static').css('display','none');	
+	}
+	
 	jQuery('#_customize-dropdown-pages-page_on_front').change(function() {
-		console.log(this.value);
-		//jQuery('#customize-control-parallax_one_frontpage_template').css('display','block');
+		
+		if ( (typeof this.value != "undefined") && (this.value != '0') ) {
+			jQuery('#customize-control-parallax_one_frontpage_template_static').css('display','block');
+		}
+		else {
+			jQuery('#customize-control-parallax_one_frontpage_template_static').css('display','none');	
+		}	
+
 	});
+	
 });	

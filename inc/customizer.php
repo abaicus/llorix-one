@@ -1039,12 +1039,11 @@ function parallax_one_customize_register( $wp_customize ) {
 	$parallax_one_templates = get_page_templates();
 	
 	if( !empty($parallax_one_templates) ):
-		$wp_customize->add_setting( 'parallax_one_frontpage_template', array(
+		$wp_customize->add_setting( 'parallax_one_frontpage_template_static', array(
 			'default' => esc_html__('Frontpage template','llorix-one'),
 			'sanitize_callback' => 'parallax_one_sanitize_text',
-			'transport' => 'postMessage'
 		));
-		$wp_customize->add_control( 'parallax_one_frontpage_template', array(
+		$wp_customize->add_control( 'parallax_one_frontpage_template_static', array(
 			'type' => 'select',
 			'label'    => esc_html__( 'Frontpage template', 'llorix-one' ),
 			'section'  => 'static_front_page',

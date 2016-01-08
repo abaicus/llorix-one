@@ -150,6 +150,8 @@ function parallax_one_setup() {
 		
 		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 	}
+	
+	
 }
 endif; // parallax_one_setup
 add_action( 'after_setup_theme', 'parallax_one_setup' );
@@ -800,3 +802,17 @@ function parallax_one_get_template_part($template){
 		}
 	}
 }
+
+function parallax_one_update_static_frontpage_template( $setting ) {
+
+	/*******************************************************************/
+    /*****	Change page template for the static page from Customize ****/
+	/*******************************************************************/
+
+	$parallax_one_page_on_front = get_option('page_on_front'); /* Static Frontpage ID */
+	$parallax_one_frontpage_template_static = get_theme_mod('parallax_one_frontpage_template_static');
+	if ( !empty($parallax_one_page_on_front) && !empty($parallax_one_frontpage_template_static) ) {
+		update_post_meta( $parallax_one_page_on_front, '_wp_page_template', $parallax_one_frontpage_template_static );
+	}	
+}
+add_action( 'customize_preview_init', 'parallax_one_update_static_frontpage_template', 10, 2 );
