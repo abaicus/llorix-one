@@ -12,7 +12,7 @@
 if ( ! isset( $content_width ) ) {
 	$content_width = 730; /* pixels */   
 }
-if ( ! function_exists( 'parallax_one_setup' ) ) :
+if ( ! function_exists( 'llorix_one_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,7 +20,7 @@ if ( ! function_exists( 'parallax_one_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function parallax_one_setup() {
+function llorix_one_setup() {
 
 	/*
 	 * Make theme available for translation.
@@ -153,8 +153,8 @@ function parallax_one_setup() {
 	
 	
 }
-endif; // parallax_one_setup
-add_action( 'after_setup_theme', 'parallax_one_setup' );
+endif; // llorix_one_setup
+add_action( 'after_setup_theme', 'llorix_one_setup' );
 
 function llorix_one_is_not_static_page() {
 	
@@ -174,9 +174,9 @@ function llorix_one_is_not_static_page() {
 }
 
 
-add_filter( 'image_size_names_choose', 'parallax_one_media_uploader_custom_sizes' );
+add_filter( 'image_size_names_choose', 'llorix_one_media_uploader_custom_sizes' );
 
-function parallax_one_media_uploader_custom_sizes( $sizes ) {
+function llorix_one_media_uploader_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'parallax_one_team' => esc_html__('Llorix One Team Member','llorix-one'),
 		'parallax_one_services' => esc_html__('Llorix One Services','llorix-one'),
@@ -190,7 +190,7 @@ function parallax_one_media_uploader_custom_sizes( $sizes ) {
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function parallax_one_widgets_init() {
+function llorix_one_widgets_init() {
 	
 	register_sidebar( 
 		array(
@@ -216,7 +216,7 @@ function parallax_one_widgets_init() {
 	);
 	
 }
-add_action( 'widgets_init', 'parallax_one_widgets_init' );
+add_action( 'widgets_init', 'llorix_one_widgets_init' );
 
 
 
@@ -226,7 +226,7 @@ add_action( 'widgets_init', 'parallax_one_widgets_init' );
  *
  * If the menu doesn't exist, the fallback function to use.
  */
-function parallax_one_wp_page_menu()
+function llorix_one_wp_page_menu()
 {
     echo '<ul class="nav navbar-nav navbar-right main-navigation small-text no-menu">';
     wp_list_pages(array('title_li' => '', 'depth' => 1));
@@ -237,7 +237,7 @@ function parallax_one_wp_page_menu()
 /**
  * Enqueue scripts and styles.
  */
-function parallax_one_scripts() {
+function llorix_one_scripts() {
 	
 	wp_enqueue_style( 'parallax-one-font', '//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600');
 
@@ -273,10 +273,10 @@ function parallax_one_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'parallax_one_scripts' );
+add_action( 'wp_enqueue_scripts', 'llorix_one_scripts' );
 
 
-function parallax_one_add_id(){
+function llorix_one_add_id(){
 	$migrate = get_option( 'parallax_one_migrate_translation' );
 	if( isset($migrate) && $migrate == false ) {
 		
@@ -403,7 +403,7 @@ function parallax_one_add_id(){
 		update_option( 'parallax_one_migrate_translation', true );
 	}
 }
-add_action( 'shutdown', 'parallax_one_add_id' );
+add_action( 'shutdown', 'llorix_one_add_id' );
 
 /**
  * Custom template tags for this theme.
@@ -425,33 +425,33 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-function parallax_one_admin_styles() {
+function llorix_one_admin_styles() {
 	wp_enqueue_style( 'parallax_admin_stylesheet', parallax_get_file('/css/admin-style.css'),'1.0.0' );
 }
-add_action( 'admin_enqueue_scripts', 'parallax_one_admin_styles', 10 );
+add_action( 'admin_enqueue_scripts', 'llorix_one_admin_styles', 10 );
 
 // Adding IE-only scripts to header.
-function parallax_one_ie () {
+function llorix_one_ie () {
     echo '<!--[if lt IE 9]>' . "\n";
     echo '<script src="'. parallax_get_file('/js/html5shiv.min.js').'"></script>' . "\n";
     echo '<![endif]-->' . "\n";
 }
-add_action('wp_head', 'parallax_one_ie');
+add_action('wp_head', 'llorix_one_ie');
 
 
 
 
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-	add_action('woocommerce_before_main_content', 'parallax_one_wrapper_start', 10);
-	add_action('woocommerce_after_main_content', 'parallax_one_wrapper_end', 10);
-	function parallax_one_wrapper_start() {
+	add_action('woocommerce_before_main_content', 'llorix_one_wrapper_start', 10);
+	add_action('woocommerce_after_main_content', 'llorix_one_wrapper_end', 10);
+	function llorix_one_wrapper_start() {
 		echo '</div> </header>';
 		echo '<div class="content-wrap">
 				<div class="container">
 					<div id="primary" class="content-area col-md-12">';
 	}
-	function parallax_one_wrapper_end() {
+	function llorix_one_wrapper_end() {
 		echo '</div></div></div>';
 	}
 
@@ -464,8 +464,8 @@ remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 require_once get_template_directory() . '/class-tgm-plugin-activation.php';
 
 
-add_action( 'tgmpa_register', 'parallax_one_register_required_plugins' );
-function parallax_one_register_required_plugins() {
+add_action( 'tgmpa_register', 'llorix_one_register_required_plugins' );
+function llorix_one_register_required_plugins() {
 	
 		$plugins = array(
 			array(
@@ -523,8 +523,8 @@ function parallax_one_register_required_plugins() {
  
 }
 
-add_action('wp_footer','parallax_one_php_style', 100);
-function parallax_one_php_style() {
+add_action('wp_footer','llorix_one_php_style', 100);
+function llorix_one_php_style() {
 	
 	echo '<style type="text/css">';
 	
@@ -582,42 +582,23 @@ function parallax_get_file($file){
  *
  */ 
 
-add_filter( 'woocommerce_output_related_products_args', 'parallax_one_related_products_args' );
+add_filter( 'woocommerce_output_related_products_args', 'llorix_one_related_products_args' );
 
-function parallax_one_related_products_args( $args ) {
+function llorix_one_related_products_args( $args ) {
 	$args['posts_per_page'] = 4;
 	$args['columns'] = 4;
 	return $args;
 }
 
-/* Prevent theme from beeing updated by wordpress.org updates */
-
-function parallax_one_prevent_wporg_update( $r, $url ) {
-    if ( 0 !== strpos( $url, 'http://api.wordpress.org/themes/update-check' ) )
-        return $r; // Not a theme update request. Bail immediately.
- 
-    $themes = @unserialize( $r['body']['themes'] );
-    unset( $themes[ get_option( 'template' ) ] );
-    unset( $themes[ get_option( 'stylesheet' ) ] );
-    $r['body']['themes'] = serialize( $themes );
-    return $r;
-}
- 
-add_filter( 'http_request_args', 'parallax_one_prevent_wporg_update', 5, 2 );
-
-
-
-function parallax_one_responsive_embed($html, $url, $attr, $post_ID) {
+function llorix_one_responsive_embed($html, $url, $attr, $post_ID) {
 	$return = '<div class="parallax-one-video-container">'.$html.'</div>';
 	return $return;
 }
 
-add_filter( 'embed_oembed_html', 'parallax_one_responsive_embed', 10, 4 );
-
-
+add_filter( 'embed_oembed_html', 'llorix_one_responsive_embed', 10, 4 );
 
 /* Comments callback function*/
-function parallax_one_comment($comment, $args, $depth) {
+function llorix_one_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 
 	switch ( $comment->comment_type ) :
@@ -803,7 +784,7 @@ function parallax_one_get_template_part($template){
 	}
 }
 
-function parallax_one_update_static_frontpage_template( $setting ) {
+function llorix_one_update_static_frontpage_template( $setting ) {
 
 	/*******************************************************************/
     /*****	Change page template for the static page from Customize ****/
@@ -815,4 +796,4 @@ function parallax_one_update_static_frontpage_template( $setting ) {
 		update_post_meta( $parallax_one_page_on_front, '_wp_page_template', $parallax_one_frontpage_template_static );
 	}	
 }
-add_action( 'customize_preview_init', 'parallax_one_update_static_frontpage_template', 10, 2 );
+add_action( 'customize_preview_init', 'llorix_one_update_static_frontpage_template', 10, 2 );
