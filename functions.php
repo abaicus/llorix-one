@@ -784,11 +784,10 @@ function parallax_one_get_template_part($template){
 	}
 }
 
+/*
+	Change the page template for frontpage
+*/
 function llorix_one_update_static_frontpage_template( $setting ) {
-
-	/*******************************************************************/
-    /*****	Change page template for the static page from Customize ****/
-	/*******************************************************************/
 
 	$parallax_one_page_on_front = get_option('page_on_front'); /* Static Frontpage ID */
 	
@@ -798,4 +797,34 @@ function llorix_one_update_static_frontpage_template( $setting ) {
 		update_post_meta( $parallax_one_page_on_front, '_wp_page_template', $parallax_one_frontpage_template_static );
 	}	
 }
-add_action( 'customize_preview_init', 'llorix_one_update_static_frontpage_template', 20, 2 );
+add_action( 'customize_save_after', 'llorix_one_update_static_frontpage_template', 20, 2 );
+
+/*
+	Function to override the default template with the one selected
+	For frontpage
+*/
+function llorix_one_redirect_to_template_page( $template ) {
+
+	$parallax_one_frontpage_template_static = get_theme_mod('parallax_one_frontpage_template_static');
+	
+	if( !empty($parallax_one_frontpage_template_static) ):
+		$new_template = locate_template( array( $parallax_one_frontpage_template_static ) );
+		if ( !empty($new_template) ):
+			return $new_template ;
+		endif;
+	endif;
+	
+	return $template;
+}
+
+/*
+	When in Customize, if a new template is selected for frontpage
+	Redirect it to that template
+*/
+
+function llorix_one_update_static_frontpage_template_customize( $setting ) {
+	
+	add_filter( 'template_include', 'llorix_one_redirect_to_template_page', 99 );
+
+}
+add_action( 'customize_preview_init', 'llorix_one_update_static_frontpage_template_customize', 20, 2 );

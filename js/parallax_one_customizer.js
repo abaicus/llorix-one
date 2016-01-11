@@ -328,15 +328,16 @@ jQuery(document).ready(function() {
 		jQuery('#customize-control-parallax_one_frontpage_template_static').css('display','none');	
 	}
 	
-	jQuery('#customize-control-page_on_front select').change(function() { /* When a frontpage is selected */
+	jQuery('#customize-control-page_on_front select').change(function() { // When a frontpage is selected
 	
 		var llorix_one_selected_fp = jQuery(this).find('option:selected');
 		
 		if(( typeof llorix_one_selected_fp != 'undefined' ) && ( typeof llorix_one_selected_fp.attr("template") != 'undefined' )) {
 			
-			jQuery('#customize-control-parallax_one_frontpage_template_static select').val(llorix_one_selected_fp.attr("template")); /* Change selected template in dropdown */
+			jQuery('#customize-control-parallax_one_frontpage_template_static select').val(llorix_one_selected_fp.attr("template"));
 			jQuery('#customize-control-parallax_one_frontpage_template_static select option[selected="selected"]').removeAttr("selected");
 			jQuery('#customize-control-parallax_one_frontpage_template_static select option[value="'+llorix_one_selected_fp.attr("template")+'"]').attr("selected","selected");
+			jQuery('#customize-control-parallax_one_frontpage_template_static select option[value="'+llorix_one_selected_fp.attr("template")+'"]').trigger('change');
 		}
 		
 		if ( (typeof this.value != "undefined") && (this.value != '0') ) {
