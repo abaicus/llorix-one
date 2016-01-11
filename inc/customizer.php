@@ -1035,7 +1035,53 @@ function parallax_one_customize_register( $wp_customize ) {
 	   )
 	));	
 	
-	/* Control for choosing template for the frontpage */
+	/*****************************************************************/
+    /**********	Control for choosing a template for the frontpage ****/
+	/*****************************************************************/
+	
+	$wp_customize->remove_control('page_on_front');
+	
+	$wp_customize->add_control(new Llorix_One_Frontpage_Templates($wp_customize, 'page_on_front',array(
+			'label'    => __( 'Front page', 'llorix-one' ),
+			'section' => 'static_front_page',
+			'priority' => 10
+	)));
+	
+	$llorix_one_page_for_posts = $wp_customize->get_control('page_for_posts');
+	if(!empty($llorix_one_page_for_posts)):
+		$llorix_one_page_for_posts->priority = 11;
+	endif;
+	
+	/*$llorix_one_page_on_front_option = $wp_customize->get_control('page_on_front'); // selected frontpage control
+	
+	if( !empty($llorix_one_page_on_front_option) ):
+	
+		$llorix_one_all_pages_array = array(); // new array with all pages
+		
+		$llorix_one_all_pages = get_pages(); // get all pages
+		
+		if( !empty($llorix_one_all_pages) ):
+		
+			$llorix_one_all_pages_array[0] = "— Select —";
+		
+			foreach ( $llorix_one_all_pages as $llorix_one_page ):
+			
+				if( !empty($llorix_one_page->ID) && !empty($llorix_one_page->post_title) ):
+					$llorix_one_all_pages_array[$llorix_one_page->ID] = $llorix_one_page->post_title;
+				endif;	
+				
+			endforeach;
+		endif;	
+		
+		if( !empty($llorix_one_all_pages_array) ): // change the frontpage control with the new array
+			$llorix_one_page_on_front_option->type = 'select';
+			$llorix_one_page_on_front_option->choices = $llorix_one_all_pages_array;
+		endif;	
+	
+	endif;
+	*/
+	
+	
 	$parallax_one_templates = get_page_templates();
 	
 	if( !empty($parallax_one_templates) ):
@@ -1048,7 +1094,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			'label'    => esc_html__( 'Frontpage template', 'llorix-one' ),
 			'section'  => 'static_front_page',
 			'choices' => array_flip($parallax_one_templates),
-			'priority'    => 10
+			'priority'    => 12
 		));
 	endif;	
 	

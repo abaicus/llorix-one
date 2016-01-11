@@ -318,7 +318,8 @@ jQuery(document).ready(function() {
 	}
 	
 	/* Show control for frontpage template */
-	var parallax_one_static_page_id = jQuery('#_customize-dropdown-pages-page_on_front').val();
+	
+	var parallax_one_static_page_id = jQuery('#customize-control-page_on_front select').val();
 	
 	if( (typeof parallax_one_static_page_id != "undefined") && (parallax_one_static_page_id != '0') ) {
 		jQuery('#customize-control-parallax_one_frontpage_template_static').css('display','block');
@@ -327,7 +328,13 @@ jQuery(document).ready(function() {
 		jQuery('#customize-control-parallax_one_frontpage_template_static').css('display','none');	
 	}
 	
-	jQuery('#_customize-dropdown-pages-page_on_front').change(function() {
+	jQuery('#customize-control-page_on_front select').change(function() { /* When a frontpage is selected */
+	
+		var llorix_one_selected_fp = jQuery(this).find('option:selected');
+		
+		if(( typeof llorix_one_selected_fp != 'undefined' ) && ( typeof llorix_one_selected_fp.attr("template") != 'undefined' )) {
+			jQuery('#customize-control-parallax_one_frontpage_template_static select').val(llorix_one_selected_fp.attr("template")); /* Change selected template in dropdown */
+		}
 		
 		if ( (typeof this.value != "undefined") && (this.value != '0') ) {
 			jQuery('#customize-control-parallax_one_frontpage_template_static').css('display','block');

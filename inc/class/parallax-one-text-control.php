@@ -12,5 +12,44 @@ class Parallax_One_Message extends WP_Customize_Control{
         echo '<span class="customize-control-title">'.$this->label.'</span>';
         echo $this->message;
     }
-} 
+}
+
+class Llorix_One_Frontpage_Templates extends WP_Customize_Control{
+   
+    public function __construct( $manager, $id, $args = array() ) {
+        parent::__construct( $manager, $id, $args );
+    }
+    
+    public function render_content(){
+		
+        $llorix_one_all_pages_array = array(); // new array with all pages
+		
+		$llorix_one_all_pages = get_pages(); // get all pages
+		
+		if( !empty($llorix_one_all_pages) ):
+		
+			$llorix_one_all_pages_array[0] = "— Select —";
+		
+			foreach ( $llorix_one_all_pages as $llorix_one_page ):
+			
+				if( !empty($llorix_one_page->ID) && !empty($llorix_one_page->post_title) ):
+					$llorix_one_all_pages_array[$llorix_one_page->ID] = $llorix_one_page->post_title;
+				endif;	
+				
+			endforeach;
+		endif;
+		
+		if( !empty($llorix_one_all_pages_array) ): // change the frontpage control with the new array
+			echo '<label>';
+			echo '<span class="customize-control-title">'.esc_html( $this->label ).'</span>';
+			echo '<select data-customize-setting-link="page_on_front" name="_customize-dropdown-pages-page_on_front" id="_customize-dropdown-pages-page_on_front">';
+				foreach($llorix_one_all_pages_array as $llorix_one_all_pages_array_k => $llorix_one_all_pages_array_v):
+					echo '<option value="'.$llorix_one_all_pages_array_k.'" template="'.get_page_template_slug($llorix_one_all_pages_array_k).'">'.$llorix_one_all_pages_array_v.'</option>';
+				endforeach;
+			echo '</select>';
+			echo '</label>';
+		endif;
+		
+    }
+}
 ?>

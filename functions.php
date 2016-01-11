@@ -791,7 +791,9 @@ function llorix_one_update_static_frontpage_template( $setting ) {
 	/*******************************************************************/
 
 	$parallax_one_page_on_front = get_option('page_on_front'); /* Static Frontpage ID */
+	
 	$parallax_one_frontpage_template_static = get_theme_mod('parallax_one_frontpage_template_static');
+	
 	if ( !empty($parallax_one_page_on_front) && !empty($parallax_one_frontpage_template_static) ) {
 		update_post_meta( $parallax_one_page_on_front, '_wp_page_template', $parallax_one_frontpage_template_static );
 	}	
