@@ -798,4 +798,4 @@ function llorix_one_update_static_frontpage_template( $setting ) {
 		update_post_meta( $parallax_one_page_on_front, '_wp_page_template', $parallax_one_frontpage_template_static );
 	}	
 }
-add_action( 'customize_preview_init', 'llorix_one_update_static_frontpage_template', 10, 2 );
+add_action( 'customize_preview_init', 'llorix_one_update_static_frontpage_template', 20, 2 );

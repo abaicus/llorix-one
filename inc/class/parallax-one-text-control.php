@@ -44,7 +44,16 @@ class Llorix_One_Frontpage_Templates extends WP_Customize_Control{
 			echo '<span class="customize-control-title">'.esc_html( $this->label ).'</span>';
 			echo '<select data-customize-setting-link="page_on_front" name="_customize-dropdown-pages-page_on_front" id="_customize-dropdown-pages-page_on_front">';
 				foreach($llorix_one_all_pages_array as $llorix_one_all_pages_array_k => $llorix_one_all_pages_array_v):
-					echo '<option value="'.$llorix_one_all_pages_array_k.'" template="'.get_page_template_slug($llorix_one_all_pages_array_k).'">'.$llorix_one_all_pages_array_v.'</option>';
+				
+					$llorix_one_page_template = get_page_template_slug($llorix_one_all_pages_array_k);
+					
+					if( !empty($llorix_one_page_template) ):
+						echo '<option value="'.$llorix_one_all_pages_array_k.'" template="'.$llorix_one_page_template.'">'.$llorix_one_all_pages_array_v.'</option>';
+					else:
+						echo '<option value="'.$llorix_one_all_pages_array_k.'" template="default">'.$llorix_one_all_pages_array_v.'</option>';
+					endif;	
+					
+					
 				endforeach;
 			echo '</select>';
 			echo '</label>';

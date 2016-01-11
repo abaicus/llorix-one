@@ -1085,6 +1085,10 @@ function parallax_one_customize_register( $wp_customize ) {
 	$parallax_one_templates = get_page_templates();
 	
 	if( !empty($parallax_one_templates) ):
+	
+		$parallax_one_templates_reversed = array_flip($parallax_one_templates);
+		$parallax_one_templates_reversed['default'] = 'Default';
+	
 		$wp_customize->add_setting( 'parallax_one_frontpage_template_static', array(
 			'default' => esc_html__('Frontpage template','llorix-one'),
 			'sanitize_callback' => 'parallax_one_sanitize_text',
@@ -1093,7 +1097,7 @@ function parallax_one_customize_register( $wp_customize ) {
 			'type' => 'select',
 			'label'    => esc_html__( 'Frontpage template', 'llorix-one' ),
 			'section'  => 'static_front_page',
-			'choices' => array_flip($parallax_one_templates),
+			'choices' => $parallax_one_templates_reversed,
 			'priority'    => 12
 		));
 	endif;	
@@ -1107,7 +1111,7 @@ add_action( 'customize_register', 'parallax_one_customize_register' );
 function parallax_one_customize_preview_js() {
 	wp_enqueue_script( 'parallax_one_customizer', parallax_get_file('/js/customizer.js'), array( 'customize-preview' ), '1.0.2', true );
 }
-add_action( 'customize_preview_init', 'parallax_one_customize_preview_js' );
+add_action( 'customize_preview_init', 'parallax_one_customize_preview_js', 10, 2 );
 
 
 function parallax_one_sanitize_text( $input ) {
@@ -1200,7 +1204,7 @@ function parallax_one_customizer_script() {
 		
 	) );
 }
-add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_script' );
+add_action( 'customize_controls_enqueue_scripts', 'parallax_one_customizer_script', 10 );
 
 function parallax_one_is_contact_page() { 
 		return is_page_template('template-contact.php');
