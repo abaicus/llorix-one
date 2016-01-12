@@ -65,7 +65,7 @@ function llorix_one_setup() {
 	) );
 	
 	// Set up the WordPress core custom background feature.
-	add_theme_support('custom-background',apply_filters( 'parallax_one_custom_background_args', array(
+	add_theme_support('custom-background',apply_filters( 'llorix_one_custom_background_args', array(
 		'default-repeat'         => 'no-repeat',
 		'default-position-x'     => 'center',
 		'default-attachment'     => 'fixed'
@@ -77,8 +77,8 @@ function llorix_one_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Header
 	 */
 	
-	add_theme_support( 'custom-header',apply_filters( 'parallax_one_custom_header_args', array(
-		'default-image' => parallax_get_file('/images/background-images/background.jpg'),
+	add_theme_support( 'custom-header',apply_filters( 'llorix_one_custom_header_args', array(
+		'default-image' => llorix_one_get_file('/images/background-images/background.jpg'),
 		'width'         => 1000,
 		'height'        => 680,
 		'flex-height'   => true,
@@ -87,9 +87,9 @@ function llorix_one_setup() {
 	)));
 	
 	register_default_headers( array(
-		'parallax_one_default_header_image' => array(
-			'url'   => parallax_get_file('/images/background-images/background.jpg'),
-			'thumbnail_url' => parallax_get_file('/images/background-images/background_thumbnail.jpg'),
+		'llorix_one_default_header_image' => array(
+			'url'   => llorix_one_get_file('/images/background-images/background.jpg'),
+			'thumbnail_url' => llorix_one_get_file('/images/background-images/background_thumbnail.jpg'),
 		),
 	));
 	
@@ -241,13 +241,13 @@ function llorix_one_scripts() {
 	
 	wp_enqueue_style( 'parallax-one-font', '//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600');
 
-	wp_enqueue_style( 'parallax-one-bootstrap-style', parallax_get_file( '/css/bootstrap.min.css'),array(), '3.3.1');
+	wp_enqueue_style( 'parallax-one-bootstrap-style', llorix_one_get_file( '/css/bootstrap.min.css'),array(), '3.3.1');
 
 	wp_enqueue_style( 'parallax-one-style', get_stylesheet_uri(), array('parallax-one-bootstrap-style'),'1.0.0');
 	
-	wp_enqueue_script( 'parallax-one-bootstrap', parallax_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
+	wp_enqueue_script( 'parallax-one-bootstrap', llorix_one_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
 		
-	wp_enqueue_script( 'parallax-one-custom-all', parallax_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
+	wp_enqueue_script( 'parallax-one-custom-all', llorix_one_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
 	
 	wp_localize_script( 'parallax-one-custom-all', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'llorix-one' ) . '</span>',
@@ -255,19 +255,19 @@ function llorix_one_scripts() {
 	) );
 	
 
-	$parallax_one_enable_move = get_theme_mod('paralax_one_enable_move');
-	if ( !empty($parallax_one_enable_move) && $parallax_one_enable_move && is_front_page() ) {
+	$llorix_one_enable_move = get_theme_mod('llorix_one_enable_move');
+	if ( !empty($llorix_one_enable_move) && $llorix_one_enable_move && is_front_page() ) {
 
-		wp_enqueue_script( 'parallax-one-home-plugin', parallax_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.1', true );
+		wp_enqueue_script( 'llorix-one-home-plugin', llorix_one_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.1', true );
 
 	}
 
 	if ( is_front_page() ) {
 
-		wp_enqueue_script( 'parallax-one-custom-home', parallax_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
+		wp_enqueue_script( 'llorix-one-custom-home', llorix_one_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
 	}
 
-	wp_enqueue_script( 'parallax-one-skip-link-focus-fix', parallax_get_file('/js/skip-link-focus-fix.js'), array(), '1.0.0', true );
+	wp_enqueue_script( 'llorix-one-skip-link-focus-fix', llorix_one_get_file('/js/skip-link-focus-fix.js'), array(), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -281,123 +281,123 @@ function llorix_one_add_id(){
 	if( isset($migrate) && $migrate == false ) {
 		
 		/*Logo*/
-		$parallax_one_logos = get_theme_mod('parallax_one_logos_content', json_encode(array( array("image_url" => parallax_get_file('/images/companies/1.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/2.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/3.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/4.png') ,"link" => "#" ),array("image_url" => parallax_get_file('/images/companies/5.png') ,"link" => "#" ) )));
-		if(!empty($parallax_one_logos)){
+		$llorix_one_logos = get_theme_mod('llorix_one_logos_content', json_encode(array( array("image_url" => llorix_one_get_file('/images/companies/1.png') ,"link" => "#" ),array("image_url" => llorix_one_get_file('/images/companies/2.png') ,"link" => "#" ),array("image_url" => llorix_one_get_file('/images/companies/3.png') ,"link" => "#" ),array("image_url" => llorix_one_get_file('/images/companies/4.png') ,"link" => "#" ),array("image_url" => llorix_one_get_file('/images/companies/5.png') ,"link" => "#" ) )));
+		if(!empty($llorix_one_logos)){
 			
-			$parallax_one_logos_decoded = json_decode($parallax_one_logos);
-			foreach($parallax_one_logos_decoded as &$it){
+			$llorix_one_logos_decoded = json_decode($llorix_one_logos);
+			foreach($llorix_one_logos_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
-			$parallax_one_logos = json_encode($parallax_one_logos_decoded);
-			set_theme_mod( 'parallax_one_logos_content', $parallax_one_logos );
+			$llorix_one_logos = json_encode($llorix_one_logos_decoded);
+			set_theme_mod( 'llorix_one_logos_content', $llorix_one_logos );
 		}
 		
 		
 		/*Services*/
-		$parallax_one_services = get_theme_mod('parallax_one_services_content', json_encode(
+		$llorix_one_services = get_theme_mod('llorix_one_services_content', json_encode(
 							array(
 									array('choice'=>'parallax_icon','icon_value' => 'icon-basic-webpage-multiple','title' => esc_html__('Lorem Ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','llorix-one')),
 									array('choice'=>'parallax_icon','icon_value' => 'icon-ecommerce-graph3','title' => esc_html__('Lorem Ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','llorix-one')),
 									array('choice'=>'parallax_icon','icon_value' => 'icon-basic-geolocalize-05','title' => esc_html__('Lorem Ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo.','llorix-one'))
 							)
 						));
-		if(!empty($parallax_one_services)){
+		if(!empty($llorix_one_services)){
 			
-			$parallax_one_services_decoded = json_decode($parallax_one_services);
-			foreach($parallax_one_services_decoded as &$it){
+			$llorix_one_services_decoded = json_decode($llorix_one_services);
+			foreach($llorix_one_services_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
 			
-			$parallax_one_services = json_encode($parallax_one_services_decoded);
-			set_theme_mod( 'parallax_one_services_content', $parallax_one_services );
+			$llorix_one_services = json_encode($llorix_one_services_decoded);
+			set_theme_mod( 'llorix_one_services_content', $llorix_one_services );
 		}
 		
 		/*Team*/
-		$parallax_one_team = get_theme_mod('parallax_one_team_content', json_encode(
+		$llorix_one_team = get_theme_mod('llorix_one_team_content', json_encode(
 							array(
-									array('image_url' => parallax_get_file('/images/team/1.jpg'),'title' => esc_html__('Albert Jacobs','llorix-one'),'subtitle' => esc_html__('Founder & CEO','llorix-one')),
-									array('image_url' => parallax_get_file('/images/team/2.jpg'),'title' => esc_html__('Tonya Garcia','llorix-one'),'subtitle' => esc_html__('Account Manager','llorix-one')),
-									array('image_url' => parallax_get_file('/images/team/3.jpg'),'title' => esc_html__('Linda Guthrie','llorix-one'),'subtitle' => esc_html__('Business Development','llorix-one'))
+									array('image_url' => llorix_one_get_file('/images/team/1.jpg'),'title' => esc_html__('Albert Jacobs','llorix-one'),'subtitle' => esc_html__('Founder & CEO','llorix-one')),
+									array('image_url' => llorix_one_get_file('/images/team/2.jpg'),'title' => esc_html__('Tonya Garcia','llorix-one'),'subtitle' => esc_html__('Account Manager','llorix-one')),
+									array('image_url' => llorix_one_get_file('/images/team/3.jpg'),'title' => esc_html__('Linda Guthrie','llorix-one'),'subtitle' => esc_html__('Business Development','llorix-one'))
 							)
 						));
-		if(!empty($parallax_one_team)){
+		if(!empty($llorix_one_team)){
 			
-			$parallax_one_team_decoded = json_decode($parallax_one_team);
-			foreach($parallax_one_team_decoded as &$it){
+			$llorix_one_team_decoded = json_decode($llorix_one_team);
+			foreach($llorix_one_team_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
 			
-			$parallax_one_team = json_encode($parallax_one_team_decoded);
-			set_theme_mod( 'parallax_one_team_content', $parallax_one_team );
+			$llorix_one_team = json_encode($llorix_one_team_decoded);
+			set_theme_mod( 'llorix_one_team_content', $llorix_one_team );
 		}
 		
 		/*Testimonials*/
-		$parallax_one_testimonials = get_theme_mod('parallax_one_testimonials_content', json_encode(
+		$llorix_one_testimonials = get_theme_mod('llorix_one_testimonials_content', json_encode(
 							array(
-									array('image_url' => parallax_get_file('/images/clients/1.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one')),
-									array('image_url' => parallax_get_file('/images/clients/2.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one')),
-									array('image_url' => parallax_get_file('/images/clients/3.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one'))
+									array('image_url' => llorix_one_get_file('/images/clients/1.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one')),
+									array('image_url' => llorix_one_get_file('/images/clients/2.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one')),
+									array('image_url' => llorix_one_get_file('/images/clients/3.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one'))
 							)
 						));
-		if(!empty($parallax_one_testimonials)){
+		if(!empty($llorix_one_testimonials)){
 			
-			$parallax_one_testimonials_decoded = json_decode($parallax_one_testimonials);
-			foreach($parallax_one_testimonials_decoded as &$it){
+			$llorix_one_testimonials_decoded = json_decode($llorix_one_testimonials);
+			foreach($llorix_one_testimonials_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
 			
-			$parallax_one_testimonials = json_encode($parallax_one_testimonials_decoded);
-			set_theme_mod( 'parallax_one_testimonials_content', $parallax_one_testimonials );
+			$llorix_one_testimonials = json_encode($llorix_one_testimonials_decoded);
+			set_theme_mod( 'llorix_one_testimonials_content', $llorix_one_testimonials );
 		}
 		
 		/*Contact Info*/
-		$parallax_one_contact_info = get_theme_mod('parallax_one_contact_info_content', json_encode(
+		$llorix_one_contact_info = get_theme_mod('llorix_one_contact_info_content', json_encode(
 			array( 
 					array("icon_value" => "icon-basic-mail" ,"text" => "contact@site.com", "link" => "#" ), 
 					array("icon_value" => "icon-basic-geolocalize-01" ,"text" => "Company address", "link" => "#" ), 
 					array("icon_value" => "icon-basic-tablet" ,"text" => "0 332 548 954", "link" => "#" ) 
 			)
 		));
-		if(!empty($parallax_one_contact_info)){
+		if(!empty($llorix_one_contact_info)){
 			
-			$parallax_one_contact_info_decoded = json_decode($parallax_one_contact_info);
-			foreach($parallax_one_contact_info_decoded as &$it){
+			$llorix_one_contact_info_decoded = json_decode($llorix_one_contact_info);
+			foreach($llorix_one_contact_info_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
 			
-			$parallax_one_contact_info = json_encode($parallax_one_contact_info_decoded);
-			set_theme_mod( 'parallax_one_contact_info_content', $parallax_one_contact_info );
+			$llorix_one_contact_info = json_encode($llorix_one_contact_info_decoded);
+			set_theme_mod( 'llorix_one_contact_info_content', $llorix_one_contact_info );
 		}
 		
 		/*Social Icons*/
-		$parallax_one_social_icons = get_theme_mod('parallax_one_social_icons', json_encode(
+		$llorix_one_social_icons = get_theme_mod('llorix_one_social_icons', json_encode(
 			array(
 				array('icon_value' =>'icon-social-facebook' , 'link' => '#'),
 				array('icon_value' =>'icon-social-twitter' , 'link' => '#'),
 				array('icon_value' =>'icon-social-googleplus' , 'link' => '#')
 			)
 		));
-		if(!empty($parallax_one_social_icons)){
+		if(!empty($llorix_one_social_icons)){
 			
-			$parallax_one_social_icons_decoded = json_decode($parallax_one_social_icons);
-			foreach($parallax_one_social_icons_decoded as &$it){
+			$llorix_one_social_icons_decoded = json_decode($llorix_one_social_icons);
+			foreach($llorix_one_social_icons_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
 			
-			$parallax_one_social_icons = json_encode($parallax_one_social_icons_decoded);
-			set_theme_mod( 'parallax_one_social_icons', $parallax_one_social_icons );
+			$llorix_one_social_icons = json_encode($llorix_one_social_icons_decoded);
+			set_theme_mod( 'llorix_one_social_icons', $llorix_one_social_icons );
 		}
 		
 		update_option( 'parallax_one_migrate_translation', true );
@@ -426,14 +426,14 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 function llorix_one_admin_styles() {
-	wp_enqueue_style( 'parallax_admin_stylesheet', parallax_get_file('/css/admin-style.css'),'1.0.0' );
+	wp_enqueue_style( 'parallax_admin_stylesheet', llorix_one_get_file('/css/admin-style.css'),'1.0.0' );
 }
 add_action( 'admin_enqueue_scripts', 'llorix_one_admin_styles', 10 );
 
 // Adding IE-only scripts to header.
 function llorix_one_ie () {
     echo '<!--[if lt IE 9]>' . "\n";
-    echo '<script src="'. parallax_get_file('/js/html5shiv.min.js').'"></script>' . "\n";
+    echo '<script src="'. llorix_one_get_file('/js/html5shiv.min.js').'"></script>' . "\n";
     echo '<![endif]-->' . "\n";
 }
 add_action('wp_head', 'llorix_one_ie');
@@ -528,23 +528,23 @@ function llorix_one_php_style() {
 	
 	echo '<style type="text/css">';
 	
-	$parallax_one_title_color = get_theme_mod('parallax_one_title_color');
-	if(!empty($parallax_one_title_color)){
-		echo '.dark-text { color: '. $parallax_one_title_color .' }';
+	$llorix_one_title_color = get_theme_mod('llorix_one_title_color');
+	if(!empty($llorix_one_title_color)){
+		echo '.dark-text { color: '. $llorix_one_title_color .' }';
 	}
-	$parallax_one_text_color = get_theme_mod('parallax_one_text_color');
-	if(!empty($parallax_one_text_color)){
-		echo 'body{ color: '.$parallax_one_text_color.'}';
+	$llorix_one_text_color = get_theme_mod('llorix_one_text_color');
+	if(!empty($llorix_one_text_color)){
+		echo 'body{ color: '.$llorix_one_text_color.'}';
 	}
 	
-	$parallax_one_enable_move = get_theme_mod('paralax_one_enable_move');
-	$parallax_one_first_layer = get_theme_mod('paralax_one_first_layer', parallax_get_file('/images/background1.png'));
-	$parallax_one_second_layer = get_theme_mod('paralax_one_second_layer',parallax_get_file('/images/background2.png'));
+	$llorix_one_enable_move = get_theme_mod('llorix_one_enable_move');
+	$llorix_one_first_layer = get_theme_mod('llorix_one_first_layer', llorix_one_get_file('/images/background1.png'));
+	$llorix_one_second_layer = get_theme_mod('llorix_one_second_layer',llorix_one_get_file('/images/background2.png'));
 
-	if( ( empty($parallax_one_enable_move) || !$parallax_one_enable_move) && is_front_page() ) {
-		$parallax_one_header_image = get_header_image();
-		if(!empty($parallax_one_header_image)){
-			echo '.header{ background-image: url('.$parallax_one_header_image.');}';
+	if( ( empty($llorix_one_enable_move) || !$llorix_one_enable_move) && is_front_page() ) {
+		$llorix_one_header_image = get_header_image();
+		if(!empty($llorix_one_header_image)){
+			echo '.header{ background-image: url('.$llorix_one_header_image.');}';
 		}
 	}
 
@@ -553,13 +553,13 @@ function llorix_one_php_style() {
 
 
 
-$pro_functions_path = parallax_get_file('/pro/functions.php');
+$pro_functions_path = llorix_one_get_file('/pro/functions.php');
 if (file_exists($pro_functions_path)) {
 	require $pro_functions_path;
 }
 
 
-function parallax_get_file($file){
+function llorix_one_get_file($file){
 	$file_parts = pathinfo($file);
 	$accepted_ext = array('jpg','img','png','css','js');
 	if( in_array($file_parts['extension'], $accepted_ext) ){
@@ -654,13 +654,13 @@ function llorix_one_comment($comment, $args, $depth) {
 if(function_exists('icl_unregister_string') && function_exists('icl_register_string')){
 	
 	/*Services*/
-	$parallax_one_services_pl = get_theme_mod('parallax_one_services_content');
-	if(!empty($parallax_one_services_pl)){
-		$parallax_one_services_pl_decoded = json_decode($parallax_one_services_pl);
-		foreach($parallax_one_services_pl_decoded as $parallax_one_service_box){
-			$title = $parallax_one_service_box->title;
-			$text = $parallax_one_service_box->text;
-			$id = $parallax_one_service_box->id;
+	$llorix_one_services_pl = get_theme_mod('llorix_one_services_content');
+	if(!empty($llorix_one_services_pl)){
+		$llorix_one_services_pl_decoded = json_decode($llorix_one_services_pl);
+		foreach($llorix_one_services_pl_decoded as $llorix_one_service_box){
+			$title = $llorix_one_service_box->title;
+			$text = $llorix_one_service_box->text;
+			$id = $llorix_one_service_box->id;
 			if(!empty($id)) {
 				if(!empty($title)){
 					icl_unregister_string ('Featured Area' , $id.'_services_title' );
@@ -679,13 +679,13 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	}
 	
 	/*Team*/
-	$parallax_one_team_pl = get_theme_mod('parallax_one_team_content');
-	if(!empty($parallax_one_team_pl)){
-		$parallax_one_team_pl_decoded = json_decode($parallax_one_team_pl);
-		foreach($parallax_one_team_pl_decoded as $parallax_one_team_box){
-			$title = $parallax_one_team_box->title;
-			$text = $parallax_one_team_box->subtitle;
-			$id = esc_attr($parallax_one_team_box->id);
+	$llorix_one_team_pl = get_theme_mod('llorix_one_team_content');
+	if(!empty($llorix_one_team_pl)){
+		$llorix_one_team_pl_decoded = json_decode($llorix_one_team_pl);
+		foreach($llorix_one_team_pl_decoded as $llorix_one_team_box){
+			$title = $llorix_one_team_box->title;
+			$text = $llorix_one_team_box->subtitle;
+			$id = esc_attr($llorix_one_team_box->id);
 			if(!empty($id)) {
 				if(!empty($title)){
 					icl_unregister_string ('Team' , $id.'_team_title' );
@@ -704,14 +704,14 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	}
 	
 	/*Testimonials*/
-	$parallax_one_testimonials_pl = get_theme_mod('parallax_one_testimonials_content');
-	if(!empty($parallax_one_testimonials_pl)){
-		$parallax_one_testimonials_pl_decoded = json_decode($parallax_one_testimonials_pl);
-		foreach($parallax_one_testimonials_pl_decoded as $parallax_one_testimonials_box){
-			$title = $parallax_one_testimonials_box->title;
-			$subtitle = $parallax_one_testimonials_box->subtitle;
-			$text = $parallax_one_testimonials_box->text;
-			$id = esc_attr($parallax_one_testimonials_box->id);
+	$llorix_one_testimonials_pl = get_theme_mod('llorix_one_testimonials_content');
+	if(!empty($llorix_one_testimonials_pl)){
+		$llorix_one_testimonials_pl_decoded = json_decode($llorix_one_testimonials_pl);
+		foreach($llorix_one_testimonials_pl_decoded as $llorix_one_testimonials_box){
+			$title = $llorix_one_testimonials_box->title;
+			$subtitle = $llorix_one_testimonials_box->subtitle;
+			$text = $llorix_one_testimonials_box->text;
+			$id = esc_attr($llorix_one_testimonials_box->id);
 			if(!empty($id)) {
 				if(!empty($title)){
 					icl_unregister_string ('Testimonials' , $id.'_testimonials_title' );
@@ -736,12 +736,12 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	}
 	
 	/*Contact*/
-	$parallax_one_contact_pl = get_theme_mod('parallax_one_contact_info_content');
-	if(!empty($parallax_one_contact_pl)){
-		$parallax_one_contact_pl_decoded = json_decode($parallax_one_contact_pl);
-		foreach($parallax_one_contact_pl_decoded as $parallax_one_contact_box){
-			$text = $parallax_one_contact_box->text;
-			$id = esc_attr($parallax_one_contact_box->id);
+	$llorix_one_contact_pl = get_theme_mod('llorix_one_contact_info_content');
+	if(!empty($llorix_one_contact_pl)){
+		$llorix_one_contact_pl_decoded = json_decode($llorix_one_contact_pl);
+		foreach($llorix_one_contact_pl_decoded as $llorix_one_contact_box){
+			$text = $llorix_one_contact_box->text;
+			$id = esc_attr($llorix_one_contact_box->id);
 			if(!empty($id)) {
 				if(!empty($text)){
 					icl_unregister_string ('Contact' , $id.'_contact' );
@@ -755,9 +755,9 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 }
 
 /*Check if Repeater is empty*/
-function parallax_one_general_repeater_is_empty($parallax_one_arr){
-	$parallax_one_services_decoded = json_decode($parallax_one_arr);
-	foreach($parallax_one_services_decoded as $parallax_box){
+function llorix_one_general_repeater_is_empty($llorix_one_arr){
+	$llorix_one_services_decoded = json_decode($llorix_one_arr);
+	foreach($llorix_one_services_decoded as $parallax_box){
 		if(!empty($parallax_box->choice) && $parallax_box->choice == 'parallax_none'){
 			$parallax_box->icon_value = '';
 			$parallax_box->image_url = '';
@@ -771,7 +771,7 @@ function parallax_one_general_repeater_is_empty($parallax_one_arr){
 	return true;
 }
 
-function parallax_one_get_template_part($template){
+function llorix_one_get_template_part($template){
 
     if(locate_template($template.'.php')) {
 		get_template_part($template);
@@ -789,12 +789,12 @@ function parallax_one_get_template_part($template){
 */
 function llorix_one_update_static_frontpage_template( $setting ) {
 
-	$parallax_one_page_on_front = get_option('page_on_front'); /* Static Frontpage ID */
+	$llorix_one_page_on_front = get_option('page_on_front'); /* Static Frontpage ID */
 	
-	$parallax_one_frontpage_template_static = get_theme_mod('parallax_one_frontpage_template_static');
+	$llorix_one_frontpage_template_static = get_theme_mod('llorix_one_frontpage_template_static');
 	
-	if ( !empty($parallax_one_page_on_front) && !empty($parallax_one_frontpage_template_static) ) {
-		update_post_meta( $parallax_one_page_on_front, '_wp_page_template', $parallax_one_frontpage_template_static );
+	if ( !empty($llorix_one_page_on_front) && !empty($llorix_one_frontpage_template_static) ) {
+		update_post_meta( $llorix_one_page_on_front, '_wp_page_template', $llorix_one_frontpage_template_static );
 	}	
 }
 add_action( 'customize_save_after', 'llorix_one_update_static_frontpage_template', 20, 2 );
@@ -805,10 +805,10 @@ add_action( 'customize_save_after', 'llorix_one_update_static_frontpage_template
 */
 function llorix_one_redirect_to_template_page( $template ) {
 
-	$parallax_one_frontpage_template_static = get_theme_mod('parallax_one_frontpage_template_static');
+	$llorix_one_frontpage_template_static = get_theme_mod('llorix_one_frontpage_template_static');
 	
-	if( !empty($parallax_one_frontpage_template_static) ):
-		$new_template = locate_template( array( $parallax_one_frontpage_template_static ) );
+	if( !empty($llorix_one_frontpage_template_static) ):
+		$new_template = locate_template( array( $llorix_one_frontpage_template_static ) );
 		if ( !empty($new_template) ):
 			return $new_template ;
 		endif;
@@ -828,3 +828,39 @@ function llorix_one_update_static_frontpage_template_customize( $setting ) {
 
 }
 add_action( 'customize_preview_init', 'llorix_one_update_static_frontpage_template_customize', 20, 2 );
+
+/*
+ * Get the old theme mods ( the one with parallax_one, get replaced by the new ones, with llorix_one )
+ */
+function llorix_one_copy_settings_from_old_versions() {
+
+	/* import old settings */
+	if( !get_option( 'llorix_one_old_settings' ) ) {
+
+		$llorix_one_all_theme_mods = get_theme_mods();
+
+		if( !empty($llorix_one_all_theme_mods) ) {
+
+			foreach ($llorix_one_all_theme_mods as $k => $v ) {
+
+				if( substr( $k, 0, 13 ) === "parallax_one_" ) {
+
+					$llorix_one_old_theme_mod = substr( $k, 13 );
+
+					if( !empty($llorix_one_old_theme_mod) && !empty($v) ) {
+
+						$llorix_one_new_theme_mod = 'llorix_one_'.$llorix_one_old_theme_mod;
+
+						set_theme_mod( $llorix_one_new_theme_mod, $v );
+					}
+
+				}
+
+			}
+		}
+
+		update_option( 'llorix_one_old_settings', 1 );
+	}
+
+}
+add_action( 'init', 'llorix_one_copy_settings_from_old_versions' );

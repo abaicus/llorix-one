@@ -27,7 +27,7 @@
 
 	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
 	 
-		$parallax_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
+		$parallax_one_disable_preloader = get_theme_mod('llorix_one_disable_preloader');
 		
 		if( isset($parallax_one_disable_preloader) && ($parallax_one_disable_preloader != 1)):
 			 
@@ -48,8 +48,8 @@
 
         <!-- COLOR OVER IMAGE -->
         <?php
-			$paralax_one_sticky_header = get_theme_mod('paralax_one_sticky_header','llorix-one');
-			if( isset($paralax_one_sticky_header) && ($paralax_one_sticky_header != 1)){
+			$llorix_one_sticky_header = get_theme_mod('llorix_one_sticky_header','llorix-one');
+			if( isset($llorix_one_sticky_header) && ($llorix_one_sticky_header != 1)){
 				$fixedheader = 'sticky-navigation-open';
 			} else {
 				if( !is_front_page() ){
@@ -57,7 +57,7 @@
 				}else{
 					$fixedheader = '';
 					if ( 'posts' != get_option( 'show_on_front' ) ) {
-						if( isset($paralax_one_sticky_header) && ($paralax_one_sticky_header != 1)){
+						if( isset($llorix_one_sticky_header) && ($llorix_one_sticky_header != 1)){
 							$fixedheader = 'sticky-navigation-open';
 						} else {
 							$fixedheader = '';
@@ -74,7 +74,7 @@
 		    	<div class="very-top-header">
 		        	<div class="container">
 		        		<?php
-		        			$llorix_one_very_top_header_phone = get_theme_mod('parallax_one_very_top_header_phone','(+9) 0999.500.400');
+		        			$llorix_one_very_top_header_phone = get_theme_mod('llorix_one_very_top_header_phone','(+9) 0999.500.400');
 
 							if( !empty($llorix_one_very_top_header_phone) ){
 				        		echo '<div class="very-top-left">';
@@ -88,7 +88,7 @@
 		        		<div class="very-top-right">
 							<?php 
 								/* SOCIAL ICONS */
-								$llorix_one_social_icons = get_theme_mod('parallax_one_very_top_social_icons',json_encode(
+								$llorix_one_social_icons = get_theme_mod('llorix_one_very_top_social_icons',json_encode(
 																array(
 																	array('icon_value' =>'icon-social-facebook' , 'link' => '#'),
 																	array('icon_value' =>'icon-social-twitter' , 'link' => '#'),
@@ -127,7 +127,7 @@
 						
 						<?php
 							
-							$parallax_one = get_theme_mod('paralax_one_logo', parallax_get_file('/images/logo-nav.png') );
+							$parallax_one = get_theme_mod('llorix_one_logo', llorix_one_get_file('/images/logo-nav.png') );
 
 							
 							

@@ -78,7 +78,7 @@ function llorix_one_entry_footer() {
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'llorix-one' ) );
-		if ( $categories_list && parallax_one_categorized_blog() ) {
+		if ( $categories_list && llorix_one_categorized_blog() ) {
 			printf( '<span class="cat-links"><i class="icon-basic-elaboration-folder-check"></i>' . esc_html__( 'Posted in %1$s', 'llorix-one' ) . '</span>', $categories_list );
 		}
 
@@ -198,7 +198,7 @@ endif;
  *
  * @return bool
  */
-function parallax_one_categorized_blog() {
+function llorix_one_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'parallax_one_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
@@ -216,23 +216,23 @@ function parallax_one_categorized_blog() {
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so parallax_one_categorized_blog should return true.
+		// This blog has more than 1 category so llorix_one_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so parallax_one_categorized_blog should return false.
+		// This blog has only 1 category so llorix_one_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in parallax_one_categorized_blog.
+ * Flush out the transients used in llorix_one_categorized_blog.
  */
-function parallax_one_category_transient_flusher() {
+function llorix_one_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
 	delete_transient( 'parallax_one_categories' );
 }
-add_action( 'edit_category', 'parallax_one_category_transient_flusher' );
-add_action( 'save_post',     'parallax_one_category_transient_flusher' );
+add_action( 'edit_category', 'llorix_one_category_transient_flusher' );
+add_action( 'save_post',     'llorix_one_category_transient_flusher' );

@@ -3,19 +3,19 @@
 ============================== -->
 <?php
 	global $wp_customize;
-	$parallax_one_happy_customers_title = get_theme_mod('parallax_one_happy_customers_title',esc_html__('Happy Customers','llorix-one'));
-	$parallax_one_happy_customers_subtitle = get_theme_mod('parallax_one_happy_customers_subtitle',esc_html__('Cloud computing subscription model out of the box proactive solution.','llorix-one'));
-	$parallax_one_testimonials_content = get_theme_mod('parallax_one_testimonials_content',
+	$llorix_one_happy_customers_title = get_theme_mod('llorix_one_happy_customers_title',esc_html__('Happy Customers','llorix-one'));
+	$llorix_one_happy_customers_subtitle = get_theme_mod('llorix_one_happy_customers_subtitle',esc_html__('Cloud computing subscription model out of the box proactive solution.','llorix-one'));
+	$llorix_one_testimonials_content = get_theme_mod('llorix_one_testimonials_content',
 		json_encode(
 			array(
-					array('image_url' => parallax_get_file('/images/clients/1.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one')),
-					array('image_url' => parallax_get_file('/images/clients/2.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one')),
-					array('image_url' => parallax_get_file('/images/clients/3.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one'))
+					array('image_url' => llorix_one_get_file('/images/clients/1.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one')),
+					array('image_url' => llorix_one_get_file('/images/clients/2.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one')),
+					array('image_url' => llorix_one_get_file('/images/clients/3.jpg'),'title' => esc_html__('Happy Customer','llorix-one'),'subtitle' => esc_html__('Lorem ipsum','llorix-one'),'text' => esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui. Nullam vel eros sit amet arcu vestibulum accumsan in in leo. Fusce malesuada vulputate faucibus. Integer in hendrerit nisi. Praesent a hendrerit urna. In non imperdiet elit, sed molestie odio. Fusce ac metus non purus sollicitudin laoreet.','llorix-one'))
 			)
 		)
 	);
 
-	if( !empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_customers_subtitle) || !parallax_one_general_repeater_is_empty($parallax_one_testimonials_content) ){
+	if( !empty($llorix_one_happy_customers_title) || !empty($llorix_one_happy_customers_subtitle) || !llorix_one_general_repeater_is_empty($llorix_one_testimonials_content) ){
 ?>
 	<section class="testimonials" id="customers" role="region" aria-label="<?php esc_html_e('Testimonials','llorix-one') ?>">
 		<div class="section-overlay-layer">
@@ -23,18 +23,18 @@
 
 				<!-- SECTION HEADER -->
 				<?php
-				if(!empty($parallax_one_happy_customers_title) || !empty($parallax_one_happy_customers_subtitle)){
+				if(!empty($llorix_one_happy_customers_title) || !empty($llorix_one_happy_customers_subtitle)){
 				?>
 					<div class="section-header">
 						<?php
-							if( !empty($parallax_one_happy_customers_title) ){
-								echo '<h2 class="dark-text">'.esc_attr($parallax_one_happy_customers_title).'</h2><div class="colored-line"></div>';
+							if( !empty($llorix_one_happy_customers_title) ){
+								echo '<h2 class="dark-text">'.esc_attr($llorix_one_happy_customers_title).'</h2><div class="colored-line"></div>';
 							} elseif ( isset( $wp_customize )   ) {
 								echo '<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>';
 							}
 
-							if( !empty($parallax_one_happy_customers_subtitle) ){
-								echo '<div class="sub-heading">'.esc_attr($parallax_one_happy_customers_subtitle).'</div>';
+							if( !empty($llorix_one_happy_customers_subtitle) ){
+								echo '<div class="sub-heading">'.esc_attr($llorix_one_happy_customers_subtitle).'</div>';
 							} elseif ( isset( $wp_customize )   ) {
 								echo '<div class="sub-heading paralax_one_only_customizer"></div>';
 							}
@@ -44,11 +44,11 @@
 				}
 
 
-				if(!empty($parallax_one_testimonials_content)) {
+				if(!empty($llorix_one_testimonials_content)) {
 					echo '<div id="happy_customers_wrap" class="testimonials-wrap">';
-					$parallax_one_testimonials_content_decoded = json_decode($parallax_one_testimonials_content);
-					foreach($parallax_one_testimonials_content_decoded as $parallax_one_testimonial){
-						if( !empty($parallax_one_testimonial->image_url) || !empty($parallax_one_testimonial->title) || !empty($parallax_one_testimonial->subtitle) || !empty($parallax_one_testimonial->text) ){
+					$llorix_one_testimonials_content_decoded = json_decode($llorix_one_testimonials_content);
+					foreach($llorix_one_testimonials_content_decoded as $llorix_one_testimonial){
+						if( !empty($llorix_one_testimonial->image_url) || !empty($llorix_one_testimonial->title) || !empty($llorix_one_testimonial->subtitle) || !empty($llorix_one_testimonial->text) ){
 			?>
 							<!-- SINGLE FEEDBACK -->
 							<div class="testimonials-box">
@@ -57,60 +57,60 @@
 										<div class="pic-container-inner">
 											<?php
 
-												if( !empty($parallax_one_testimonial->image_url) ){
-													if(!empty($parallax_one_testimonial->title)){
-														echo '<img src="'.esc_url($parallax_one_testimonial->image_url).'" alt="'.$parallax_one_testimonial->title.'">';
+												if( !empty($llorix_one_testimonial->image_url) ){
+													if(!empty($llorix_one_testimonial->title)){
+														echo '<img src="'.esc_url($llorix_one_testimonial->image_url).'" alt="'.$llorix_one_testimonial->title.'">';
 													} else {
-														echo '<img src="'.esc_url($parallax_one_testimonial->image_url).'" alt="'.esc_html('Avatar','llorix-one').'">';
+														echo '<img src="'.esc_url($llorix_one_testimonial->image_url).'" alt="'.esc_html('Avatar','llorix-one').'">';
 													}
 												} else {
-													$default_image = parallax_get_file('/images/clients/client-no-image.jpg');
+													$default_image = llorix_one_get_file('/images/clients/client-no-image.jpg');
 													echo '<img src="'.esc_url($default_image).'" alt="'.esc_html('Avatar','llorix-one').'">';	
 												}	
 											?>
 										</div>
 									</div>
 									<?php
-									if(!empty($parallax_one_testimonial->title) || !empty($parallax_one_testimonial->subtitle) || !empty($parallax_one_testimonial->text)) {
+									if(!empty($llorix_one_testimonial->title) || !empty($llorix_one_testimonial->subtitle) || !empty($llorix_one_testimonial->text)) {
 									?>
 										<div class="feedback-text-wrap">
 										<?php
-											if(!empty($parallax_one_testimonial->title)){
+											if(!empty($llorix_one_testimonial->title)){
 										?>
 												<h5 class="colored-text">
 													<?php
 														if(function_exists('icl_t')){
-															echo icl_t('Testimonials',$parallax_one_testimonial->id.'_testimonials_title',esc_attr($parallax_one_testimonial->title));
+															echo icl_t('Testimonials',$llorix_one_testimonial->id.'_testimonials_title',esc_attr($llorix_one_testimonial->title));
 														} else {
-															echo esc_attr($parallax_one_testimonial->title);
+															echo esc_attr($llorix_one_testimonial->title);
 														}
 													?>
 												</h5>
 										<?php
 											}
 
-											if(!empty($parallax_one_testimonial->subtitle)){
+											if(!empty($llorix_one_testimonial->subtitle)){
 										?>
 												<div class="small-text">
 													<?php 
 														if(function_exists('icl_t')){
-															echo icl_t('Testimonials',$parallax_one_testimonial->id.'_testimonials_subtitle',esc_attr($parallax_one_testimonial->subtitle));
+															echo icl_t('Testimonials',$llorix_one_testimonial->id.'_testimonials_subtitle',esc_attr($llorix_one_testimonial->subtitle));
 														} else {
-															echo esc_attr($parallax_one_testimonial->subtitle);
+															echo esc_attr($llorix_one_testimonial->subtitle);
 														}
 													?>	
 												</div>
 										<?php
 											}
 
-											if(!empty($parallax_one_testimonial->text)){
+											if(!empty($llorix_one_testimonial->text)){
 										?>
 												<p>
 													<?php 
 														if(function_exists('icl_t')){
-															echo icl_t('Testimonials',$parallax_one_testimonial->id.'_testimonials_text',html_entity_decode($parallax_one_testimonial->text));
+															echo icl_t('Testimonials',$llorix_one_testimonial->id.'_testimonials_text',html_entity_decode($llorix_one_testimonial->text));
 														} else {
-															echo html_entity_decode($parallax_one_testimonial->text); 
+															echo html_entity_decode($llorix_one_testimonial->text); 
 														}
 													?>
 												</p>

@@ -8,13 +8,13 @@ jQuery(document).ready(function() {
     }
 
     /* Upsell in Customizer (Link to Welcome page) */
-    if ( !jQuery( ".parallax-upsells" ).length ) {
-        jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section parallax-upsells">');
+    if ( !jQuery( ".llorix-one-upsells" ).length ) {
+        jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section llorix-one-upsells">');
     }
     if (typeof llorix_one_aboutpage !== 'undefined') {
-        jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="' + llorix_one_aboutpage + '" class="button" target="_blank">{themeinfo}</a>'.replace('{themeinfo}', llorixOneWelcomeScreenCustomizerObject.themeinfo));
+        jQuery('.llorix-one-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="' + llorix_one_aboutpage + '" class="button" target="_blank">{themeinfo}</a>'.replace('{themeinfo}', llorixOneWelcomeScreenCustomizerObject.themeinfo));
     }
-    if ( !jQuery( ".parallax-upsells" ).length ) {
+    if ( !jQuery( ".llorix-one-upsells" ).length ) {
         jQuery('#customize-theme-controls > ul').prepend('</li>');
     }
 });

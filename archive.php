@@ -16,27 +16,27 @@
 <!-- /END HOME / HEADER  -->
 
 <?php
-	$parallax_one_blog_header_image = get_theme_mod( 'parallax_one_blog_header_image', parallax_get_file('/images/background-images/background-blog.jpg') );
-	$parallax_one_blog_header_title = get_theme_mod( 'parallax_one_blog_header_title', esc_html__('BLOG','llorix-one')  );
-	$parallax_one_blog_header_subtitle = get_theme_mod( 'parallax_one_blog_header_subtitle', esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis risus augue. Cras at mollis eros. Sed porttitor quam eget aliquam mattis. Fusce leo nibh, ornare at volutpat ut, luctus dictum elit. Mauris non vehicula eros, ac lacinia lorem. Quisque fermentum purus ac scelerisque suscipit. Morbi et iaculis tellus. Proin ut urna ac purus suscipit iaculis. Aliquam erat volutpat. Donec at viverra magna. Fusce efficitur eros a nunc volutpat ultrices. Aenean mattis purus lectus, quis fermentum diam placerat in.','llorix-one') );
+	$llorix_one_blog_header_image = get_theme_mod( 'llorix_one_blog_header_image', llorix_one_get_file('/images/background-images/background-blog.jpg') );
+	$llorix_one_blog_header_title = get_theme_mod( 'llorix_one_blog_header_title', esc_html__('BLOG','llorix-one')  );
+	$llorix_one_blog_header_subtitle = get_theme_mod( 'llorix_one_blog_header_subtitle', esc_html__('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis risus augue. Cras at mollis eros. Sed porttitor quam eget aliquam mattis. Fusce leo nibh, ornare at volutpat ut, luctus dictum elit. Mauris non vehicula eros, ac lacinia lorem. Quisque fermentum purus ac scelerisque suscipit. Morbi et iaculis tellus. Proin ut urna ac purus suscipit iaculis. Aliquam erat volutpat. Donec at viverra magna. Fusce efficitur eros a nunc volutpat ultrices. Aenean mattis purus lectus, quis fermentum diam placerat in.','llorix-one') );
 	
-	if( !empty($parallax_one_blog_header_image) || !empty($parallax_one_blog_header_title) || !empty($parallax_one_blog_header_subtitle) ):
+	if( !empty($llorix_one_blog_header_image) || !empty($llorix_one_blog_header_title) || !empty($llorix_one_blog_header_subtitle) ):
 		
-		if( !empty($parallax_one_blog_header_image) ):
-			echo '<div class="archive-top" style="background-image: url('.$parallax_one_blog_header_image.');">';
+		if( !empty($llorix_one_blog_header_image) ):
+			echo '<div class="archive-top" style="background-image: url('.$llorix_one_blog_header_image.');">';
 		else:
 			echo '<div class="archive-top">';
 		endif;
 				echo '<div class="section-overlay-layer">';
 					echo '<div class="container">';
 
-						if( !empty($parallax_one_blog_header_title) ):
-							echo '<p class="archive-top-big-title">'.$parallax_one_blog_header_title.'</p>';
+						if( !empty($llorix_one_blog_header_title) ):
+							echo '<p class="archive-top-big-title">'.$llorix_one_blog_header_title.'</p>';
 							echo '<p class="colored-line"></p>';							
 						endif;
 						
-						if( !empty($parallax_one_blog_header_subtitle) ):
-							echo '<p class="archive-top-text">'.$parallax_one_blog_header_subtitle.'</p>';
+						if( !empty($llorix_one_blog_header_subtitle) ):
+							echo '<p class="archive-top-text">'.$llorix_one_blog_header_subtitle.'</p>';
 						endif;	
 
 					echo '</div>';
