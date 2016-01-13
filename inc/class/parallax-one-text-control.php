@@ -28,7 +28,7 @@ class Llorix_One_Frontpage_Templates extends WP_Customize_Control{
 		
 		if( !empty($llorix_one_all_pages) ):
 		
-			$llorix_one_all_pages_array[0] = "— Select —";
+			$llorix_one_all_pages_array[0] = "&#45;&#45; Select &#45;&#45;";
 		
 			foreach ( $llorix_one_all_pages as $llorix_one_page ):
 			

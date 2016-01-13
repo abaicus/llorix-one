@@ -62,7 +62,7 @@
 					/* COPYRIGHT */
 					$llorix_one_copyright = get_theme_mod('llorix_one_copyright','Themeisle');
 					
-					if( !empty($paralax_one_copyright) ){
+					if( !empty($llorix_one_copyright) ){
 						echo '<span class="parallax_one_copyright_content">'.esc_attr($llorix_one_copyright).'</span>';
 					} elseif ( isset( $wp_customize )   ) {
 						echo '<span class="parallax_one_copyright_content paralax_one_only_customizer"></span>';
