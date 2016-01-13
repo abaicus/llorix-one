@@ -56,7 +56,7 @@ function media_upload(button_class) {
 /********************************************
 *** Generate uniq id ***
 *********************************************/
-function parallax_one_uniqid(prefix, more_entropy) {
+function llorix_one_uniqid(prefix, more_entropy) {
 
   if (typeof prefix === 'undefined') {
     prefix = '';
@@ -104,7 +104,7 @@ function parallax_one_uniqid(prefix, more_entropy) {
 /********************************************
 *** General Repeater ***
 *********************************************/
-function parallax_one_refresh_general_control_values(){
+function llorix_one_refresh_general_control_values(){
 	jQuery(".parallax_one_general_control_repeater").each(function(){
 		var values = [];
 		var th = jQuery(this);
@@ -162,25 +162,25 @@ jQuery(document).ready(function(){
             jQuery(this).parent().parent().find('.parallax_one_image_control').hide();
         }
         
-        parallax_one_refresh_general_control_values();
+        llorix_one_refresh_general_control_values();
         return false;        
     });
     media_upload('.custom_media_button_parallax_one');
     jQuery(".custom_media_url").live('change',function(){
-        parallax_one_refresh_general_control_values();
+        llorix_one_refresh_general_control_values();
         return false;
     });
     
 
 	jQuery("#customize-theme-controls").on('change', '.parallax_one_icon_control',function(){
-		parallax_one_refresh_general_control_values();
+		llorix_one_refresh_general_control_values();
 		return false; 
 	});
 
 	jQuery(".parallax_one_general_control_new_field").on("click",function(){
 	 
 		var th = jQuery(this).parent();
-		var id = 'parallax_one_'+parallax_one_uniqid();
+		var id = 'parallax_one_'+llorix_one_uniqid();
 		if(typeof th != 'undefined') {
 			
             var field = th.find(".parallax_one_general_control_repeater_container:first").clone();
@@ -200,7 +200,7 @@ jQuery(document).ready(function(){
                 field.find(".parallax_one_subtitle_control").val('');
                 field.find(".parallax_one_shortcode_control").val('');
                 th.find(".parallax_one_general_control_repeater_container:first").parent().append(field);
-                parallax_one_refresh_general_control_values();
+                llorix_one_refresh_general_control_values();
             }
 			
 		}
@@ -210,36 +210,36 @@ jQuery(document).ready(function(){
 	jQuery("#customize-theme-controls").on("click", ".parallax_one_general_control_remove_field",function(){
 		if( typeof	jQuery(this).parent() != 'undefined'){
 			jQuery(this).parent().parent().remove();
-			parallax_one_refresh_general_control_values();
+			llorix_one_refresh_general_control_values();
 		}
 		return false;
 	});
 
 
 	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_title_control',function(){
-		 parallax_one_refresh_general_control_values();
+		 llorix_one_refresh_general_control_values();
 	});
 
 	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_subtitle_control',function(){
-		 parallax_one_refresh_general_control_values();
+		 llorix_one_refresh_general_control_values();
 	});
     
     jQuery("#customize-theme-controls").on('keyup', '.parallax_one_shortcode_control',function(){
-		 parallax_one_refresh_general_control_values();
+		 llorix_one_refresh_general_control_values();
 	});
     
 	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_text_control',function(){
-		 parallax_one_refresh_general_control_values();
+		 llorix_one_refresh_general_control_values();
 	});
 	
 	jQuery("#customize-theme-controls").on('keyup', '.parallax_one_link_control',function(){
-		parallax_one_refresh_general_control_values();
+		llorix_one_refresh_general_control_values();
 	});
 	
 	/*Drag and drop to change icons order*/
 	jQuery(".parallax_one_general_control_droppable").sortable({
 		update: function( event, ui ) {
-			parallax_one_refresh_general_control_values();
+			llorix_one_refresh_general_control_values();
 		}
 	});	
 
@@ -266,25 +266,25 @@ var entityMap = {
 
 jQuery(document).ready(function(){
   
-	var sh = jQuery('#customize-control-paralax_one_enable_move').find('input:checkbox');
+	var sh = jQuery('#customize-control-llorix_one_enable_move').find('input:checkbox');
 	if(!sh.is(':checked')){
-		jQuery('#customize-control-paralax_one_first_layer').hide();
-		jQuery('#customize-control-paralax_one_second_layer').hide();
+		jQuery('#customize-control-llorix_one_first_layer').hide();
+		jQuery('#customize-control-llorix_one_second_layer').hide();
 		jQuery('#customize-control-header_image').show();
 	} else {
-		jQuery('#customize-control-paralax_one_first_layer').show();
-		jQuery('#customize-control-paralax_one_second_layer').show();
+		jQuery('#customize-control-llorix_one_first_layer').show();
+		jQuery('#customize-control-llorix_one_second_layer').show();
 		jQuery('#customize-control-header_image').hide();
 	}
 	
 	sh.on('change',function(){
 		if(jQuery(this).is(':checked')){
-			jQuery('#customize-control-paralax_one_first_layer').fadeIn();
-			jQuery('#customize-control-paralax_one_second_layer').fadeIn();
+			jQuery('#customize-control-llorix_one_first_layer').fadeIn();
+			jQuery('#customize-control-llorix_one_second_layer').fadeIn();
 			jQuery('#customize-control-header_image').fadeOut();
 		} else {
-			jQuery('#customize-control-paralax_one_first_layer').fadeOut();
-			jQuery('#customize-control-paralax_one_second_layer').fadeOut();
+			jQuery('#customize-control-llorix_one_first_layer').fadeOut();
+			jQuery('#customize-control-llorix_one_second_layer').fadeOut();
 			jQuery('#customize-control-header_image').fadeIn();
 		} 
 	});
@@ -292,8 +292,8 @@ jQuery(document).ready(function(){
 
 jQuery(document).ready(function() {
 
-	var parallax_one_aboutpage = parallaxOneCustomizerObject.aboutpage;
-    var parallax_one_nr_actions_required = parallaxOneCustomizerObject.nr_actions_required;
+	var parallax_one_aboutpage = llorixOneCustomizerObject.aboutpage;
+    var parallax_one_nr_actions_required = llorixOneCustomizerObject.nr_actions_required;
 
     /* Number of required actions */
     if ((typeof parallax_one_aboutpage !== 'undefined') && (typeof parallax_one_nr_actions_required !== 'undefined') && (parallax_one_nr_actions_required != '0')) {
@@ -301,19 +301,52 @@ jQuery(document).ready(function() {
     }
 
     /* Upsells in customizer (Documentation link, Support link, View theme info and Upgrade to PRO link */
-	if( !jQuery( ".parallax-upsells" ).length ) {
-		jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section parallax-upsells">');
+	if( !jQuery( ".llorix-one-upsells" ).length ) {
+		jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section llorix-one-upsells">');
 	}
 
-	if( jQuery( ".parallax-upsells" ).length ) {
+	if( jQuery( ".llorix-one-upsells" ).length ) {
 
-		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-llorix-one/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', parallaxOneCustomizerObject.documentation));
-		jQuery('.parallax-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/llorix-one/" class="button" target="_blank">{github}</a>'.replace('{github}', parallaxOneCustomizerObject.support));
+		jQuery('.llorix-one-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-llorix-one/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', llorixOneCustomizerObject.documentation));
+		jQuery('.llorix-one-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/llorix-one/" class="button" target="_blank">{github}</a>'.replace('{github}', llorixOneCustomizerObject.support));
 
 	}
-	/*jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',parallaxOneCustomizerObject.pro));*/
+	/*jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',llorixOneCustomizerObject.pro));*/
 
-	if ( !jQuery( ".parallax-upsells" ).length ) {
+	if ( !jQuery( ".llorix-one-upsells" ).length ) {
 		jQuery('#customize-theme-controls > ul').prepend('</li>');
 	}
+	
+	/* Show control for frontpage template */
+	
+	var parallax_one_static_page_id = jQuery('#customize-control-page_on_front select').val();
+	
+	if( (typeof parallax_one_static_page_id != "undefined") && (parallax_one_static_page_id != '0') ) {
+		jQuery('#customize-control-llorix_one_frontpage_template_static').css('display','block');
+	}
+	else {
+		jQuery('#customize-control-llorix_one_frontpage_template_static').css('display','none');
+	}
+	
+	jQuery('#customize-control-page_on_front select').change(function() { // When a frontpage is selected
+	
+		var llorix_one_selected_fp = jQuery(this).find('option:selected');
+		
+		if(( typeof llorix_one_selected_fp != 'undefined' ) && ( typeof llorix_one_selected_fp.attr("template") != 'undefined' )) {
+			
+			jQuery('#customize-control-llorix_one_frontpage_template_static select').val(llorix_one_selected_fp.attr("template"));
+			jQuery('#customize-control-llorix_one_frontpage_template_static select option[selected="selected"]').removeAttr("selected");
+			jQuery('#customize-control-llorix_one_frontpage_template_static select option[value="'+llorix_one_selected_fp.attr("template")+'"]').attr("selected","selected");
+			jQuery('#customize-control-llorix_one_frontpage_template_static select option[value="'+llorix_one_selected_fp.attr("template")+'"]').trigger('change');
+		}
+		
+		if ( (typeof this.value != "undefined") && (this.value != '0') ) {
+			jQuery('#customize-control-llorix_one_frontpage_template_static').css('display','block');
+		}
+		else {
+			jQuery('#customize-control-llorix_one_frontpage_template_static').css('display','none');
+		}	
+
+	});
+	
 });	

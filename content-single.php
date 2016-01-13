@@ -36,6 +36,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php parallax_one_entry_footer(); ?>
+		<?php llorix_one_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

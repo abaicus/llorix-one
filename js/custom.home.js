@@ -7,12 +7,12 @@ var marginTop = 0;
 
 /* LATEST NEWS */
 jQuery(document).ready(function () {
-    parallax_one_latest_news();
+    llorix_one_latest_news();
     jQuery('button.control_prev').click(function () {
-        parallax_one_moveBottom();
+        llorix_one_moveBottom();
     });
     jQuery('button.control_next').click(function () {
-         parallax_one_moveTop();
+         llorix_one_moveTop();
     });
 });
 
@@ -49,7 +49,7 @@ jQuery(window).resize(function() {
 });
 
 /* latest news [start] */
-function parallax_one_latest_news() {
+function llorix_one_latest_news() {
 
      /* maximum height for slides */
     slideHeight = 0;
@@ -70,7 +70,7 @@ function parallax_one_latest_news() {
 
 }
 
-function parallax_one_moveTop() {
+function llorix_one_moveTop() {
     if ( marginTop - slideHeight >= - sliderUlHeight + slideHeight ){
         marginTop = marginTop - slideHeight;
         jQuery('#parallax_slider ul').animate({
@@ -85,7 +85,7 @@ function parallax_one_moveTop() {
     }
 };    
 
-function parallax_one_moveBottom() {
+function llorix_one_moveBottom() {
     if ( marginTop + slideHeight <= 0 ){
         marginTop = marginTop + slideHeight;
         jQuery('#parallax_slider ul').animate({

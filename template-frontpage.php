@@ -19,9 +19,9 @@
 
 	if( !isset( $wp_customize ) ): 
 
-		$parallax_one_disable_preloader = get_theme_mod('paralax_one_disable_preloader');
+		$llorix_one_disable_preloader = get_theme_mod('llorix_one_disable_preloader');
 
-		if( isset($parallax_one_disable_preloader) && ($parallax_one_disable_preloader != 1)):
+		if( isset($llorix_one_disable_preloader) && ($llorix_one_disable_preloader != 1)):
 			 
 			echo '<div class="preloader">';
 				echo '<div class="status">&nbsp;</div>';
@@ -31,7 +31,7 @@
 
 	endif; 
 
-	parallax_one_get_template_part( apply_filters("parallax_one_plus_header_layout","/sections/parallax_one_header_section"));
+	llorix_one_get_template_part( apply_filters("parallax_one_plus_header_layout","/sections/parallax_one_header_section"));
 
 ?>
 	</div>
@@ -60,7 +60,7 @@
 
 	if(!empty($sections_array)){
 		foreach($sections_array as $section){
-			parallax_one_get_template_part($section);
+			llorix_one_get_template_part($section);
 		}
 	}
 ?>

@@ -2,7 +2,7 @@
 if ( ! class_exists( 'WP_Customize_Control' ) )
     return NULL;
 
-class Parallax_One_General_Repeater extends WP_Customize_Control {
+class Llorix_One_General_Repeater extends WP_Customize_Control {
 
         private $options = array();
 

@@ -7,7 +7,7 @@
 	$args = array( 'post_type' => 'post', 'posts_per_page' => $parallax_number_of_posts, 'order' => 'DESC','ignore_sticky_posts' => true );
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) {
-		$parallax_one_latest_news_title = get_theme_mod('parallax_one_latest_news_title',esc_html__('Latest news','llorix-one'));
+		$llorix_one_latest_news_title = get_theme_mod('llorix_one_latest_news_title',esc_html__('Latest news','llorix-one'));
 		if($parallax_number_of_posts > 0) {
 		?>
 			<section class="brief timeline" id="latestnews" role="region" aria-label="<?php esc_html_e('Latest blog posts','llorix-one'); ?>">
@@ -17,8 +17,8 @@
 
 							<!-- TIMELINE HEADING / TEXT  -->
 							<?php
-								if(!empty($parallax_one_latest_news_title)){
-									echo '<div class="col-md-12 timeline-text text-left"><h2 class="text-left dark-text">'.esc_attr($parallax_one_latest_news_title).'</h2><div class="colored-line-left"></div></div>';
+								if(!empty($llorix_one_latest_news_title)){
+									echo '<div class="col-md-12 timeline-text text-left"><h2 class="text-left dark-text">'.esc_attr($llorix_one_latest_news_title).'</h2><div class="colored-line-left"></div></div>';
 								} elseif ( isset( $wp_customize )   ) {
 									echo '<div class="col-md-12 timeline-text text-left paralax_one_only_customizer"><h2 class="text-left dark-text "></h2><div class="colored-line-left "></div></div>';
 								}
@@ -62,7 +62,7 @@
 																if ( has_post_thumbnail() ) :
 																	the_post_thumbnail('parallax-one-post-thumbnail-latest-news');
 																else: ?>
-																	<img src="<?php echo parallax_get_file('/images/no-thumbnail-latest-news.jpg'); ?>" width="150" height="150" alt="<?php the_title(); ?>">
+																	<img src="<?php echo llorix_one_get_file('/images/no-thumbnail-latest-news.jpg'); ?>" width="150" height="150" alt="<?php the_title(); ?>">
 															<?php 
 																endif; 
 															?>

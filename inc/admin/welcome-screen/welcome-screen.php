@@ -21,7 +21,6 @@ class Parallax_One_Welcome {
 		add_action( 'llorix_one_welcome', array( $this, 'llorix_one_welcome_actions_required' ),        20 );
 		add_action( 'llorix_one_welcome', array( $this, 'llorix_one_welcome_github' ), 		            30 );
 		add_action( 'llorix_one_welcome', array( $this, 'llorix_one_welcome_changelog' ), 				40 );
-		add_action( 'llorix_one_welcome', array( $this, 'llorix_one_welcome_free_pro' ), 				50 );
 		
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_llorix_one_dismiss_required_action', array( $this, 'llorix_one_dismiss_required_action_callback') );
@@ -165,7 +164,6 @@ class Parallax_One_Welcome {
 			<li role="presentation" class="parallax-one-w-red-tab"><a href="#actions_required" aria-controls="actions_required" role="tab" data-toggle="tab"><?php esc_html_e( 'Actions required','llorix-one'); ?></a></li>
 			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Contribute','llorix-one'); ?></a></li>
 			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Changelog','llorix-one'); ?></a></li>
-			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','llorix-one'); ?></a></li>
 		</ul>
 
 		<div class="parallax-one-tab-content">
@@ -176,7 +174,6 @@ class Parallax_One_Welcome {
 			 * @hooked llorix_one_welcome_actions_required - 20
 			 * @hooked llorix_one_welcome_github - 30
 			 * @hooked llorix_one_welcome_changelog - 40
-			 * @hooked llorix_one_welcome_free_pro - 50
 			 */
 			do_action( 'llorix_one_welcome' ); ?>
 
@@ -206,13 +203,6 @@ class Parallax_One_Welcome {
 	 */
 	public function llorix_one_welcome_changelog() {
 		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/changelog.php' );
-	}
-	/**
-	 * Free vs PRO
-	 * @since 1.8.2.4
-	 */
-	public function llorix_one_welcome_free_pro() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/free_pro.php' );
 	}	
 }
 $GLOBALS['Parallax_One_Welcome'] = new Parallax_One_Welcome();

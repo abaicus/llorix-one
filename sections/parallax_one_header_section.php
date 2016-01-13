@@ -1,34 +1,34 @@
 <!-- CONTAINER -->
 <?php
-	$paralax_one_header_logo = get_theme_mod('paralax_one_header_logo', parallax_get_file('/images/logo-2.png'));
-	$parallax_one_header_title = get_theme_mod('parallax_one_header_title',esc_html__('Simple, Reliable and Awesome.','llorix-one'));
-	$parallax_one_header_subtitle = get_theme_mod('parallax_one_header_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-	$parallax_one_header_button_text = get_theme_mod('parallax_one_header_button_text',esc_html__('GET STARTED','llorix-one'));
-	$parallax_one_header_button_link = get_theme_mod('parallax_one_header_button_link','#');
-	$parallax_one_enable_move = get_theme_mod('paralax_one_enable_move');
-	$parallax_one_first_layer = get_theme_mod('paralax_one_first_layer', parallax_get_file('/images/background1.png'));
-	$parallax_one_second_layer = get_theme_mod('paralax_one_second_layer',parallax_get_file('/images/background2.png'));
-	if(!empty($paralax_one_header_logo) || !empty($parallax_one_header_title) || !empty($parallax_one_header_subtitle) || !empty($parallax_one_header_button_text)){
+	$llorix_one_header_logo = get_theme_mod('llorix_one_header_logo', llorix_one_get_file('/images/logo-2.png'));
+	$llorix_one_header_title = get_theme_mod('llorix_one_header_title',esc_html__('Simple, Reliable and Awesome.','llorix-one'));
+	$llorix_one_header_subtitle = get_theme_mod('llorix_one_header_subtitle','Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+	$llorix_one_header_button_text = get_theme_mod('llorix_one_header_button_text',esc_html__('GET STARTED','llorix-one'));
+	$llorix_one_header_button_link = get_theme_mod('llorix_one_header_button_link','#');
+	$llorix_one_enable_move = get_theme_mod('llorix_one_enable_move');
+	$llorix_one_first_layer = get_theme_mod('llorix_one_first_layer', llorix_one_get_file('/images/background1.png'));
+	$llorix_one_second_layer = get_theme_mod('llorix_one_second_layer',llorix_one_get_file('/images/background2.png'));
+	if(!empty($llorix_one_header_logo) || !empty($llorix_one_header_title) || !empty($llorix_one_header_subtitle) || !empty($llorix_one_header_button_text)){
 ?>
 
 <?php
-	if( !empty($parallax_one_enable_move) && $parallax_one_enable_move ) {
+	if( !empty($llorix_one_enable_move) && $llorix_one_enable_move ) {
 		
 		echo '<ul id="parallax_move">';
 
 
-			if ( empty($parallax_one_first_layer) && empty($parallax_one_second_layer) ) {
+			if ( empty($llorix_one_first_layer) && empty($llorix_one_second_layer) ) {
 
-				$parallax_one_header_image2 = get_header_image();
-				echo '<li class="layer layer1" data-depth="0.10" style="background-image: url('.$parallax_one_header_image2.');"></li>';
+				$llorix_one_header_image2 = get_header_image();
+				echo '<li class="layer layer1" data-depth="0.10" style="background-image: url('.$llorix_one_header_image2.');"></li>';
 
 			} else {
 
-				if( !empty($parallax_one_first_layer) )  {
-					echo '<li class="layer layer1" data-depth="0.10" style="background-image: url('.$parallax_one_first_layer.');"></li>';
+				if( !empty($llorix_one_first_layer) )  {
+					echo '<li class="layer layer1" data-depth="0.10" style="background-image: url('.$llorix_one_first_layer.');"></li>';
 				}
-				if( !empty($parallax_one_second_layer) ) {
-					echo '<li class="layer layer2" data-depth="0.20" style="background-image: url('.$parallax_one_second_layer.');"></li>';
+				if( !empty($llorix_one_second_layer) ) {
+					echo '<li class="layer layer2" data-depth="0.20" style="background-image: url('.$llorix_one_second_layer.');"></li>';
 				}
 
 			}
@@ -43,8 +43,8 @@
 
 			<!-- ONLY LOGO ON HEADER -->
 			<?php
-				if( !empty($paralax_one_header_logo) ){
-					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="'.esc_url($paralax_one_header_logo).'"   alt=""></div></div></div>';
+				if( !empty($llorix_one_header_logo) ){
+					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="'.esc_url($llorix_one_header_logo).'"   alt=""></div></div></div>';
 				} elseif ( isset( $wp_customize )   ) {
 					echo '<div class="only-logo"><div id="only-logo-inner" class="navbar"><div id="parallax_only_logo" class="navbar-header"><img src="" alt=""></div></div></div>';
 				}
@@ -56,13 +56,13 @@
 
 					<!-- HEADING AND BUTTONS -->
 					<?php 
-					if(!empty($paralax_one_header_logo) || !empty($parallax_one_header_title) || !empty($parallax_one_header_subtitle) || !empty($parallax_one_header_button_text)){?>
+					if(!empty($llorix_one_header_logo) || !empty($llorix_one_header_title) || !empty($llorix_one_header_subtitle) || !empty($llorix_one_header_button_text)){?>
 						<div id="intro-section" class="intro-section">
 
 							<!-- WELCOM MESSAGE -->
 							<?php
-								if( !empty($parallax_one_header_title) ){
-									echo '<h1 id="intro_section_text_1" class="intro white-text">'.esc_attr($parallax_one_header_title).'</h1>';
+								if( !empty($llorix_one_header_title) ){
+									echo '<h1 id="intro_section_text_1" class="intro white-text">'.esc_attr($llorix_one_header_title).'</h1>';
 								} elseif ( isset( $wp_customize )   ) {
 									echo '<h1 id="intro_section_text_1" class="intro white-text paralax_one_only_customizer"></h1>';
 								}
@@ -70,8 +70,8 @@
 
 
 							<?php
-								if( !empty($parallax_one_header_subtitle) ){
-									echo '<h5 id="intro_section_text_2" class="white-text">'.esc_attr($parallax_one_header_subtitle).'</h5>';
+								if( !empty($llorix_one_header_subtitle) ){
+									echo '<h5 id="intro_section_text_2" class="white-text">'.esc_attr($llorix_one_header_subtitle).'</h5>';
 								} elseif ( isset( $wp_customize )   ) {
 									echo '<h5 id="intro_section_text_2" class="white-text paralax_one_only_customizer"></h5>';
 								}
@@ -79,14 +79,14 @@
 
 							<!-- BUTTON -->
 							<?php
-								if( !empty($parallax_one_header_button_text) ){
-									if( empty($parallax_one_header_button_link) ){
-										echo '<button id="inpage_scroll_btn" class="btn btn-primary standard-button inpage-scroll"><span class="screen-reader-text">'.esc_html__('Header button label:','llorix-one').$parallax_one_header_button_text.'</span>'.$parallax_one_header_button_text.'</button>';
+								if( !empty($llorix_one_header_button_text) ){
+									if( empty($llorix_one_header_button_link) ){
+										echo '<button id="inpage_scroll_btn" class="btn btn-primary standard-button inpage-scroll"><span class="screen-reader-text">'.esc_html__('Header button label:','llorix-one').$llorix_one_header_button_text.'</span>'.$llorix_one_header_button_text.'</button>';
 									} else {
-										if(strpos($parallax_one_header_button_link, '#') === 0) {
-											echo '<button id="inpage_scroll_btn" class="btn btn-primary standard-button inpage-scroll" data-anchor="'.$parallax_one_header_button_link.'"><span class="screen-reader-text">'.esc_html__('Header button label:','llorix-one').$parallax_one_header_button_text.'</span>'.$parallax_one_header_button_text.'</button>';
+										if(strpos($llorix_one_header_button_link, '#') === 0) {
+											echo '<button id="inpage_scroll_btn" class="btn btn-primary standard-button inpage-scroll" data-anchor="'.$llorix_one_header_button_link.'"><span class="screen-reader-text">'.esc_html__('Header button label:','llorix-one').$llorix_one_header_button_text.'</span>'.$llorix_one_header_button_text.'</button>';
 										} else {
-											echo '<button id="inpage_scroll_btn" class="btn btn-primary standard-button inpage-scroll" onClick="parent.location=\''.esc_url($parallax_one_header_button_link).'\'"><span class="screen-reader-text">'.esc_html__('Header button label:','llorix-one').$parallax_one_header_button_text.'</span>'.$parallax_one_header_button_text.'</button>';
+											echo '<button id="inpage_scroll_btn" class="btn btn-primary standard-button inpage-scroll" onClick="parent.location=\''.esc_url($llorix_one_header_button_link).'\'"><span class="screen-reader-text">'.esc_html__('Header button label:','llorix-one').$llorix_one_header_button_text.'</span>'.$llorix_one_header_button_text.'</button>';
 										}
 									}
 								} elseif ( isset( $wp_customize )   ) {
