@@ -1,5 +1,13 @@
 
 
+### 1.0.0.9 - 13/01/2016
+
+ Changes: 
+
+
+ * #29 Regerate pot file, for translations
+
+
 ### 1.0.0.7 - 05/01/2016
 
  Changes: 
