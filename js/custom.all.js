@@ -213,7 +213,7 @@ jQuery(window).scroll(function(){
         if( isAdminBar ) {
             limit = -veryTopHeaderHeight + adminBarHeight;
         } else {
-            linit = -veryTopHeaderHeight;
+            limit = -veryTopHeaderHeight;
         }
         if( window_offset < limit ) {
             $nav.css('top', limit );
