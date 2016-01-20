@@ -192,7 +192,7 @@ var adminBarHeight;
 var isAdminBar;
 var limit;
 jQuery( document ).ready( function() { 
-    veryTopHeaderHeight = 48;
+    veryTopHeaderHeight = jQuery( '.very-top-header' ).height();
     adminBarHeight      = 32;
     isAdminBar          = ( jQuery( '#wpadminbar').length != 0 ? true : false );
     limit               = 0;
