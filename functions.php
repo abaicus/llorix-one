@@ -256,13 +256,13 @@ function llorix_one_scripts() {
 	
 
 	$llorix_one_enable_move = get_theme_mod('llorix_one_enable_move');
-	if ( !empty($llorix_one_enable_move) && $llorix_one_enable_move && is_front_page() ) {
+	if ( !empty($llorix_one_enable_move) && $llorix_one_enable_move && ( is_front_page() || is_page_template('template-frontpage.php') ) ) {
 
 		wp_enqueue_script( 'llorix-one-home-plugin', llorix_one_get_file('/js/plugin.home.js'), array('jquery','parallax-one-custom-all'), '1.0.1', true );
 
 	}
 
-	if ( is_front_page() ) {
+	if ( is_front_page() || is_page_template('template-frontpage.php') ) {
 
 		wp_enqueue_script( 'llorix-one-custom-home', llorix_one_get_file('/js/custom.home.js'), array('jquery'), '1.0.0', true );
 	}
@@ -541,7 +541,7 @@ function llorix_one_php_style() {
 	$llorix_one_first_layer = get_theme_mod('llorix_one_first_layer', llorix_one_get_file('/images/background1.png'));
 	$llorix_one_second_layer = get_theme_mod('llorix_one_second_layer',llorix_one_get_file('/images/background2.png'));
 
-	if( ( empty($llorix_one_enable_move) || !$llorix_one_enable_move) && is_front_page() ) {
+	if( ( empty($llorix_one_enable_move) || !$llorix_one_enable_move) && ( is_front_page() || is_page_template('template-frontpage.php') ) ) {
 		$llorix_one_header_image = get_header_image();
 		if(!empty($llorix_one_header_image)){
 			echo '.header{ background-image: url('.$llorix_one_header_image.');}';

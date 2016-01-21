@@ -2120,7 +2120,8 @@ header .navbar-brand {
 	width: 100%;
 }
 
-#parallax_slider {
+#llorix_one_slider {
+	width: 100%;
 	position: relative;
 	overflow: hidden;
 	margin: 20px auto 0 auto;
@@ -2129,7 +2130,7 @@ header .navbar-brand {
 	border-radius: 4px;
 }
 
-#parallax_slider ul {
+#llorix_one_slider ul {
 	position: relative;
 	margin: 0;
 	padding: 0;
@@ -2137,7 +2138,7 @@ header .navbar-brand {
 	list-style: none;
 }
 
-#parallax_slider ul li {
+#llorix_one_slider ul li {
 	position: relative;
 	display: block;
 	float: left;
@@ -5758,7 +5759,7 @@ h2.screen-reader-text {
 		display: inline-block;
 	}
 
-	#parallax_slider {
+	#llorix_one_slider {
 		margin: 0px auto 0 auto;
 	}
 
