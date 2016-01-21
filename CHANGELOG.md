@@ -1,5 +1,15 @@
 
 
+### 1.0.0.10 - 21/01/2016
+
+ Changes: 
+
+
+ * Fixed #34 Header text color
+ * Fixed #33 Top menu is too big after scroll
+ * Accessibility ready
+
+
 ### 1.0.0.9 - 13/01/2016
 
  Changes: 
