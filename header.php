@@ -25,7 +25,7 @@
 		
 	 global $wp_customize;
 
-	 if(is_front_page() && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
+	 if((is_front_page() || is_page_template('template-frontpage.php')) && !isset( $wp_customize ) && get_option( 'show_on_front' ) != 'page' ): 
 	 
 		$parallax_one_disable_preloader = get_theme_mod('llorix_one_disable_preloader');
 		
@@ -52,7 +52,7 @@
 			if( isset($llorix_one_sticky_header) && ($llorix_one_sticky_header != 1)){
 				$fixedheader = 'sticky-navigation-open';
 			} else {
-				if( !is_front_page() ){
+				if( !is_front_page() || is_page_template('template-frontpage.php') ){
 					$fixedheader = 'sticky-navigation-open';
 				}else{
 					$fixedheader = '';

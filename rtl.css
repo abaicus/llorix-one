@@ -260,10 +260,10 @@ li.galcolumn{
 .parallax-slider-whole-wrap{
     float:right;
 }
-#parallax_slider{
+#llorix_one_slider{
     margin:20px auto 0 auto;
 }
-#parallax_slider ul li{
+#llorix_one_slider ul li{
     float:right;
 }
 a.control_next{
@@ -844,7 +844,7 @@ footer.footer ul{
     .timeline h2{
         padding-left:0;
     }
-    #parallax_slider{
+    #llorix_one_slider{
         margin:0px auto 0 auto;
     }
     #sidebar-secondary{

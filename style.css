@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/llorix-one/
 Author: ThemeIsle
 Author URI: http://themeisle.com/
 Description: Llorix One is a free and beautiful business WordPress theme, with a flat clean design and an elegant parallax effect. It provides a simple and professional look that can be used for any kind of businesses or startups. Llorix One has a blue & orange appearance, with buttons and icons promoting simplicity and elegance at their best. The theme provides a responsive blog section, is ecommerce ready (WooCommerce compatible), WPML and SEO friendly. You can use it for your business / startup, agencies, corporate websites, or portfolios. 
-Version: 1.0.0.9
+Version: 1.0.0.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: llorix-one
@@ -1030,7 +1030,7 @@ header .navbar-brand {
 .very-top-left {
     float: left;
     padding: 10px 0;
-    color: #CCC;
+    color: #FFF;
     font-size: 14px;
     font-weight: bold;
 }
@@ -1303,6 +1303,9 @@ header .navbar-brand {
 .navbar-toggle {
 	margin-right: 5px;
 	padding: 13px 10px;
+}
+.navbar-toggle:hover .icon-bar, .navbar-toggle.toggled-on .icon-bar {
+	background-color:#0d3c55;
 }
 
 /* ONLY LOGO */
@@ -2117,7 +2120,8 @@ header .navbar-brand {
 	width: 100%;
 }
 
-#parallax_slider {
+#llorix_one_slider {
+	width: 100%;
 	position: relative;
 	overflow: hidden;
 	margin: 20px auto 0 auto;
@@ -2126,7 +2130,7 @@ header .navbar-brand {
 	border-radius: 4px;
 }
 
-#parallax_slider ul {
+#llorix_one_slider ul {
 	position: relative;
 	margin: 0;
 	padding: 0;
@@ -2134,7 +2138,7 @@ header .navbar-brand {
 	list-style: none;
 }
 
-#parallax_slider ul li {
+#llorix_one_slider ul li {
 	position: relative;
 	display: block;
 	float: left;
@@ -4538,11 +4542,11 @@ footer.footer .team-member-box .team-member {
 }
 
 a {
-	color: #f16c20;
+	color: #c65400;
 }
 
 a:hover {
-	color: #f16c20;
+	color: #c65400;
 }
 
 .border-bottom-hover:hover {
@@ -5035,7 +5039,7 @@ h2.screen-reader-text {
 
 .comment-list .comment-author .says {
 	font-weight: 500;
-	color: #a7a8b1;
+	color: #666666;
 	font-size: 14px;
 }
 
@@ -5755,7 +5759,7 @@ h2.screen-reader-text {
 		display: inline-block;
 	}
 
-	#parallax_slider {
+	#llorix_one_slider {
 		margin: 0px auto 0 auto;
 	}
 

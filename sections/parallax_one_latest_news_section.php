@@ -30,7 +30,7 @@
 									<button class="control_prev fade-btn icon icon-arrow-carrot-up"><span class="screen-reader-text"><?php esc_attr_e('Post slider navigation: Up','llorix-one')?></span></button>
 								</div>
 								<!-- TIMLEINE SCROLLER -->
-								<div itemscope itemtype="http://schema.org/Blog" id="parallax_slider" class="col-md-12 timeline-section">
+								<div itemscope itemtype="http://schema.org/Blog" id="llorix_one_slider" class="timeline-section">
 									<ul class="vertical-timeline" id="timeline-scroll">
 
 										<?php
