@@ -94,7 +94,7 @@
 							
 								foreach($llorix_one_social_icons_decoded as $llorix_one_social_icon){
 									
-									echo '<li><a target="_blank" href="'.esc_url($llorix_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark"></span></a></li>';
+									echo '<li><a href="'.esc_url($llorix_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark"><span class="screen-reader-text">'.esc_attr($llorix_one_social_icon->icon_value).'</span></a></li>';
 
 								}
 						
@@ -107,7 +107,7 @@
 	        </div><!-- .footer-bottom-wrap -->
 
 	        <div class="powered-by">
-	            <a class="" href="https://themeisle.com/themes/parallax-one/" target="_blank" rel="nofollow">Llorix One </a> <?php esc_html_e('powered by','llorix-one'); ?> <a class="" href="http://wordpress.org/" target="_blank" rel="nofollow"><?php esc_html_e('WordPress','llorix-one'); ?></a>
+	            <a class="" href="https://themeisle.com/themes/llorix-one/" rel="nofollow">Llorix One </a> <?php esc_html_e('powered by','llorix-one'); ?> <a class="" href="http://wordpress.org/" rel="nofollow"><?php esc_html_e('WordPress','llorix-one'); ?></a>
 	        </div>
 
 	    </div><!-- container -->

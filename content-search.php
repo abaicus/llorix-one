@@ -44,7 +44,7 @@
 
 			<div class="entry-meta list-post-entry-meta">
 				<span class="post-author">
-					<i class="icon-man-people-streamline-user"></i><?php the_author_posts_link(); ?>
+					<i class="icon-man-people-streamline-user" aria-hidden="true"></i><?php the_author_posts_link(); ?>
 				</span>
 				
 					<?php
@@ -53,7 +53,7 @@
                         if(!empty($categories_list)){
                         ?>
                             <span class="posted-in">
-                                <i class="icon-basic-elaboration-folder-check"></i>
+                                <i class="icon-basic-elaboration-folder-check" aria-hidden="true"></i>
                         <?php
                             esc_html_e('Posted in ','llorix-one');
                         
@@ -68,7 +68,7 @@
 					?>
 				
 				<a href="<?php comments_link(); ?>" class="post-comments">
-					<i class="icon-comment-alt"></i><?php comments_number( esc_html__('No comments','llorix-one'), esc_html__('One comment','llorix-one'), esc_html__('% comments','llorix-one') ); ?>
+					<i class="icon-comment-alt" aria-hidden="true"></i><?php comments_number( esc_html__('No comments','llorix-one'), esc_html__('One comment','llorix-one'), esc_html__('% comments','llorix-one') ); ?>
 				</a>
 			</div><!-- .entry-meta -->
 
@@ -80,12 +80,10 @@
 	<div class="entry-content">
 		<?php
 			$ismore = @strpos( $post->post_content, '<!--more-->');
-			if($ismore) : the_content();
+			if($ismore) : the_content( sprintf( esc_html__('Read more %s ...','llorix-one'), '<span class="screen-reader-text">'.esc_html__('about ', 'llorix-one').get_the_title().'</span>' ) );
 			else : the_excerpt();
 			endif;
-		?>
-
-		<?php
+			
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'llorix-one' ),
 				'after'  => '</div>',

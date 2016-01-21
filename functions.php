@@ -864,3 +864,9 @@ function llorix_one_copy_settings_from_old_versions() {
 
 }
 add_action( 'init', 'llorix_one_copy_settings_from_old_versions' );
+
+function new_excerpt_more($more) {
+	global $post;
+	return '<a class="moretag" href="'. get_permalink($post->ID) . '"><span class="screen-reader-text">'.esc_html__('Read more about ', 'llorix-one').get_the_title().'</span>[...]</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

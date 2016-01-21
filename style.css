@@ -1304,6 +1304,9 @@ header .navbar-brand {
 	margin-right: 5px;
 	padding: 13px 10px;
 }
+.navbar-toggle:hover .icon-bar, .navbar-toggle.toggled-on .icon-bar {
+	background-color:#0d3c55;
+}
 
 /* ONLY LOGO */
 .centered-logo {
@@ -4538,11 +4541,11 @@ footer.footer .team-member-box .team-member {
 }
 
 a {
-	color: #f16c20;
+	color: #c65400;
 }
 
 a:hover {
-	color: #f16c20;
+	color: #c65400;
 }
 
 .border-bottom-hover:hover {
@@ -5035,7 +5038,7 @@ h2.screen-reader-text {
 
 .comment-list .comment-author .says {
 	font-weight: 500;
-	color: #a7a8b1;
+	color: #666666;
 	font-size: 14px;
 }
 
