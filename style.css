@@ -1304,7 +1304,7 @@ header .navbar-brand {
 	margin-right: 5px;
 	padding: 13px 10px;
 }
-.navbar-toggle:hover .icon-bar, .navbar-toggle.toggled-on .icon-bar {
+.navbar-toggle:hover .icon-bar, .navbar-toggle.toggled-on .icon-bar, .navbar-toggle:focus .icon-bar {
 	background-color:#0d3c55;
 }
 
