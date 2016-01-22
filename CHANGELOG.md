@@ -1,5 +1,18 @@
 
 
+### 1.0.0.11 - 22/01/2016
+
+ Changes: 
+
+
+ *  #39 latest news titles issue fixed
+
+latest news titles issue fix
+ * Merge pull request #41 from Gouravwp/development
+
+#39 latest news titles issue fixed
+
+
 ### 1.0.0.10 - 21/01/2016
 
  Changes: 
