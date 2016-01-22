@@ -65,7 +65,7 @@
 					if( !empty($llorix_one_copyright) ){
 						echo '<span class="parallax_one_copyright_content">'.esc_attr($llorix_one_copyright).'</span>';
 					} elseif ( isset( $wp_customize )   ) {
-						echo '<span class="parallax_one_copyright_content paralax_one_only_customizer"></span>';
+						echo '<span class="parallax_one_copyright_content llorix_one_only_customizer"></span>';
 					}
 				
 					/* OPTIONAL FOOTER LINKS */
@@ -94,7 +94,7 @@
 							
 								foreach($llorix_one_social_icons_decoded as $llorix_one_social_icon){
 									
-									echo '<li><a href="'.esc_url($llorix_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark"><span class="screen-reader-text">'.esc_attr($llorix_one_social_icon->icon_value).'</span></a></li>';
+									echo '<li><a href="'.esc_url($llorix_one_social_icon->link).'"><span class="parallax-one-footer-icons '.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark" aria-hidden="true"></span><span class="screen-reader-text">'.esc_attr($llorix_one_social_icon->icon_value).'</span></a></li>';
 
 								}
 						

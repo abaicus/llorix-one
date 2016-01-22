@@ -64,7 +64,7 @@
 								if( !empty($llorix_one_header_title) ){
 									echo '<h1 id="intro_section_text_1" class="intro white-text">'.esc_attr($llorix_one_header_title).'</h1>';
 								} elseif ( isset( $wp_customize )   ) {
-									echo '<h1 id="intro_section_text_1" class="intro white-text paralax_one_only_customizer"></h1>';
+									echo '<h1 id="intro_section_text_1" class="intro white-text llorix_one_only_customizer"></h1>';
 								}
 							?>
 
@@ -73,7 +73,7 @@
 								if( !empty($llorix_one_header_subtitle) ){
 									echo '<h5 id="intro_section_text_2" class="white-text">'.esc_attr($llorix_one_header_subtitle).'</h5>';
 								} elseif ( isset( $wp_customize )   ) {
-									echo '<h5 id="intro_section_text_2" class="white-text paralax_one_only_customizer"></h5>';
+									echo '<h5 id="intro_section_text_2" class="white-text llorix_one_only_customizer"></h5>';
 								}
 							?>
 
@@ -90,7 +90,7 @@
 										}
 									}
 								} elseif ( isset( $wp_customize )   ) {
-									echo '<div id="intro_section_text_3" class="button"><div id="inpage_scroll_btn"><a href="" class="btn btn-primary standard-button inpage-scroll paralax_one_only_customizer"></a></div></div>';
+									echo '<div id="intro_section_text_3" class="button"><div id="inpage_scroll_btn"><a href="" class="btn btn-primary standard-button inpage-scroll llorix_one_only_customizer"></a></div></div>';
 								}
 							?>
 							<!-- /END BUTTON -->

@@ -661,6 +661,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			$title = $llorix_one_service_box->title;
 			$text = $llorix_one_service_box->text;
 			$id = $llorix_one_service_box->id;
+			$link = $llorix_one_service_box->link;
 			if(!empty($id)) {
 				if(!empty($title)){
 					icl_unregister_string ('Featured Area' , $id.'_services_title' );
@@ -673,6 +674,12 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 					icl_register_string( 'Featured Area' , $id.'_services_text' , $text );
 				} else {
 					icl_unregister_string ('Featured Area' , $id.'_services_text' );
+				}
+				if(!empty($link)){
+					icl_unregister_string ('Featured Area' , $id.'_services_link' );
+					icl_register_string( 'Featured Area' , $id.'_services_link' , $link );
+				} else {
+					icl_unregister_string ('Featured Area' , $id.'_services_link' );
 				}
 			}
 		}
