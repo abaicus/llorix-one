@@ -17,7 +17,7 @@
 				</span>
         	</span>
 			<time class="post-time posted-on published" datetime="<?php the_time('c'); ?>" itemprop="datePublished">
-				<i class="icon-clock-alt" aria-hidden="true"></i><?php the_time('F j, Y'); ?>
+				<i class="icon-clock-alt" aria-hidden="true"></i><?php the_time( get_option('date_format') ); ?>
 			</time>
 			<a href="<?php comments_link(); ?>" class="post-comments">
 				<i class="icon-comment-alt" aria-hidden="true"></i><?php comments_number( esc_html__('No comments','llorix-one'), esc_html__('One comment','llorix-one'), esc_html__('% comments','llorix-one') ); ?>

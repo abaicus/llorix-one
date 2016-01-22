@@ -82,7 +82,7 @@
 				        		echo '<span>' . esc_attr($llorix_one_very_top_header_phone) . '</span>';
 				        		echo '</div>';
 							} elseif ( isset( $wp_customize )   ) {
-								echo '<div class="very-top-left paralax_one_only_customizer">' . esc_html_e('Call us:', 'llorix-one') . '<span></span></div>';
+								echo '<div class="very-top-left llorix_one_only_customizer">' . esc_html_e('Call us:', 'llorix-one') . '<span></span></div>';
 							}
 						?>
 		        		<div class="very-top-right">
@@ -139,7 +139,7 @@
 
 								echo '</a>';
 
-								echo '<div class="header-logo-wrap text-header paralax_one_only_customizer">';
+								echo '<div class="header-logo-wrap text-header llorix_one_only_customizer">';
 
 									echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 								
@@ -151,7 +151,7 @@
 							
 								if( isset( $wp_customize ) ):
 								
-									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand paralax_one_only_customizer" title="'.get_bloginfo('title').'">';
+									echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand llorix_one_only_customizer" title="'.get_bloginfo('title').'">';
 
 										echo '<img src="" alt="'.get_bloginfo('title').'">';
 

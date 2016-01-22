@@ -65,7 +65,7 @@
 					if( !empty($llorix_one_copyright) ){
 						echo '<span class="parallax_one_copyright_content">'.esc_attr($llorix_one_copyright).'</span>';
 					} elseif ( isset( $wp_customize )   ) {
-						echo '<span class="parallax_one_copyright_content paralax_one_only_customizer"></span>';
+						echo '<span class="parallax_one_copyright_content llorix_one_only_customizer"></span>';
 					}
 				
 					/* OPTIONAL FOOTER LINKS */

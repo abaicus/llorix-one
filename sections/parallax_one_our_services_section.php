@@ -27,7 +27,7 @@
 							if( !empty($llorix_one_our_services_title) ){
 								echo '<h2 class="dark-text">'.esc_attr($llorix_one_our_services_title).'</h2><div class="colored-line"></div>';
 							} elseif ( isset( $wp_customize )   ) {
-								echo '<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>';
+								echo '<h2 class="dark-text llorix_one_only_customizer"></h2><div class="colored-line llorix_one_only_customizer"></div>';
 							}
 						?>
 
@@ -35,7 +35,7 @@
 							if( !empty($llorix_one_our_services_subtitle) ){
 								echo '<div class="sub-heading">'.esc_attr($llorix_one_our_services_subtitle).'</div>';
 							} elseif ( isset( $wp_customize )   ) {
-								echo '<div class="sub-heading paralax_one_only_customizer"></div>';
+								echo '<div class="sub-heading llorix_one_only_customizer"></div>';
 							}
 						?>
 					</div>
@@ -52,7 +52,15 @@
 												if ( $llorix_one_service_box->choice == 'parallax_icon' ){
 													if( !empty($llorix_one_service_box->icon_value) ) {
 														if( !empty($llorix_one_service_box->link) ){
-															echo '<div class="service-icon colored-text"><a href="'.esc_url($llorix_one_service_box->link).'"><span class="'.esc_attr($llorix_one_service_box->icon_value).'"></span></a></div>';
+															if (function_exists ( 'icl_t' ) && !empty($llorix_one_service_box->id)){
+																
+																$llorix_one_link_services = icl_t('Featured Area',$llorix_one_service_box->id.'_services_link',$llorix_one_service_box->link);
+																
+																echo '<div class="service-icon colored-text"><a href="'.esc_url($llorix_one_link_services).'"><span class="'.esc_attr($llorix_one_service_box->icon_value).'"></span></a></div>';
+															} else {
+															
+																echo '<div class="service-icon colored-text"><a href="'.esc_url($llorix_one_service_box->link).'"><span class="'.esc_attr($llorix_one_service_box->icon_value).'"></span></a></div>';
+															}
 														} else {
 															echo '<div class="service-icon colored-text"><span class="'.esc_attr($llorix_one_service_box->icon_value).'"></span></div>';
 														}
@@ -62,9 +70,32 @@
 													if( !empty($llorix_one_service_box->image_url)){
 														if( !empty($llorix_one_service_box->link) ){
 															if(!empty($llorix_one_service_box->title)){
-																echo '<a href="'.esc_url($llorix_one_service_box->link).'"><img src="'.esc_url($llorix_one_service_box->image_url).'" alt="'.$llorix_one_service_box->title.'"/></a>';
+																
+																if (function_exists ( 'icl_t' ) && !empty($llorix_one_service_box->id)){
+																
+																	$llorix_one_title_services = icl_t('Featured Area',$llorix_one_service_box->id.'_services_title',$llorix_one_service_box->title);
+																	$llorix_one_link_services = icl_t('Featured Area',$llorix_one_service_box->id.'_services_link',$llorix_one_service_box->link);
+														
+																	echo '<a href="'.esc_url($llorix_one_link_services).'"><img src="'.esc_url($llorix_one_service_box->image_url).'" alt="'.$llorix_one_title_services.'"/></a>';
+																	
+																} else {
+																	
+																	echo '<a href="'.esc_url($llorix_one_service_box->link).'"><img src="'.esc_url($llorix_one_service_box->image_url).'" alt="'.$llorix_one_service_box->title.'"/></a>';
+																}	
+																
 															} else {
-																echo '<a href="'.esc_url($llorix_one_service_box->link).'"><img src="'.esc_url($llorix_one_service_box->image_url).'" alt="'.esc_html__('Featured Image','llorix-one').'"/></a>';
+																
+																if (function_exists ( 'icl_t' ) && !empty($llorix_one_service_box->id)){
+																	
+																	$llorix_one_link_services = icl_t('Featured Area',$llorix_one_service_box->id.'_services_link',$llorix_one_service_box->link);
+																	
+																	echo '<a href="'.esc_url($llorix_one_link_services).'"><img src="'.esc_url($parallax_one_service_box->image_url).'" alt="'.esc_html__('Featured Image','llorix-one').'"/></a>';
+																	
+																} else {
+																	
+																	echo '<a href="'.esc_url($llorix_one_service_box->link).'"><img src="'.esc_url($parallax_one_service_box->image_url).'" alt="'.esc_html__('Featured Image','llorix-one').'"/></a>';
+																}	
+																
 															}
 														} else {
 															if(!empty($llorix_one_service_box->title)){
@@ -80,7 +111,8 @@
 												if( !empty($llorix_one_service_box->link) ){
 													if (function_exists ( 'icl_t' ) && !empty($llorix_one_service_box->id)){
 														$llorix_one_title_services = icl_t('Featured Area',$llorix_one_service_box->id.'_services_title',$llorix_one_service_box->title);
-														echo '<h3 class="colored-text"><a href="'.esc_url($llorix_one_service_box->link).'">'.esc_attr($llorix_one_title_services).'</a></h3>';
+														$llorix_one_link_services = icl_t('Featured Area',$llorix_one_service_box->id.'_services_link',$llorix_one_service_box->link);
+														echo '<h3 class="colored-text"><a href="'.esc_url($llorix_one_link_services).'">'.esc_attr($llorix_one_title_services).'</a></h3>';
 													} else {
 														echo '<h3 class="colored-text"><a href="'.esc_url($llorix_one_service_box->link).'">'.esc_attr($llorix_one_service_box->title).'</a></h3>';
 													}
@@ -113,12 +145,12 @@
 	} else {
 		if( isset( $wp_customize ) ) {
 ?>
-			<section class="services paralax_one_only_customizer" id="services" role="region" aria-label="<?php esc_html_e('Services','llorix-one') ?>">
+			<section class="services llorix_one_only_customizer" id="services" role="region" aria-label="<?php esc_html_e('Services','llorix-one') ?>">
 				<div class="section-overlay-layer">
 					<div class="container">
 						<div class="section-header">
-							<h2 class="dark-text paralax_one_only_customizer"></h2><div class="colored-line paralax_one_only_customizer"></div>
-							<div class="sub-heading paralax_one_only_customizer"></div>
+							<h2 class="dark-text llorix_one_only_customizer"></h2><div class="colored-line llorix_one_only_customizer"></div>
+							<div class="sub-heading llorix_one_only_customizer"></div>
 						</div>
 					</div>
 				</div>
