@@ -98,10 +98,12 @@
 								
 								if( !empty( $llorix_one_social_icons ) ){
 									$llorix_one_social_icons_decoded = json_decode($llorix_one_social_icons);
+
 									if( !empty($llorix_one_social_icons_decoded) ){
 										echo '<ul class="social-icons">';
 											foreach($llorix_one_social_icons_decoded as $llorix_one_social_icon){
-												echo '<li><a href="'.esc_url($llorix_one_social_icon->link).'"><span class="'.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark" aria-hidden="true"></span><span class="screen-reader-text">'.esc_attr($llorix_one_social_icon->icon_value).'</span></a></li>';
+
+												echo '<li><a href="'.esc_url($llorix_one_social_icon->link).'"><span class="'.esc_attr($llorix_one_social_icon->icon_value).' transparent-text-dark" aria-hidden="true"></span><span class="screen-reader-text">'.esc_attr(explode("-",$llorix_one_social_icon->icon_value)[2]).'</span></a></li>';
 											}
 										echo '</ul>';
 									}
