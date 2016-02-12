@@ -299,23 +299,6 @@ jQuery(document).ready(function() {
     if ((typeof parallax_one_aboutpage !== 'undefined') && (typeof parallax_one_nr_actions_required !== 'undefined') && (parallax_one_nr_actions_required != '0')) {
         jQuery('#accordion-section-themes .accordion-section-title').append('<a href="' + parallax_one_aboutpage + '"><span class="parallax-one-actions-count">' + parallax_one_nr_actions_required + '</span></a>');
     }
-
-    /* Upsells in customizer (Documentation link, Support link, View theme info and Upgrade to PRO link */
-	if( !jQuery( ".llorix-one-upsells" ).length ) {
-		jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section llorix-one-upsells">');
-	}
-
-	if( jQuery( ".llorix-one-upsells" ).length ) {
-
-		jQuery('.llorix-one-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-llorix-one/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}', llorixOneCustomizerObject.documentation));
-		jQuery('.llorix-one-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/llorix-one/" class="button" target="_blank">{github}</a>'.replace('{github}', llorixOneCustomizerObject.support));
-
-	}
-	/*jQuery('.preview-notice').append('<a class="parallax-one-upgrade-to-pro-button" href="http://themeisle.com/plugins/parallax-one-plus/" class="button" target="_blank">{pro}</a>'.replace('{pro}',llorixOneCustomizerObject.pro));*/
-
-	if ( !jQuery( ".llorix-one-upsells" ).length ) {
-		jQuery('#customize-theme-controls > ul').prepend('</li>');
-	}
 	
 	/* Show control for frontpage template */
 	

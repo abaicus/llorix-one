@@ -1009,9 +1009,7 @@ function llorix_one_customizer_script() {
 	wp_enqueue_script( 'llorix_one_customizer_script', llorix_one_get_file('/js/parallax_one_customizer.js'), array("jquery","jquery-ui-draggable"),'1.0.0', true  );
 	
 	wp_localize_script( 'llorix_one_customizer_script', 'llorixOneCustomizerObject', array(
-		
-		'documentation' => esc_html__( 'Documentation', 'llorix-one' ),
-		'support' => esc_html__('Support Forum','llorix-one'),
+	
 		'pro' => __('Upgrade to PRO','llorix-one'),
 		
 	) );
