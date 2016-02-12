@@ -80,7 +80,6 @@ function llorix_one_customize_register( $wp_customize ) {
 	
 	/* Logo	*/
 	$wp_customize->add_setting( 'llorix_one_logo', array(
-		'default' => llorix_one_get_file('/images/logo-nav.png'),
 		'sanitize_callback' => 'esc_url',
 		'transport' => 'postMessage'
 	));

@@ -129,7 +129,7 @@
 						
 						<?php
 							
-							$parallax_one = get_theme_mod('llorix_one_logo', llorix_one_get_file('/images/logo-nav.png') );
+							$parallax_one = get_theme_mod( 'llorix_one_logo' );
 
 							
 							
