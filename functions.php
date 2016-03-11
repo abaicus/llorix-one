@@ -10,7 +10,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 730; /* pixels */   
+	$content_width = 730; /* pixels */
 }
 if ( ! function_exists( 'llorix_one_setup' ) ) :
 /**
@@ -37,7 +37,7 @@ function llorix_one_setup() {
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
 	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.  
+	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
 
@@ -48,7 +48,7 @@ function llorix_one_setup() {
 		'parallax_footer_menu' => esc_html__('Footer Menu', 'llorix-one'),
 	) );
 
-	
+
 	 /* Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
@@ -63,7 +63,7 @@ function llorix_one_setup() {
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link',
 	) );
-	
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support('custom-background',apply_filters( 'llorix_one_custom_background_args', array(
 		'default-repeat'         => 'no-repeat',
@@ -76,7 +76,7 @@ function llorix_one_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Header
 	 */
-	
+
 	add_theme_support( 'custom-header',apply_filters( 'llorix_one_custom_header_args', array(
 		'default-image' => llorix_one_get_file('/images/background-images/background.jpg'),
 		'width'         => 1000,
@@ -85,14 +85,14 @@ function llorix_one_setup() {
 		'flex-width'    => true,
 		'header-text' 	=> false
 	)));
-	
+
 	register_default_headers( array(
 		'llorix_one_default_header_image' => array(
 			'url'   => llorix_one_get_file('/images/background-images/background.jpg'),
 			'thumbnail_url' => llorix_one_get_file('/images/background-images/background_thumbnail.jpg'),
 		),
 	));
-	
+
 	//Theme Support for WooCommerce
 	add_theme_support( 'woocommerce' );
 
@@ -101,28 +101,28 @@ function llorix_one_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	add_theme_support( 'post-thumbnails' ); 
+	add_theme_support( 'post-thumbnails' );
 
 	/* Set the image size by cropping the image */
 	add_image_size( 'parallax-one-post-thumbnail-big', 730, 340, true );
 	add_image_size( 'parallax-one-post-thumbnail-mobile', 500, 233, true );
 
 	// Latest news Section (homepage)
-	add_image_size( 'parallax-one-post-thumbnail-latest-news', 150, 150, true ); 	
+	add_image_size( 'parallax-one-post-thumbnail-latest-news', 150, 150, true );
 	add_image_size( 'parallax_one_team', 268, 273, true );
 	add_image_size( 'parallax_one_services',60,62,true );
 	add_image_size( 'parallax_one_customers',75,75,true );
-	
-	
+
+
 	if( !get_option( 'parallax_one_migrate_translation' ) ) {
 		add_option( 'parallax_one_migrate_translation', false );
 	}
-	
+
 	/**
 	* Welcome screen
 	*/
 	if ( is_admin() ) {
-		
+
 		global $llorix_one_required_actions;
         /*
          * id - unique id; required
@@ -147,29 +147,29 @@ function llorix_one_setup() {
                 "plugin_slug" => 'intergeo-maps'
             )
 		);
-		
+
 		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 	}
-	
-	
+
+
 }
 endif; // llorix_one_setup
 add_action( 'after_setup_theme', 'llorix_one_setup' );
 
 function llorix_one_is_not_static_page() {
-	
+
 	$llorix_one_is_not_static = 1;
-	
+
 	if( 'page' == get_option( 'show_on_front' ) ):
-		
+
 		$llorix_one_front_page_id = get_option( 'page_on_front' );
 		$llorix_one_template_name = get_page_template_slug( $llorix_one_front_page_id );
 		if ( !empty($llorix_one_template_name) && ( $llorix_one_template_name == 'template-frontpage.php' ) ):
 			$llorix_one_is_not_static = 0;
 		endif;
-		
+
 	endif;
-	
+
 	return (!$llorix_one_is_not_static ? true : false);
 }
 
@@ -191,8 +191,8 @@ function llorix_one_media_uploader_custom_sizes( $sizes ) {
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function llorix_one_widgets_init() {
-	
-	register_sidebar( 
+
+	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'llorix-one' ),
 			'id'            => 'sidebar-1',
@@ -203,18 +203,18 @@ function llorix_one_widgets_init() {
 			'after_title'   => '</h2><div class="colored-line-left"></div><div class="clearfix widget-title-margin"></div>',
 		)
 	);
-	
-	register_sidebars( 4, 
+
+	register_sidebars( 4,
 		array(
 			'name' => esc_html__('Footer area %d','llorix-one'),
 			'id' => 'footer-area',
 			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'	=> '<h3 class="widget-title">',
-			'after_title'	=> '</h3>'
-		) 
+			'after_title'	=> '</h3><div class="colored-line-left"></div><div class="clearfix widget-title-margin"></div>'
+		)
 	);
-	
+
 }
 add_action( 'widgets_init', 'llorix_one_widgets_init' );
 
@@ -238,22 +238,22 @@ function llorix_one_wp_page_menu()
  * Enqueue scripts and styles.
  */
 function llorix_one_scripts() {
-	
+
 	wp_enqueue_style( 'parallax-one-font', '//fonts.googleapis.com/css?family=Cabin:400,600|Open+Sans:400,300,600');
 
 	wp_enqueue_style( 'parallax-one-bootstrap-style', llorix_one_get_file( '/css/bootstrap.min.css'),array(), '3.3.1');
 
 	wp_enqueue_style( 'parallax-one-style', get_stylesheet_uri(), array('parallax-one-bootstrap-style'),'1.0.0');
-	
+
 	wp_enqueue_script( 'parallax-one-bootstrap', llorix_one_get_file('/js/bootstrap.min.js'), array(), '3.3.5', true );
-		
+
 	wp_enqueue_script( 'parallax-one-custom-all', llorix_one_get_file('/js/custom.all.js'), array('jquery'), '2.0.2', true );
-	
+
 	wp_localize_script( 'parallax-one-custom-all', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'llorix-one' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'llorix-one' ) . '</span>',
 	) );
-	
+
 
 	$llorix_one_enable_move = get_theme_mod('llorix_one_enable_move');
 	if ( !empty($llorix_one_enable_move) && $llorix_one_enable_move && ( is_front_page() || is_page_template('template-frontpage.php') ) ) {
@@ -279,11 +279,11 @@ add_action( 'wp_enqueue_scripts', 'llorix_one_scripts' );
 function llorix_one_add_id(){
 	$migrate = get_option( 'parallax_one_migrate_translation' );
 	if( isset($migrate) && $migrate == false ) {
-		
+
 		/*Logo*/
 		$llorix_one_logos = get_theme_mod('llorix_one_logos_content', json_encode(array( array("image_url" => llorix_one_get_file('/images/companies/1.png') ,"link" => "#" ),array("image_url" => llorix_one_get_file('/images/companies/2.png') ,"link" => "#" ),array("image_url" => llorix_one_get_file('/images/companies/3.png') ,"link" => "#" ),array("image_url" => llorix_one_get_file('/images/companies/4.png') ,"link" => "#" ),array("image_url" => llorix_one_get_file('/images/companies/5.png') ,"link" => "#" ) )));
 		if(!empty($llorix_one_logos)){
-			
+
 			$llorix_one_logos_decoded = json_decode($llorix_one_logos);
 			foreach($llorix_one_logos_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
@@ -293,8 +293,8 @@ function llorix_one_add_id(){
 			$llorix_one_logos = json_encode($llorix_one_logos_decoded);
 			set_theme_mod( 'llorix_one_logos_content', $llorix_one_logos );
 		}
-		
-		
+
+
 		/*Services*/
 		$llorix_one_services = get_theme_mod('llorix_one_services_content', json_encode(
 							array(
@@ -304,18 +304,18 @@ function llorix_one_add_id(){
 							)
 						));
 		if(!empty($llorix_one_services)){
-			
+
 			$llorix_one_services_decoded = json_decode($llorix_one_services);
 			foreach($llorix_one_services_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
-			
+
 			$llorix_one_services = json_encode($llorix_one_services_decoded);
 			set_theme_mod( 'llorix_one_services_content', $llorix_one_services );
 		}
-		
+
 		/*Team*/
 		$llorix_one_team = get_theme_mod('llorix_one_team_content', json_encode(
 							array(
@@ -325,18 +325,18 @@ function llorix_one_add_id(){
 							)
 						));
 		if(!empty($llorix_one_team)){
-			
+
 			$llorix_one_team_decoded = json_decode($llorix_one_team);
 			foreach($llorix_one_team_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
-			
+
 			$llorix_one_team = json_encode($llorix_one_team_decoded);
 			set_theme_mod( 'llorix_one_team_content', $llorix_one_team );
 		}
-		
+
 		/*Testimonials*/
 		$llorix_one_testimonials = get_theme_mod('llorix_one_testimonials_content', json_encode(
 							array(
@@ -346,39 +346,39 @@ function llorix_one_add_id(){
 							)
 						));
 		if(!empty($llorix_one_testimonials)){
-			
+
 			$llorix_one_testimonials_decoded = json_decode($llorix_one_testimonials);
 			foreach($llorix_one_testimonials_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
-			
+
 			$llorix_one_testimonials = json_encode($llorix_one_testimonials_decoded);
 			set_theme_mod( 'llorix_one_testimonials_content', $llorix_one_testimonials );
 		}
-		
+
 		/*Contact Info*/
 		$llorix_one_contact_info = get_theme_mod('llorix_one_contact_info_content', json_encode(
-			array( 
-					array("icon_value" => "icon-basic-mail" ,"text" => "contact@site.com", "link" => "#" ), 
-					array("icon_value" => "icon-basic-geolocalize-01" ,"text" => "Company address", "link" => "#" ), 
-					array("icon_value" => "icon-basic-tablet" ,"text" => "0 332 548 954", "link" => "#" ) 
+			array(
+					array("icon_value" => "icon-basic-mail" ,"text" => "contact@site.com", "link" => "#" ),
+					array("icon_value" => "icon-basic-geolocalize-01" ,"text" => "Company address", "link" => "#" ),
+					array("icon_value" => "icon-basic-tablet" ,"text" => "0 332 548 954", "link" => "#" )
 			)
 		));
 		if(!empty($llorix_one_contact_info)){
-			
+
 			$llorix_one_contact_info_decoded = json_decode($llorix_one_contact_info);
 			foreach($llorix_one_contact_info_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
-			
+
 			$llorix_one_contact_info = json_encode($llorix_one_contact_info_decoded);
 			set_theme_mod( 'llorix_one_contact_info_content', $llorix_one_contact_info );
 		}
-		
+
 		/*Social Icons*/
 		$llorix_one_social_icons = get_theme_mod('llorix_one_social_icons', json_encode(
 			array(
@@ -388,18 +388,18 @@ function llorix_one_add_id(){
 			)
 		));
 		if(!empty($llorix_one_social_icons)){
-			
+
 			$llorix_one_social_icons_decoded = json_decode($llorix_one_social_icons);
 			foreach($llorix_one_social_icons_decoded as &$it){
 				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
 					$it = (object) array_merge( (array)$it, array( 'id' => 'parallax_one_'.uniqid() ) );
 				}
 			}
-			
+
 			$llorix_one_social_icons = json_encode($llorix_one_social_icons_decoded);
 			set_theme_mod( 'llorix_one_social_icons', $llorix_one_social_icons );
 		}
-		
+
 		update_option( 'parallax_one_migrate_translation', true );
 	}
 }
@@ -466,68 +466,68 @@ require_once get_template_directory() . '/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'llorix_one_register_required_plugins' );
 function llorix_one_register_required_plugins() {
-	
+
 		$plugins = array(
 			array(
-	 
+
 				'name'      => 'Intergeo Maps - Google Maps Plugin',
-	 
+
 				'slug'      => 'intergeo-maps',
-	 
+
 				'required'  => false
-	 
+
 			),
-			
+
 			array(
-			
+
 				'name'     => 'Pirate Forms',
-			
+
 				'slug' 	   => 'pirate-forms',
 
 				'required' => false
-			
+
 			)
 		);
-	
+
 	$config = array(
-        'default_path' => '',                      
-        'menu'         => 'tgmpa-install-plugins', 
-        'has_notices'  => true,                   
-        'dismissable'  => true,                  
-        'dismiss_msg'  => '',                   
-        'is_automatic' => false,                 
-        'message'      => '',     
+        'default_path' => '',
+        'menu'         => 'tgmpa-install-plugins',
+        'has_notices'  => true,
+        'dismissable'  => true,
+        'dismiss_msg'  => '',
+        'is_automatic' => false,
+        'message'      => '',
         'strings'      => array(
             'page_title'                      => esc_html__( 'Install Required Plugins', 'llorix-one' ),
             'menu_title'                      => esc_html__( 'Install Plugins', 'llorix-one' ),
-            'installing'                      => esc_html__( 'Installing Plugin: %s', 'llorix-one' ), 
+            'installing'                      => esc_html__( 'Installing Plugin: %s', 'llorix-one' ),
             'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'llorix-one' ),
             'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'llorix-one' ),
             'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'llorix-one' ),
             'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'llorix-one' ),
             'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'llorix-one' ),
             'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'llorix-one' ),
-            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'llorix-one' ), 
-            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'llorix-one' ), 
-            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'llorix-one' ), 
+            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'llorix-one' ),
+            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'llorix-one' ),
+            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'llorix-one' ),
             'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'llorix-one' ),
             'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'llorix-one' ),
             'return'                          => esc_html__( 'Return to Required Plugins Installer', 'llorix-one' ),
             'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'llorix-one' ),
-            'complete'                        => esc_html__( 'All plugins installed and activated successfully. %s', 'llorix-one' ), 
+            'complete'                        => esc_html__( 'All plugins installed and activated successfully. %s', 'llorix-one' ),
             'nag_type'                        => 'updated'
         )
     );
- 
-	tgmpa( $plugins, $config );	
- 
+
+	tgmpa( $plugins, $config );
+
 }
 
 add_action('wp_footer','llorix_one_php_style', 100);
 function llorix_one_php_style() {
-	
+
 	echo '<style type="text/css">';
-	
+
 	$llorix_one_title_color = get_theme_mod('llorix_one_title_color');
 	if(!empty($llorix_one_title_color)){
 		echo '.dark-text { color: '. $llorix_one_title_color .' }';
@@ -536,7 +536,7 @@ function llorix_one_php_style() {
 	if(!empty($llorix_one_text_color)){
 		echo 'body{ color: '.$llorix_one_text_color.'}';
 	}
-	
+
 	$llorix_one_enable_move = get_theme_mod('llorix_one_enable_move');
 	$llorix_one_first_layer = get_theme_mod('llorix_one_first_layer', llorix_one_get_file('/images/background1.png'));
 	$llorix_one_second_layer = get_theme_mod('llorix_one_second_layer',llorix_one_get_file('/images/background2.png'));
@@ -565,7 +565,7 @@ function llorix_one_get_file($file){
 	if( in_array($file_parts['extension'], $accepted_ext) ){
 		$file_path = get_stylesheet_directory() . $file;
 		if ( file_exists( $file_path ) ){
-			return esc_url(get_stylesheet_directory_uri() . $file); 
+			return esc_url(get_stylesheet_directory_uri() . $file);
 		} else {
 			return esc_url(get_template_directory_uri() . $file);
 		}
@@ -580,7 +580,7 @@ function llorix_one_get_file($file){
  * Change number of related products on product page
  * Set your own value for 'posts_per_page'
  *
- */ 
+ */
 
 add_filter( 'woocommerce_output_related_products_args', 'llorix_one_related_products_args' );
 
@@ -603,8 +603,8 @@ function llorix_one_comment($comment, $args, $depth) {
 
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
-	
-	
+
+
 		case 'trackback' :
 		?>
 			<li class="post pingback">
@@ -612,7 +612,7 @@ function llorix_one_comment($comment, $args, $depth) {
 		<?php
 		break;
 
-	
+
 		default :
 		?>
 			<li itemscope itemtype="http://schema.org/UserComments" <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
@@ -645,14 +645,14 @@ function llorix_one_comment($comment, $args, $depth) {
 
 <?php
 		break;
-	
+
 	endswitch;
 }
 
 /*Polylang repeater translate*/
 
 if(function_exists('icl_unregister_string') && function_exists('icl_register_string')){
-	
+
 	/*Services*/
 	$llorix_one_services_pl = get_theme_mod('llorix_one_services_content');
 	if(!empty($llorix_one_services_pl)){
@@ -684,7 +684,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			}
 		}
 	}
-	
+
 	/*Team*/
 	$llorix_one_team_pl = get_theme_mod('llorix_one_team_content');
 	if(!empty($llorix_one_team_pl)){
@@ -709,7 +709,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			}
 		}
 	}
-	
+
 	/*Testimonials*/
 	$llorix_one_testimonials_pl = get_theme_mod('llorix_one_testimonials_content');
 	if(!empty($llorix_one_testimonials_pl)){
@@ -741,7 +741,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			}
 		}
 	}
-	
+
 	/*Contact*/
 	$llorix_one_contact_pl = get_theme_mod('llorix_one_contact_info_content');
 	if(!empty($llorix_one_contact_pl)){
@@ -783,7 +783,7 @@ function llorix_one_get_template_part($template){
     if(locate_template($template.'.php')) {
 		get_template_part($template);
     } else {
-		if(defined('PARALLAX_ONE_PLUS_PATH')){		
+		if(defined('PARALLAX_ONE_PLUS_PATH')){
 			if(file_exists ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' )){
 				require_once ( PARALLAX_ONE_PLUS_PATH.'public/templates/'.$template.'.php' );
 			}
@@ -797,12 +797,12 @@ function llorix_one_get_template_part($template){
 function llorix_one_update_static_frontpage_template( $setting ) {
 
 	$llorix_one_page_on_front = get_option('page_on_front'); /* Static Frontpage ID */
-	
+
 	$llorix_one_frontpage_template_static = get_theme_mod('llorix_one_frontpage_template_static');
-	
+
 	if ( !empty($llorix_one_page_on_front) && !empty($llorix_one_frontpage_template_static) ) {
 		update_post_meta( $llorix_one_page_on_front, '_wp_page_template', $llorix_one_frontpage_template_static );
-	}	
+	}
 }
 add_action( 'customize_save_after', 'llorix_one_update_static_frontpage_template', 20, 2 );
 
@@ -813,14 +813,14 @@ add_action( 'customize_save_after', 'llorix_one_update_static_frontpage_template
 function llorix_one_redirect_to_template_page( $template ) {
 
 	$llorix_one_frontpage_template_static = get_theme_mod('llorix_one_frontpage_template_static');
-	
+
 	if( !empty($llorix_one_frontpage_template_static) ):
 		$new_template = locate_template( array( $llorix_one_frontpage_template_static ) );
 		if ( !empty($new_template) ):
 			return $new_template ;
 		endif;
 	endif;
-	
+
 	return $template;
 }
 
@@ -830,7 +830,7 @@ function llorix_one_redirect_to_template_page( $template ) {
 */
 
 function llorix_one_update_static_frontpage_template_customize( $setting ) {
-	
+
 	add_filter( 'template_include', 'llorix_one_redirect_to_template_page', 99 );
 
 }
